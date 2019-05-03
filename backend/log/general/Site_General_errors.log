@@ -1,0 +1,6 @@
+03/05/19 08:00:03 AM | ERROR: [2] json_encode() expects parameter 2 to be long, string given
+Warning on line 35 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/contact/controller/controller_contact.class.php
+ | contact | response 200
+03/05/19 08:02:27 AM | ERROR: [2] json_encode() expects parameter 2 to be long, string given
+Warning on line 35 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/contact/controller/controller_contact.class.php
+ | contact | response 200

@@ -1,0 +1,22 @@
+{
+    "frases" : {
+        "en": {
+          "Idioma:": "Language:",
+          "Cambiar":"Change",
+          "Seleccionar": "Select",
+          "Español": "Spanish",
+          "Inglés": "English",
+          "Valenciano": "Valencian",
+          "Inicio": "Home",
+          "Casas": "Houses",
+          "Favoritos": "Favorites",
+          "Conocenos": "About us",
+          "Contacto": "Contact",
+          "CRUD": "CRUD",
+          "Tienda": "Shop",
+          "Perfil": "Profile",
+          "Logout": "Logout",
+          "Login": "Login"
+        }
+    }
+}

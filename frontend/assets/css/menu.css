@@ -1,0 +1,118 @@
+/* #menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+} */
+.menu_block  {
+	z-index: 50;
+	padding: 0px 0 0;
+	background-color: #e7e6d4e0;;
+	position: relative;
+	/* padding: 31px 0 19px; */
+
+}
+
+/* .page1 .menu_block {
+	padding: 27px 0 20px;
+} */
+
+.menu_block nav {
+	/* padding-left: 73px; */
+    font-family: 'Marvel', sans-serif;
+}
+
+
+nav>.sf-menu {
+	z-index: 990;
+	text-align: center;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+}
+@media screen and (max-width: 1032px)  { 
+	nav>.sf-menu {
+		z-index: 990;
+		text-align: center;
+		position: relative;
+		display: flex;
+		justify-content: space-around;
+		align-items:center;
+	}
+}
+nav{ position:relative;padding: 0px 0 0 0;}
+.sf-menu li {float:left;position:relative; }
+.sf-menu>li {
+	z-index: 900;
+	position: relative;
+	z-index: 5;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+.sf-menu>li>ul>li {
+  float: none;
+  position: static;
+}
+
+
+.sf-menu>li>a{
+	text-align: center;
+	display: block;
+	position: relative;
+	z-index: 999;
+	color: #5f604b;
+	line-height:40px;
+
+}
+
+.sf-menu>li>a:hover {
+	color: #ce9f56;
+}
+
+
+/*================================>> 2 Level <<========================================*/
+
+.sf-menu li ul,.sf-menu li.sfHover>ul{
+		display: none;
+		left: -50%;
+		right: -50%;
+    z-index: 999;
+    padding-top: 12px;
+    /* width: 97px; */
+    top: 150%;
+    padding-bottom: 14px;
+    background-color: #e7e6d4;
+    position: absolute;
+}
+
+
+.sf-menu li ul li{
+	position: relative;
+	text-align: center;
+	float: none !important;
+	font-size: 12px;
+	padding: 0 3px;
+	margin: 0 20px;
+	font-size: 20px;
+	line-height: 35px;
+	font-family:  'Marvel', sans-serif;
+}
+.sf-menu li ul li:hover{
+	color:  #ce9f56;
+}
+.sf-menu li ul li a{
+	position: relative;
+	display: inline-block;
+	z-index: 999;
+	color: #5f604b;
+	/* padding: 50px; */
+	width: 100%;
+	margin: 8px auto;
+}
+
+.sf-menu li li a:hover, 
+.sf-menu li.sfHover li.sfHover>a {  
+	color:  #ce9f56;;
+
+}

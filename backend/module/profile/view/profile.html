@@ -1,0 +1,107 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+        <ul class="tabs">
+                <li><a href="#myprofile">My Profile</a></li>
+                <li><a href="#myfavorites">My Favorites</a></li>
+                <li><a href="#mypurchases">My Purchase</a></li>
+        </ul>
+        <div class="tab-container">
+                <div id='myprofile' class="tab_content">
+                        <form class="cd-form" name="formprofile" id="formprofile">
+                           <div class="divpro">
+                                <p class="fieldset">
+                                        <label class="image-replace cd-username" for="signup-username"></label>
+                                        <input class="full-width has-padding has-border" id="proname" name="user" type="text" placeholder="Username" readonly>
+                                        <span class="cd-error-message"></span>
+                                        <!-- <span id="error_update"><span class="cd-error-message"></span></span> -->
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace cd-email" for="signup-email"></label>
+                                        <input class="full-width has-padding has-border" id="proemail" name="mail" type="text" placeholder="E-mail" readonly>
+                                        <span class="cd-error-message"></span>
+                                        <!-- <span id="error_update"><span class="cd-error-message"></span></span> -->
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace fas fa-phone fa-3x" for="signup-tf"></label>
+                                        <input class="full-width has-padding has-border" id="protf" name="tf" type="text"  placeholder="Phone">
+                                        <span class="cd-error-message"></span>
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace cd-password" for="signup-password"></label>
+                                        <input class="full-width has-padding has-border" name="propassword" id="propassword" type="text"  placeholder="Password">
+                                        <a href="#0" class="hide-password">Hide</a>
+                                        <span class="cd-error-message"></span>
+                                        <span id="error_update"><span class="cd-error-message"></span></span>
+                                        <p id="changepass" class="profile-form-bottom-message"><a  href="#0">Cambiar Contraseña</a></p>
+                                </p>
+                            </div>
+                            
+                            <div class="divpro">
+                                <p class="fieldset">
+                                        <select class="full-width has-padding has-border provinciaprofile" name="selprovince" id="provinciaini">       
+                                        </select>
+                                        <span class="cd-error-message"></span>
+                                </p>
+                                <p class="fieldset">
+                                        <select class="full-width has-padding has-border" name="selcity" id="selcity"> 
+                                        </select>
+                                        <span class="cd-error-message"></span>
+                                </p>
+                                <p class="divpro">
+                                        <div id="dropzone" class="dropzone"></div>
+                                        <span id="error_img"><span class="img-error-message"></span></span>
+                                </p>
+                            </div>  
+                        
+                             <div class="cien">
+                                <p class="fieldset">
+                                        <!-- <button type="submit" class="full-width">Update account</button> -->
+                                        <button class="full-width">Update account</button>
+                                </p>
+                            </div>
+                        </form> 
+                        
+                </div>
+                <div id='myfavorites' class="tab_content">
+                       
+                </div>
+                <div id='mypurchases' class="tab_content">
+                </div>
+        </div>  
+        <div class="cd-pass-modal">
+        <div class="cd-pass-modal-container"> <!-- this is the container wrapper -->
+        <div id="cd-change-password"> <!-- reset password form -->
+                <p class="cd-form-message">Quieres cambiar la contraseña? Primero introduce la actual y después la nueva.</p>
+    
+                <form class="cd-form" name="profilepass" id="profilepass">
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border" name="old-pass" id="old-pass" type="text" placeholder="Contraseña actual">
+                        <span class="cd-error-message">Error message here!</span>
+                        <span id="error_update_pass"><span class="cd-error-message"></span></span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border" name="newpass1" id="newpass1" type="text" placeholder="Contraseña Nueva">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border"name="newpass2" id="newpass2" type="text" placeholder="Repite Contraseña">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+    
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Change password">
+                    </p>
+                </form>
+    
+                <p class="profile-form-bottom-message center"><a id="closepass" href="#0">Cerrar</a></p>
+            </div> <!-- cd-reset-password -->
+        </div>
+</div> 
+</div>
+</div> 

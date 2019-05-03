@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>favorites</name>
+        <uri>favorites</uri>
+    </function>
+    <function>
+        <name>read_favorites</name>
+        <uri>read_favorites</uri>
+    </function>
+    <function>
+        <name>delete_favorites</name>
+        <uri>delete_favorites</uri>
+    </function>
+</functions>

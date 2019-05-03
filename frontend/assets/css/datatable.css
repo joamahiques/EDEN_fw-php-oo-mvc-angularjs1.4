@@ -1,0 +1,133 @@
+#tablecart{
+    min-height: 200px;
+    text-align: center;
+}
+
+
+
+th.td1.sorting{
+    min-width: 230px;
+}
+
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+    /* color: #a1a086; */
+    /* height: 32px;*/
+     margin: 15px 0;
+} 
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0.5em;
+    height: 32px;
+	background: #fafaf6;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-box-sizing: border-box; /*Firefox 1-3*/
+	 -webkit-box-sizing: border-box;
+	/* color: #92928d; */
+    font: 14px/18px Arial, Helvetica, sans-serif;
+	border: 1px solid #e5e5e4;
+	padding: 7px 12px 7px;
+	
+}
+.dataTables_filter label,.dataTables_length label{
+    height: 32px;
+    display: inline-table;
+}
+.dataTables_length label select{
+    height: 32px;
+    background: #fafaf6;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #92928d;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+    border: 1px solid #e5e5e4;
+    padding: 7px 12px 7px;
+}
+/* div#table_crud_paginate.dataTables_paginate.paging_simple_numbers a{
+    color: #92928d !important;
+} 
+ .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+    background: linear-gradient(to bottom, #585858 0%, #53534a 100%);
+    border: 1px solid #53534a;
+} */
+table.dataTable tfoot th, table.dataTable tfoot td{
+    border-top: 1px solid #b7b7b6
+
+}
+table.dataTable.no-footer {
+    border-bottom: 1px solid #b7b7b6
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #b7b7b6
+} */ 
+
+/* jqwidget datatable */
+
+ 
+
+.jqx-widget-content-ui-lightness{
+
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f8f8f8),to(#eee));
+    background-image: -moz-linear-gradient(top,#f8f8f8,#eee);
+    background-image: -o-linear-gradient(top,#f8f8f8,#eee);
+    border-color: #ddd;
+    color: #333;
+    font-size: 12px;
+    
+}
+.jqx-widget-ui-lightness {
+    line-height: 17px;
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    margin: 3em auto;
+    
+}
+    
+.jqx-widget-header-ui-lightness{
+
+    font-family: 'Marvel';
+    background: #e7e6d4 url();
+    color:  #5f604b;
+    font-size: 1rem;
+    
+   
+}
+.jqx-dropdownlist-content-ui-lightness{
+    font-family: 'Marvel';
+    font-size: 1rem;
+    color:  #5f604b;
+    min-width:100px;
+    height: 26px;
+}
+.jqx-grid-table{
+    font-size: 15px;
+    font-family: 'Marvel';
+}
+.jqx-grid-cell-alt {
+    background: #e7e6d44f;
+}
+#jqxWidget319c6e820093{
+    min-width: 133px;
+    min-height: 20px;
+}
+.jqx-fill-state-normal{
+    background-color: #e7e6d4;
+}
+.filtercolumns.jqx-dropdownlist.jqx-dropdownlist-classic.jqx-widget.jqx-widget-classic.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-classic.jqx-rc-all.jqx-rc-all-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic.jqx-default.jqx-default-classic{
+    min-width: 133px;
+    min-height: 20px;
+    background-color: white;
+}
+div#jqxWidget4ebdedf70022 .filtercolumns.jqx-dropdownlist.jqx-dropdownlist-ui-lightness.jqx-widget.jqx-widget-ui-lightness.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-ui-lightness.jqx-rc-all.jqx-rc-all-ui-lightness.jqx-fill-state-normal.jqx-fill-state-normal-ui-lightness.jqx-default.jqx-default-ui-lightness{
+    min-width: 133px;
+    min-height: 20px;
+    
+}
+.jqx-rc-all.jqx-rc-all-classic.jqx-button.jqx-button-classic.jqx-widget.jqx-widget-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic, .jqx-dropdownlist.jqx-dropdownlist-classic.jqx-widget.jqx-widget-classic.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-classic.jqx-rc-all.jqx-rc-all-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic.jqx-default.jqx-default-classic{
+    background-color: white;
+}  

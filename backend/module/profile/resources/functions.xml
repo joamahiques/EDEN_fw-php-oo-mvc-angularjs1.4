@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    
+    <function>
+        <name>load_data_user</name>
+        <uri>load_data_user</uri>
+    </function>
+    <function>
+        <name>update_profile</name>
+        <uri>update_profile</uri>
+    </function>
+    <function>
+        <name>view</name>
+        <uri>view</uri>
+    </function>
+    <function>
+        <name>logout</name>
+        <uri>logout</uri>
+    </function>
+    <function>
+        <name>controluser</name>
+        <uri>controluser</uri>
+    </function>
+    <function>
+        <name>actividad</name>
+        <uri>actividad</uri>
+    </function>
+    <function>
+        <name>load_data_favorites</name>
+        <uri>load_data_favorites</uri>
+    </function>
+    <function>
+        <name>load_data_purchases</name>
+        <uri>load_data_purchases</uri>
+    </function>
+    <function>
+        <name>delete_favorites</name>
+        <uri>delete_favorites</uri>
+    </function>
+    <function>
+        <name>uploadimg</name>
+        <uri>uploadimg</uri>
+    </function>
+    <function>
+        <name>delete</name>
+        <uri>delete</uri>
+    </function>
+    <function>
+        <name>update_pass_pro</name>
+        <uri>update_pass_pro</uri>
+    </function>
+</functions>

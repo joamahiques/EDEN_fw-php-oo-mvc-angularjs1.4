@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_home</name>
+        <uri>list_home</uri>
+    </function>
+    <function>
+        <name>scroll_home</name>
+        <uri>scroll_home</uri>
+    </function>
+    <function>
+        <name>active_user</name>
+        <uri>active_user</uri>
+    </function>
+</functions>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>list_crud</name>
+        <uri>list_crud</uri>
+    </function>
+    <function>
+        <name>lista</name>
+        <uri>lista</uri>
+    </function>
+    <function>
+        <name>delete</name>
+        <uri>delete</uri>
+    </function>
+    <function>
+        <name>delete_home</name>
+        <uri>delete_home</uri>
+    </function>
+    <function>
+        <name>delete_all_homes</name>
+        <uri>delete_all_homes</uri>
+    </function>
+    
+</functions>

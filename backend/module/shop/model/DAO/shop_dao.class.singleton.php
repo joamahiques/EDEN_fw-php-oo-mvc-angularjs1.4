@@ -40,8 +40,8 @@ class shop_dao {
         $provi=$data['provi'];
         $local=$data['local'];
         $val=$data['val'];
-        $start = $data['start'];
-        $records_per_page = $data['records'];
+        // $start = $data['start'];
+        // $records_per_page = $data['records'];
         if ($val=='null'){
             $val='';
         }
@@ -51,19 +51,9 @@ class shop_dao {
         if ($local=='null'){
             $local='';
         }
-        $sql = "SELECT * FROM casas WHERE provincia LIKE '%" . $provi . "%' AND localidad like '%" . $local . "%' AND nombre LIKE '%" . $val . "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC LIMIT $start, $records_per_page";
-        // $sql = "SELECT * FROM casas WHERE provincia='$provi' AND localidad='$local' AND nombre LIKE '".$val."%'";
-        // if(($provi=='null')&&($local=='null')&&($val=='null')){//sacar todo
-        //     $sql = "SELECT * from casas ORDER BY provincia ASC LIMIT $start, $records_per_page";
-        // }else if(($local=='null') && ($val=='null')&& ($provi!='null')){//provincia
-        //     $sql = "SELECT * FROM casas WHERE provincia='$provi' ORDER BY localidad ASC,capacidad ASC ";//LIMIT $start, $records_per_page";
-        // }else if(($provi!='null')&&($local!='null') && ($val=='null')){//provincia y localidad
-        //     $sql = "SELECT * FROM casas WHERE provincia='$provi' AND localidad='$local' ORDER BY capacidad ASC ";//LIMIT $start, $records_per_page";
-        // }else if (($provi!='null')&&($local!='null') &&($val!='null')){///busqueda por los 3 campos
-        //     $sql = "SELECT * FROM casas WHERE provincia='$provi' AND localidad='$local' AND nombre LIKE '".$val."%'";// LIMIT $start, $records_per_page";
-        // }else if(($provi=='null') &&($local=='null') && ($val!='null')){//por valor del autocomplete
-        //     $sql = "SELECT * FROM casas WHERE nombre LIKE '".$val. "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC";// LIMIT $start, $records_per_page";
-        // }
+        // $sql = "SELECT * FROM casas WHERE provincia LIKE '%" . $provi . "%' AND localidad like '%" . $local . "%' AND nombre LIKE '%" . $val . "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC LIMIT $start, $records_per_page";
+        $sql = "SELECT * FROM casas WHERE provincia LIKE '%" . $provi . "%' AND localidad like '%" . $local . "%' AND nombre LIKE '%" . $val . "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC";
+
         
         
         $stmp = $db->ejecutar($sql);

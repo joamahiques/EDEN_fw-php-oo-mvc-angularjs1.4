@@ -1,5 +1,6 @@
-eden.controller('contactCtrler', function($scope, $http, ngDialog,services){
+eden.controller('contactCtrler', function($scope, $http, contact_map,services){
     console.log('contact');
+    
     $scope.contact = {
         inputName: "",
         inputEmail: "",
@@ -27,4 +28,5 @@ eden.controller('contactCtrler', function($scope, $http, ngDialog,services){
 
         
     };
+    contact_map.initmap();
 });

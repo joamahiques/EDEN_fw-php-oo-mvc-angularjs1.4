@@ -4,3 +4,9 @@ Warning on line 35 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/c
 03/05/19 08:02:27 AM | ERROR: [2] json_encode() expects parameter 2 to be long, string given
 Warning on line 35 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/contact/controller/controller_contact.class.php
  | contact | response 200
+04/05/19 06:02:29 PM | ERROR: [8] Undefined index: start
+Notice on line 43 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/model/DAO/shop_dao.class.singleton.php
+ | shop | response 200
+04/05/19 06:02:29 PM | ERROR: [8] Undefined index: records
+Notice on line 44 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/model/DAO/shop_dao.class.singleton.php
+ | shop | response 200

@@ -25,37 +25,40 @@ class controller_shop{
     }
 
     function products(){
-        $search= json_decode($_POST['search'],true);
-        if( isset($search['page_num']) ){
+        // echo json_encode($_POST['search']);
+        // exit;
+        // $search= json_decode($_POST['search'],true);
+        // if( isset($search['page_num']) ){
             set_error_handler('ErrorHandler');
-                $page					=	intval($search['page_num']);//number of page
-                $current_page			=	$page - 1;
-                $records_per_page		=	6; // records to show per page
-                $start					=	$current_page * $records_per_page;//first limit to search
-                $val                    =   ($search['val']);
-                $provi                  =   ($search['provi']);
-                $local                  =   ($search['local']);
+                // $page					=	intval($search['page_num']);//number of page
+                // $current_page			=	$page - 1;
+                // $records_per_page		=	6; // records to show per page
+                // $start					=	$current_page * $records_per_page;//first limit to search
+                $val                    =  "";// ($search['val']);
+                $provi                  =   "";//($search['provi']);
+                $local                  =   "";//($search['local']);
                 $arrArgument = array(
-                    'start'=>$start,
-                    'records'=>$records_per_page,
+                   // 'start'=>$start,
+                   // 'records'=>$records_per_page,
                     'val'=>$val,
                     'provi'=>$provi,
                     'local'=>$local
                 );
                
-                $totalResults = loadModel(MODEL_MODULE, "shop_model", "count", $arrArgument);/// to count the total of houses
+                // $totalResults = loadModel(MODEL_MODULE, "shop_model", "count", $arrArgument);/// to count the total of houses
                 $arrValue = loadModel(MODEL_MODULE, "shop_model", "alldrops", $arrArgument);
-                $result= array('totalcount'=>$totalResults,'results' => $arrValue);
-                // echo json_encode($arrValue);
-                // exit;
+            //    $result= array('totalcount'=>$totalResults,'results' => $arrValue);
             restore_error_handler();
-            if(($totalResults)&&($arrValue)){
-                echo json_encode($result);
-            }else{
-                echo json_encode($result);
-            }
+                echo json_encode($arrValue);
+                exit;
+            
+            // if(($totalResults)&&($arrValue)){
+            //     echo json_encode($result);
+            // }else{
+            //     echo json_encode($result);
+            // }
            
-        }
+        // }
     }
     
     function ubication(){

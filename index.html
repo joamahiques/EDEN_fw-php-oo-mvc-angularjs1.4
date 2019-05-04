@@ -5,12 +5,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- jQuery -->
-		 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script> 
 		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />  -->
 		<!-- Auth0 -->
 		<script src="https://cdn.auth0.com/js/auth0/9.2.2/auth0.min.js"></script>
+		<!-- google -->
+		
        <!-- datatables -->
 		<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
 		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> -->
@@ -32,8 +34,9 @@
 		
 		<!-- general js -->
 		<!-- <script src="<?php echo JS_PATH ?>lang/lang2.js"></script> -->
-		<!-- <script src="<?php echo JS_PATH ?>functions.js"></script>
-		<script src="<?php echo JS_PATH ?>exclude.js"></script> -->
+		<!-- <script src="<?php echo JS_PATH ?>functions.js"></script>-->
+		 <script src="frontend/assets/js/exclude.js"></script>
+		 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAYHdEqOUAWAQfT7EH1aTmfTQ03bINOhPs' async defer></script>
 		<!-- PDF -->
 		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 		<script src="https://unpkg.com/jspdf-autotable@3.0.13/dist/jspdf.plugin.autotable.js"></script>
@@ -62,6 +65,7 @@
 		<script src="<?php echo PROFILE_JS_PATH ?>functions-profile.js"></script> -->
     </head>
     <body id="top">
+		
         <!--==============================header=================================-->
         <header>
                     <div>
@@ -121,7 +125,8 @@
 					<script src="frontend/common.services.js"></script>
 					<script src="frontend/modules/home/controller/homeCtrler.js"></script>
 					<script src="frontend/modules/contact/controller/contactCtrler.js"></script>
-
+					<script src="frontend/modules/contact/services/map.services.js"></script>
+					<script src="frontend/modules/shop/controller/shopCtrler.js"></script>
                     
 
                     </header>

@@ -1,28 +1,14 @@
-eden.controller('homeCtrler', function($scope, $http, ngDialog,services){
+eden.controller('homeCtrler', function($scope, homes,commonServices){
         //console.log('homecontroller');
-        $scope.items = [];
-        //$scope.loading = true;
-        services.post('home', 'scroll_home').then(function (response) {
-            //console.log(response);
-            $scope.homes = response;
-        });
-        // $http({
-        //     method: 'POST',
-        //     url: '/www/EDEN_ANGULARJS/backend/index.php?module=home&function=scroll_home'
-        //  }).then(function (response){
-        //     $scope.homes = response.data;
-        //      //$scope.loading = false;
-        //  },function (error){
-      
-        //  });
+        $scope.homes = homes;
 
-         $scope.dialog = function($scope) {
-            ngDialog.open({
-            template: 'frontend/components/modal/view/modal.view.html',
-            className: 'ngdialog-theme-default',
-           // controller: 'modalCtrler',
-            scope: $scope,
-        });
+         $scope.dialog = function(home) {
+             commonServices.openModal(home,'modal','read_modal');
+        
       };
 });
+eden.controller('modalController', function($scope, details){
+    console.log(details);
+    $scope.data=details;
+})
 

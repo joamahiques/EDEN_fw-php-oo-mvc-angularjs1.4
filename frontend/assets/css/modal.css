@@ -1,3 +1,27 @@
+/* div#ngdialog1.ngdialog.ngdialog-theme-default.ng-scope{
+    padding-bottom: 0px; 
+    padding-top: 50px;
+}
+#ngdialog1-aria-describedby{
+    padding: 0 10px;
+    background-color: white;
+}
+#ngdialog1.ngdialog.ngdialog-theme-default .ngdialog-content{
+    -webkit-animation: ngdialog-flyin .5s;
+    animation: ngdialog-flyin .5s;
+    background: #e7e6d4e0;
+    border-radius: 5px;
+    color: #444;
+    font-family: inherit;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1em;
+    position: relative;
+    max-width: 700px;
+} */
+
 #user_modal{
     z-index: 1000;
     min-width: 60%;

@@ -13,7 +13,7 @@
                             <br>Capacidad:  {{home.capacidad}}</br>
                             <br>Precio Noche:  {{home.precionoche}}</br>
                             </br></br>
-                            <a  class='read' ng-click="dialog()"  id="{{home.nombre}}">READ MORE</a>&nbsp;
+                            <a  class='read' ng-click="dialog(home.nombre)"  id="{{home.nombre}}">READ MORE</a>&nbsp;
                         </div>
             </div>
             <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>

@@ -792,3 +792,30 @@ ul.tabs li.active a{
   .bootpag li.active a{
     color: #f0e262;
   }
+
+
+  div#autocomplete .dropdown-menu.ng-isolate-scope{
+    display: block;
+    top: 32px;
+    left: 0px;
+    position: absolute;
+    background-color: #fafaf6;
+    
+  }
+  .form-control ul.dropdown-menu.ng-isolate-scope{
+    display: block;
+    top: 32px;
+    left: 0px;
+    position: absolute;
+    background-color: #fafaf6;
+  }
+/* desplegable buscador */
+  li.ng-scope{
+    background-color: #fafaf6;
+    line-height: 32px;
+    padding-left: 10px;
+    border-left: 0.1em solid #d5d4c3;
+    border-right: 0.1em solid #d5d4c3;
+    border-bottom: 0.1em solid #d5d4c3;
+    margin-top: 0.1em;
+  }

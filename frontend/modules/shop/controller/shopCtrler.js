@@ -1,5 +1,7 @@
-eden.controller('shopCtrler', function($scope, homes,commonServices){
-    //console.log('homecontroller');
+eden.controller('shopCtrler', function($scope, homes,commonServices, searchservices){
+  console.log(searchservices);
+  console.log(searchservices.data.provincia);
+    $scope.provincia=searchservices.data.provincia;
     $scope.homes = homes;
 
      $scope.dialog = function(home) {

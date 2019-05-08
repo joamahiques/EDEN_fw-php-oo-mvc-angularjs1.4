@@ -18,7 +18,7 @@ class search_dao {
     function readProvince_DAO($db){
             
         $sql = "SELECT DISTINCT provincia FROM casas ORDER BY provincia ASC";
-
+        //$sql = "SELECT distinct *  FROM casas group by provincia";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
      }
@@ -32,11 +32,11 @@ class search_dao {
      }
 
      function autocomplete_DAO($db,$data){
-        $val = $data['auto'];
-        $local = $data['drop2'];
+        // $val = $data['auto'];
+        // $local = $data['drop2'];
        //$sql = "SELECT *  FROM casas WHERE nombre LIKE '".$val. "%'";
-        $sql = "SELECT *  FROM casas WHERE localidad='$local' and nombre LIKE '".$val. "%'";
-         
+        //$sql = "SELECT *  FROM casas WHERE localidad='$local' and nombre LIKE '".$val. "%'";
+        $sql = "SELECT *  FROM casas WHERE localidad='$data'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt);
      }

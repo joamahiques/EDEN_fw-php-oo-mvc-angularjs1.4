@@ -81,8 +81,9 @@
                                     <section class="slider__section"><img  class="slider__img"></section>
                                 </div>
                                 
-                            </div>
-                            <form class="search">
+							</div>
+							<div ng-include src="'frontend/components/search/view/search.view.html'"></div>
+                            <!-- <form class="search">
                                 
                                     <select id="drop1">
                                         <option value="0">Selecciona Provincia</option>
@@ -97,8 +98,8 @@
                                          <input id="autocom" type="text" />
                                         </div>	
                                    
-                                    <div ><a id="searchlist">BUSCAR</a></div>   <!--<button class="btn">BUSCAR</button>-->
-                                </form>
+                                    <div ><a id="searchlist">BUSCAR</a></div>   
+                                </form> -->
                         </div>
                     </div>
                     <div class="clear"></div>
@@ -108,6 +109,7 @@
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+					<script src="frontend/assets/js/ui-bootstrap-tpls-0.9.0.js"></script>
 					<script src="frontend/assets/js/dirPagination.js"></script>
 					<!-- ngDialog -->
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css">
@@ -127,6 +129,9 @@
 					<script src="frontend/modules/contact/controller/contactCtrler.js"></script>
 					<script src="frontend/modules/contact/services/map.services.js"></script>
 					<script src="frontend/modules/shop/controller/shopCtrler.js"></script>
+					<script src="frontend/components/search/controller/searchCtrler.js"></script>
+					<script src="frontend/components/search/services/search.services.js"></script>
+                    
                     
 
                     </header>

@@ -1,5 +1,7 @@
 eden.controller('searchCtrler',function($scope, $http,services,$location,searchservices){
     console.log('search');
+    
+    
     $scope.selectedProvi = '';
     $scope.selectedLocal='';
     $scope.homes = '';
@@ -35,13 +37,14 @@ eden.controller('searchCtrler',function($scope, $http,services,$location,searchs
   $scope.searchresults = function(){
     searchservices.data.provincia=$scope.selectedProvi.provincia;
     searchservices.data.localidad=$scope.selectedLocal.localidad;
-    // searchservices.data.home=$scope.selectedhome.nombre;
-    if(!$scope.selectedhome){searchservices.data.home=null;}else{searchservices.data.home=$scope.selectedhome.nombre;}
-    console.log(searchservices.data.provincia);
-    console.log(searchservices.data.localidad);
-    console.log(searchservices.data.home)
-       //$location.url('#tienda');
-      window.location.href='#tienda';
+    if(!$scope.selectedhome){searchservices.data.home=undefined;}else{searchservices.data.home=$scope.selectedhome.nombre;}
+    $scope.selectedProvi = '';
+    $scope.selectedLocal='';
+    $scope.selectedhome = '';
+    // console.log(searchservices.data.provincia);
+    // console.log(searchservices.data.localidad);
+    // console.log(searchservices.data.home)
+      location.href='#search';
   }
 
 })

@@ -9,10 +9,22 @@ eden.config(['$routeProvider',
             }}})
             .when('/contacto', {templateUrl:'frontend/modules/contact/view/contact.view.html', controller: 'contactCtrler'})
             .when('/tienda', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
+                homes:function(services,searchservices){
+                    searchservices.data={};
+                    return services.post('shop', 'products');
+                }
+            }})
+            .when('/search', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
                 homes:function(services){
                     return services.post('shop', 'products');
                 }
             }})
+            .when('/ubication', {templateUrl:'frontend/modules/shop/view/ubication.view.html', controller: 'mapshopCtrler'})
+            // , resolve:{
+            //     homes:function(services){
+            //         return services.post('shop', 'products');
+            //     }
+            // }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
         //$locationProvider.html5Mode(true);
     }

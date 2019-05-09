@@ -10,3 +10,288 @@ Notice on line 43 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/sh
 ERROR: [8] Undefined index: records
 Notice on line 44 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/model/DAO/shop_dao.class.singleton.php
  | 04.05.2019 06:02:29  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:13:17  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 95 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:13:17  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:13:17  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:13:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:13:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:22:48  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 95 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:22:48  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:22:48  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:23:07  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:23:07  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:28:53  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 95 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:28:53  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:28:53  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 94 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:29:07  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 95 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:29:07  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:29:07  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:30:14  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:30:14  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:30:14  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:31:30  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:31:30  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:31:30  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:32:40  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:32:40  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:32:40  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:29  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:29  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:29  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:37  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:37  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:34:37  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:36:34  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:36:34  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:36:34  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:47:45  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:47:45  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:47:45  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:47:53  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:47:53  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:50:22  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:50:22  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:50:39  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:50:39  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:51:57  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:51:57  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:51:57  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:52:44  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:52:44  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:53:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:53:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:53:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:53:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:53:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:16  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:23  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:23  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:56  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:54:56  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:55:15  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:11  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:11  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:11  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:51  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:51  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 12:58:51  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:18  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:18  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:18  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:47  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:47  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:03:47  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:02  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:02  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:02  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:50  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:50  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:05:50  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:07:19  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:07:19  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:07:19  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:09:18  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:09:18  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:10:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:10:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:10:32  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:12:01  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:12:01  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 01:12:01  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 03:17:44  |  User:   | shop | response 200
+ERROR: [8] Undefined index: provi
+Notice on line 98 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 03:17:44  |  User:   | shop | response 200
+ERROR: [8] Undefined index: local
+Notice on line 99 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 03:17:44  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 03:18:48  |  User:   | shop | response 200
+ERROR: [8] Undefined index: val
+Notice on line 97 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/shop/controller/controller_shop.class.php
+ | 09.05.2019 03:19:02  |  User:   | shop | response 200

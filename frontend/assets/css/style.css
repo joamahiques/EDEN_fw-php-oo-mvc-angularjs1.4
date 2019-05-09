@@ -819,3 +819,8 @@ ul.tabs li.active a{
     border-bottom: 0.1em solid #d5d4c3;
     margin-top: 0.1em;
   }
+
+  .pagination.ng-scope li.ng-scope{
+      border:none;
+      background-color: #fff;
+  }

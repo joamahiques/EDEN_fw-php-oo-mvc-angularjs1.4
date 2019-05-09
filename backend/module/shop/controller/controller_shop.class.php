@@ -63,7 +63,10 @@ class controller_shop{
     
     function ubication(){
                 //set_error_handler('ErrorHandler');
-                    $direccion = $_POST['muni'].','.$_POST['ubi'].',ESPAÑA';
+                $ubica= json_decode($_GET['aux'],true);
+                //echo json_encode($ubica);
+                
+                    $direccion = $ubica['muni'].','.$ubica['ubi'].',ESPAÑA';
                     // Obtener los resultados JSON de la peticion.
                     $geo = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?key='.apikeymap.'&address='.urlencode($direccion));
                 //restore_error_handler(); 
@@ -85,7 +88,10 @@ class controller_shop{
     }
 
     function productsmap(){
-        $search= json_decode($_POST['searchmap'],true);
+
+        $search= json_decode($_GET['aux'],true);
+        // echo json_encode($search);
+        // exit;
             set_error_handler('ErrorHandler');
             
             $val                    =   ($search['val']);
@@ -103,4 +109,3 @@ class controller_shop{
     }
 }
      ?>
-            

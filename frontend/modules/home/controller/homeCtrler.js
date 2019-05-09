@@ -7,8 +7,8 @@ eden.controller('homeCtrler', function($scope, homes,commonServices){
         
       };
 });
-eden.controller('modalController', function($scope, details){
-    console.log(details);
-    $scope.data=details;
-})
+// eden.controller('modalController', function($scope, details){
+//     console.log(details);
+//     $scope.data=details;
+// })
 

@@ -7,9 +7,9 @@ $(document).ready(function () {
       document.getElementsByTagName('script')[0].parentNode.appendChild(script);
     }
 
-    $('#ubi').on('click',function(){
-        window.location.href=amigable('?module=shop&function=list_map')
-    });
+    // $('#ubi').on('click',function(){
+    //     window.location.href=amigable('?module=shop&function=list_map')
+    // });
     ///saca el mapa de la provincia buscada
     if(document.getElementById("mapa_ubi") != null){
         if(provi!='null'){

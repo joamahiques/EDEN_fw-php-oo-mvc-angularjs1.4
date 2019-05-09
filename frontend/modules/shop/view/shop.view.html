@@ -2,16 +2,16 @@
         <div class="container_12">
             <div class="grid_12">   
                 <h2> Resultados de tu búsqueda </h2>
-                <a id="ubi">Ver en el mapa</a>
+                <a id="ubi" href="#/ubication">Ver en el mapa</a>
                 <div id="inicioshop" class="flex1">
-                        <div class="grid" dir-paginate="home in homes | itemsPerPage:6 | filter: provincia">
+                        <div class="grid" dir-paginate="home in homes | filter:provincia | filter:localidad | filter:homesearch | itemsPerPage:6 as filtered">
                             <div class="text1 flex">{{home.nombre}}<a class="corazon" id="{{home.nombre}}"><i class="far fa-heart"></i></a></div>
                                  <br>Localidad: {{home.localidad}}</br>
                                 <br id="jolo">Provincia: {{home.provincia}}</br>
                                 <br>Capacidad:  {{home.capacidad}}</br>
                                 <br>Precio Noche:  {{home.precionoche}}</br>
                                 </br></br>
-                                <a  class='read' ng-click="dialog(home.nombre)"  id="{{home.nombre}}">READ MORE</a>&nbsp;
+                                <div style="text-align:right"><a  class='read' ng-click="dialog(home.nombre)"  id="{{home.nombre}}">READ MORE</a></div>&nbsp;
                         </div>
                 </div>
                 <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>

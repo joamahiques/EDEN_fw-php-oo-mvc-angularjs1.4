@@ -1,10 +1,5 @@
-<script type="text/ng-template" id="customTemplate.html">
-    <a>
-        <span bind-html-unsafe="match.model | typeaheadHighlight:query"></span>
-        <i>{{match.model.nombre}}</i>
-    </a>
-  </script>
-<form class="search" ng-controller="searchCtrler"  ng-model="busqueda" ng-init="getProvis()">
+
+<form class="search" ng-controller="searchCtrler"  ng-model="busqueda" ng-init="getProvis()" name='search'>
     <select id="drop1" ng-model="selectedProvi" ng-change='fetchlocal()' ng-options = "provincia as provincia.provincia for provincia in provinces">
         <option value="">Selecciona provincia</option>
     </select>
@@ -14,14 +9,13 @@
     </select>
     
     <div class="autocomplete"> 
-        <!-- <div id="optionsauto">
-                    </div> --> 
-        <input id="autocom" type="text" ng-model="selectedhome" placeholder="Casa" value="{{home.nombre}}"
+        <input id="autocom" type="text" ng-model="selectedhome" placeholder="" value=""
         typeahead="home as home.nombre for home in homes | filter:$viewValue | limitTo:10" 
         typeahead-min-length='1' 
-        typeahead-on-select='onSelect(home.nombre)' 
+        typeahead-on-select=';' 
+        peahead-editable="false"
         class="form-control">  
     </div>	
     
-    <div ><a id="searchlist" ng-click="searchresults()">BUSCAR</a></div>   
+    <div ><a id="searchlist" ng-click="searchresults()"  ng-disabled="selectedProvi===undefined">BUSCAR</a></div>   
 </form>

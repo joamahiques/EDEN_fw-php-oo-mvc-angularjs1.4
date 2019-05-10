@@ -1,5 +1,5 @@
 eden.controller('searchCtrler',function($scope, $http,services,$location,searchservices){
-    console.log('search');
+    //console.log('search');
     
     
     $scope.selectedProvi = '';
@@ -9,7 +9,7 @@ eden.controller('searchCtrler',function($scope, $http,services,$location,searchs
   
   function getProvis(){  
     services.get('components', 'search','firstdrop').then(function (response) {
-        console.log(response);
+        //console.log(response);
          $scope.provinces = response;
         
     });  
@@ -18,7 +18,7 @@ eden.controller('searchCtrler',function($scope, $http,services,$location,searchs
   $scope.fetchlocal = function(){
     provincia=$scope.selectedProvi.provincia;
     services.get('components', 'search','seconddrop',provincia).then(function (response) {
-      console.log(response);
+      //console.log(response);
        $scope.local = response;
       
     });  
@@ -44,7 +44,7 @@ eden.controller('searchCtrler',function($scope, $http,services,$location,searchs
     // console.log(searchservices.data.provincia);
     // console.log(searchservices.data.localidad);
     // console.log(searchservices.data.home)
-      location.href='#search';
+      location.href='#tienda';
   }
 
 })

@@ -10,12 +10,7 @@ eden.config(['$routeProvider',
             .when('/contacto', {templateUrl:'frontend/modules/contact/view/contact.view.html', controller: 'contactCtrler'})
             .when('/tienda', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
                 homes:function(services,searchservices){
-                    searchservices.data={};
-                    return services.post('shop', 'products');
-                }
-            }})
-            .when('/search', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
-                homes:function(services){
+                    // searchservices.data={};
                     return services.post('shop', 'products');
                 }
             }})

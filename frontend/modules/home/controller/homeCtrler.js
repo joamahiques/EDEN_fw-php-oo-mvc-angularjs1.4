@@ -1,14 +1,10 @@
-eden.controller('homeCtrler', function($scope, homes,commonServices){
+eden.controller('homeCtrler', function($scope, homes, modalServices){
         //console.log('homecontroller');
         $scope.homes = homes;
 
          $scope.dialog = function(home) {
-             commonServices.openModal(home,'modal','read_modal');
+            modalServices.openModal(home,'modal','read_modal');
         
       };
 });
-// eden.controller('modalController', function($scope, details){
-//     console.log(details);
-//     $scope.data=details;
-// })
 

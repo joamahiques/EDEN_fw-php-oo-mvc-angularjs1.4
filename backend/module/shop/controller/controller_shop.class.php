@@ -92,7 +92,7 @@ class controller_shop{
         $search= json_decode($_GET['aux'],true);
         // echo json_encode($search);
         // exit;
-            set_error_handler('ErrorHandler');
+            //set_error_handler('ErrorHandler');
             
             $val                    =   ($search['val']);
             $provi                  =   ($search['provi']);
@@ -104,7 +104,7 @@ class controller_shop{
             );
             
             $arrValue = loadModel(MODEL_MODULE, "shop_model", "productsmap", $arrArgument);
-            restore_error_handler();
+            //restore_error_handler();
             echo json_encode($arrValue);
     }
 }

@@ -1,4 +1,4 @@
-eden.factory('commonServices',['services','ngDialog', function(services,ngDialog){
+eden.factory('modalServices',['services','ngDialog', function(services,ngDialog){
     var serv={};
     serv.openModal = openModal;
     return serv;

@@ -1,6 +1,5 @@
 {
-    "frases" : {
-        "vl": {
+
           "Idioma:": "Idioma",
           "Cambiar":"Canviar",
           "Seleccionar": "Seleccionar",
@@ -16,7 +15,8 @@
           "Tienda": "Tenda",
           "Perfil": "Perfil",
           "Salir": "Ixir",
-          "Login": "Login"
-        }
-    }
+          "Login": "Login",
+          "BUTTON_LANG": "valencià"
+        
+    
 }

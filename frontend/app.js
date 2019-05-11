@@ -1,4 +1,4 @@
-var eden = angular.module('eden',['ngRoute','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap']);
+var eden = angular.module('eden',['ngRoute','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate']);
 eden.config(['$routeProvider',
     function($routeProvider){
         //console.log('$rProvider');
@@ -24,3 +24,25 @@ eden.config(['$routeProvider',
         //$locationProvider.html5Mode(true);
     }
 ]);
+eden.run (['$rootScope', function ($rootScope) { 
+    $rootScope. lang = 'es'; 
+}])
+eden.config(function ($translateProvider) {
+    $translateProvider
+    .useStaticFilesLoader({
+        prefix: 'frontend/assets/js/lang/',
+        suffix: '.json'
+    })
+    .useSanitizeValueStrategy('sanitizeParameters')    
+    .preferredLanguage('es');
+});
+
+
+eden.controller('Ctrl', function ($scope, $rootScope, $translate) {
+    $scope.changeLanguage = function () {
+        $rootScope.lang = $scope.idioma;
+        console.log($scope.idioma);
+        key=$scope.idioma;
+        $translate.use(key);
+    };
+});

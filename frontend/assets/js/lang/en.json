@@ -1,6 +1,4 @@
 {
-    "frases" : {
-        "en": {
           "Idioma:": "Language:",
           "Cambiar":"Change",
           "Seleccionar": "Select",
@@ -16,7 +14,8 @@
           "Tienda": "Shop",
           "Perfil": "Profile",
           "Logout": "Logout",
-          "Login": "Login"
-        }
-    }
+          "Login": "Login",
+          "BUTTON_LANG": "Inglish"
+        
+    
 }

@@ -1,24 +1,24 @@
 {
-    "frases" : {
-        "en": {
-          "Idioma:": "Language:",
+
+          "Idioma:": "Idioma:",
           "Cambiar":"Change",
           "Seleccionar": "Select",
           "Español": "Spanish",
           "Inglés": "English",
           "Valenciano": "Valencian",
-          "Inicio": "Home",
+          "Inicio": "Inicio",
           "Casas": "Houses",
           "Favoritos": "Favorites",
-          "Conocenos": "About us",
-          "Contacto": "Contact",
+          "Conocenos": "Contacto",
+          "Contacto": "Contacto",
           "CRUD": "CRUD",
-          "Tienda": "Shop",
+          "Tienda": "Tienda",
           "Perfil": "Profile",
           "Salir": "Logout",
-          "Login": "Login"
-        }
+          "Login": "Registro",
+          "BUTTON_LANG": "español"
+        
        
-    }
+    
 }
       

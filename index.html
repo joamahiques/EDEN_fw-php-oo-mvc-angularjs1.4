@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="eden">
+<html lang = "{{lang}}" ng-app="eden">
 	<head>
 		<title>Heathy Homes</title>
         <meta charset="utf-8">
@@ -64,7 +64,7 @@
 		<script src="<?php echo CART_JS_PATH ?>functionscart.js"></script>
 		<script src="<?php echo PROFILE_JS_PATH ?>functions-profile.js"></script> -->
     </head>
-    <body id="top">
+    <body id="top" >
 		
         <!--==============================header=================================-->
         <header>
@@ -111,6 +111,8 @@
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
 					<script src="frontend/assets/js/ui-bootstrap-tpls-0.9.0.js"></script>
 					<script src="frontend/assets/js/dirPagination.js"></script>
+					<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate.min.js"></script>
+					<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 					<!-- ngDialog -->
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css">
 					<link rel="stylesheet" href="frontend/assets/css/ngDialog-theme-default.css" >
@@ -128,6 +130,7 @@
 					<script src="frontend/components/search/controller/searchCtrler.js"></script>
 					<script src="frontend/components/search/services/search.services.js"></script>
 					<script src="frontend/components/modal/controller/modalCtrler.js"></script>
+					<script src="frontend/modules/home/directives/home.directives.js"></script>
 
                     
                     

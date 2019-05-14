@@ -1,21 +1,23 @@
-<div class="menu_block">
+<div class="menu_block" ng-controller="menuCtrler">
     <div class="container_12">
         <div class="grid_12">
             <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                 <ul class="sf-menu">
-                    <!-- <li><a href="index.php?page=home" data-tr="Inicio"></a></li> -->
-                    <li><a href="#/" data-tr="Inicio">{{"Inicio" | translate}}</a></li>								
-                    <!-- <li><a href="index.php?page=favorites" data-tr="Favoritos"></a></li> -->
-                    <!-- <li><a href="index.php?page=shop"" data-tr="Tienda" id="btnshop"></a></li> -->
-                    <li><a href="#tienda" data-tr="Tienda" id="btnshop">{{"Tienda" | translate}}</a></li>
-                    <li><a href="#contacto" data-tr="Contacto">{{"Contacto" | translate}}</a></li>
-                    <!-- <li><a href="index.php?page=controller-login&op=view" data-tr="Login"></a></li> --> 
-                    <li><a data-tr="Login" class="main-nav">{{"Login" | translate}}</a></li>
+                    <li><a href="#/">{{"inicio" | translate}}</a></li>	
+                    <li ng-show="crud"><a href="#CRUD">CRUD</a></li>							
+                    <li><a href="#tienda" id="btnshop">{{"tienda" | translate}}</a></li>
+                    <li><a href="#contacto">{{"contacto" | translate}}</a></li>
+                    <li ng-show="login" href="#login" ng-click="dialogLogin()"><a class="main-nav">{{"login" | translate}}</a></li>
                     <li><a href="#cart"><i class="fa fa-shopping-cart"><span>0</span></i></a></li>
+                    <li ng-show="profile"><a id="menuprofile">  <img id="avatar"></a>
+                        <ul id="submenu">
+                            <li><a href="#perfil" id="btnprofile" >Perfil</a></li>
+                            <li><a id="btnlogout">Salir</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <div class="clear"></div>
         </div>
-        <!-- <div class="clear"></div> -->
     </div>
 </div>

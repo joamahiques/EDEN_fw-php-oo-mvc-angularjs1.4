@@ -189,6 +189,10 @@
 	margin-left: 22px;
 }
 /* formulario idioma */
+form#idioma{
+	display: flex;
+    justify-content: flex-end;
+}
 #idioma select{
 	width: 50%;
 	height: 32px;

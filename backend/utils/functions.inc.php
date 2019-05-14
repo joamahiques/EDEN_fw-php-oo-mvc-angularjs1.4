@@ -1,7 +1,6 @@
 <?php
 
 function generate_JWK($name){
-    //require_once "classes/JWT.class.singleton.php";
     $header = '{"typ":"JWT", "alg":"HS256"}';
     $secret = 'ettelefonomicasa';
     //$secret = rand(0, 1) ? 'maytheforcebewithyou' : 'ettelefonomicasa';
@@ -25,6 +24,8 @@ function generate_JWK($name){
     // exit;
     return $token;
 }
+
+
 ////////debug
     function debugPHP($array){
         echo "<pre>";

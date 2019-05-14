@@ -15,9 +15,16 @@
                         </div>
                 </div>
                 <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>
-                <div class='club'>
+                <div class='club' ng-controller="clubruralCtrler">
                      <h2 id="h2club"></h2> 
-                    <div id ="shopclub"></div>
+                    <div id ="shopclub">
+                        <div class="grid" ng-repeat="i in items"> 
+                            <div class="text1 flex">{{i.nombre}}holaaaa</div>
+                            <br><img src="'+img+'">
+                            <br><span>Provincia:   <span id="prov">+provincia+</span></span></br>
+                            <a class="btn" id="" href="">CLUBRURAL</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

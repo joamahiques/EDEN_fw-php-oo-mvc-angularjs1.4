@@ -1,11 +1,11 @@
 
 <form class="search" ng-controller="searchCtrler"  ng-model="busqueda" ng-init="getProvis()" name='search'>
     <select id="drop1" ng-model="selectedProvi" ng-change='fetchlocal()' ng-options = "provincia as provincia.provincia for provincia in provinces">
-        <option value="">Selecciona provincia</option>
+        <option value="">{{"selecciona provincia" | translate}}</option>
     </select>
 
     <select id="drop2" ng-model="selectedLocal" ng-change='fetchhomes()' ng-options = "localidad as localidad.localidad for localidad in local">
-        <option value="">Selecciona Municipio</option>
+        <option value="">{{"selecciona municipio" | translate}}</option>
     </select>
     
     <div class="autocomplete"> 
@@ -17,5 +17,5 @@
         class="form-control">  
     </div>	
     
-    <div ><a id="searchlist" ng-click="searchresults()"  ng-disabled="selectedProvi===undefined">BUSCAR</a></div>   
+    <div ><a id="searchlist" ng-click="searchresults()"  ng-disabled="selectedProvi===undefined">{{"buscar" | translate}}</a></div>   
 </form>

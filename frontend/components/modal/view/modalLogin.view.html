@@ -1,0 +1,109 @@
+<div> <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+        <ul class="cd-switcher">
+            <li ng-click="tablogin()"><a href="#0">Sign in</a></li>
+            <li ng-click="tabregister()"><a href="#0">New account</a></li>
+        </ul>
+
+        <div id="cd-login" ng-show="login"> <!-- login form -->
+            <form class="cd-form" id="formlogin" name="formlogin">
+                <p class="fieldset">
+                    <label class="image-replace cd-username" for="signin-username"></label>
+                    <input class="full-width has-padding has-border" id="signin-username" type="text" name="user" placeholder="User" required ng-model="datalogin.user" >
+                    <span class="cd-error-message" ng-show="formlogin.user.$error.required && (formlogin.user.$dirty || formlogin.user.$touched)">El usuario es requerido</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signin-password"></label>
+                    <input class="full-width has-padding has-border" id="signin-password" type="text" name="password"  placeholder="Password" required ng-model="datalogin.password">
+                    <a href="#0" class="hide-password">Hide</a>
+                    <span class="cd-error-message" ng-show="formlogin.password.$error.required && (formlogin.password.$dirty || formlogin.password.$touched)">La contraseña es requerida</span>
+                </p>
+
+                <p class="fieldset">
+                    <input type="checkbox" id="remember-me" checked>
+                    <label for="remember-me">Remember me</label>
+                </p>
+                <p><a id="login_auth">LOGIN CON REDES SOCIALES</a></label></p>
+                <p class="fieldset">
+                    <button type="submit" class="full-width" ng-disabled="formlogin.$invalid"
+                    ng-click="SubmitLogin()" ng-class="{'disabled-class': formlogin.$invalid}">Login</button>
+                    <!-- <input class="full-width" type="submit" value="Login"></button> -->
+                </p>
+            </form>
+            
+            <p class="cd-form-bottom-message password"><a href="#0">Forgot your password?</a></p>
+            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+        </div> <!-- cd-login -->
+
+        <div id="cd-signup" ng-show="register"> <!-- sign up form -->
+            <form class="cd-form" name="formregister" id="formregister">
+                <p class="fieldset">
+                    <label class="image-replace cd-username" for="signup-username"></label>
+                    <input required ng-model="dataregister.username" class="full-width has-padding has-border" id="signup-username" name="user" type="text" placeholder="Username">
+                    <span class="cd-error-message" ng-show="formregister.user.$error.required && (formregister.user.$dirty || formregister.user.$touched)">El nombre de usuario es requerido</span>
+                    <span class="cd-error-message" ng-show="formregister.user.$error.required && (formregister.user.$dirty || formregister.user.$touched)">El nombre de usuario ya existe</span>
+
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signup-email"></label>
+                    <input required ng-model="dataregister.email" class="full-width has-padding has-border" id="signup-email" name="mail" type="text" placeholder="E-mail">
+                    <span class="cd-error-message"ng-show="formregister.mail.$error.required && (formregister.mail.$dirty || formregister.mail.$touched)">El email es requerido</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-password"></label>
+                    <input required ng-model="dataregister.password" class="full-width has-padding has-border" id="signup-password" name="password" type="text"  placeholder="Password">
+                    <a href="#0" class="hide-password">Hide</a>
+                    <span class="cd-error-message" ng-show="formregister.password.$error.required && (formregister.password.$dirty || formregister.password.$touched)">La contraseña es requerida</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-rpassword"></label>
+                    <input required ng-model="dataregister.rpassword" class="full-width has-padding has-border" name="rpassword" id="signup-rpassword" type="text"  placeholder="Password">
+                    <a href="#0" class="hide-password">Hide</a>
+                    <span class="cd-error-message" ng-show="formregister.rpassword.$error.required && (formregister.rpassword.$dirty || formregister.rpassword.$touched)">La contraseña es requerida</span>
+                </p>
+                
+                <p class="fieldset">
+                    <input required="required" type="checkbox" id="accept-terms" name="terms" value="terms">
+                    <span class="cd-error-message" ng-show="formregister.terms.$error.required && (formregister.terms.$dirty || formregister.terms.$touched)">Acepta los términos y condiciones</span>
+                    <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                </p>
+                <p><a id="login_auth">REGISTRO CON REDES SOCIALES</a></label></p>
+                <p class="fieldset">
+                <button type="submit" class="full-width" ng-disabled="formregister.$invalid"
+                ng-click="SubmitRegister()" ng-class="{'disabled-class': formregister.$invalid}">Create account</button>
+                    <!-- <input class="full-width has-padding" type="submit" value="Create account"> -->
+                </p>
+            </form>
+
+            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+        </div> <!-- cd-signup -->
+
+        <div id="cd-reset-password" ng-show="resetpass"> <!-- reset password form -->
+            <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+            <form class="cd-form" name="formforgotpass" id="formforgotpass">
+                <p class="fieldset">
+                        <label class="image-replace cd-username" for="reset-user"></label>
+                        <input class="full-width has-padding has-border" id="reset-user" name="reset-user" type="text" placeholder="User">
+                        <span class="cd-error-message"></span>
+                    </p>
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="reset-email"></label>
+                    <input class="full-width has-padding has-border" id="reset-email" name="reset-email" type="text" placeholder="E-mail">
+                    <span class="cd-error-message"></span>
+                </p>
+
+                <p class="fieldset">
+                    <input class="full-width has-padding" type="submit" value="Reset password">
+                </p>
+            </form>
+
+            <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+        </div> <!-- cd-reset-password -->
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+    </div> <!-- cd-user-modal-container -->
+</div> <!-- cd-user-modal -->

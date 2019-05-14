@@ -1,0 +1,22 @@
+{
+          "idioma:": "Language:",
+          "cambiar":"Change",
+          "seleccionar": "Select",
+          "español": "Spanish",
+          "inglés": "English",
+          "valenciano": "Valencian",
+          "inicio": "Home",
+          "casas": "Houses",
+          "favoritos": "Favorites",
+          "conocenos": "About us",
+          "contacto": "Contact",
+          "CRUD": "CRUD",
+          "tienda": "Shop",
+          "perfil": "Profile",
+          "salir": "Logout",
+          "login": "Login",
+          "selecciona provincia":"Select province",
+          "selecciona municipio":"Select city",
+          "buscar":"Search",
+          "Política de Privacidad":"Privacy Policy"    
+}

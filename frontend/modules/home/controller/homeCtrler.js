@@ -8,4 +8,13 @@ eden.controller('homeCtrler', function($scope, homes, modalServices){
         
       };
 });
+eden.controller('menuCtrler', function($scope,loginservices,modalServices){
+      //console.log('homecontroller');
+     
+      loginservices.login();
+      $scope.dialogLogin = function() {
+            modalServices.openModalLogin();
+        
+      };
+});
 

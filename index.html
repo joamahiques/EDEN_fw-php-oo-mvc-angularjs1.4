@@ -83,29 +83,14 @@
                                 
 							</div>
 							<div ng-include src="'frontend/components/search/view/search.view.html'"></div>
-                            <!-- <form class="search">
-                                
-                                    <select id="drop1">
-                                        <option value="0">Selecciona Provincia</option>
-                                    </select>
-                                
-                                    <select id="drop2">
-                                        <option value="0">Selecciona Municipio</option>
-                                    </select>
-                                    
-                                    <div class="autocomplete"> 
-                                        <div id="optionsauto"></div> 
-                                         <input id="autocom" type="text" />
-                                        </div>	
-                                   
-                                    <div ><a id="searchlist">BUSCAR</a></div>   
-                                </form> -->
                         </div>
                     </div>
                     <div class="clear"></div>
                     <div ng-include src="'frontend/assets/include/menu.view.html'"></div>
                     <div ng-view></div>
 					<div ng-include='"frontend/assets/include/footer.view.html"'></div>
+
+					<!-- librerías -->
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
@@ -126,13 +111,13 @@
 					<script src="frontend/modules/contact/controller/contactCtrler.js"></script>
 					<script src="frontend/modules/contact/services/map.services.js"></script>
 					<script src="frontend/modules/shop/controller/shopCtrler.js"></script>
+					<script src="frontend/modules/login/controller/loginCtrler.js"></script>
 					<script src="frontend/modules/shop/services/ubication.services.js"></script>
+					<script src="frontend/modules/login/services/login.services.js"></script>
 					<script src="frontend/components/search/controller/searchCtrler.js"></script>
 					<script src="frontend/components/search/services/search.services.js"></script>
 					<script src="frontend/components/modal/controller/modalCtrler.js"></script>
+					<script src="frontend/components/translate/controller/translateCtrler.js"></script>
+					<script src="frontend/components/apis/clubrural/controller/clubruralCtrler.js"></script>
 					<script src="frontend/modules/home/directives/home.directives.js"></script>
-
-                    
-                    
-
                     </header>

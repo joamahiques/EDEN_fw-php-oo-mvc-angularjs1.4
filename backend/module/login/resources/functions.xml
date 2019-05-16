@@ -37,4 +37,8 @@
         <name>update_pass</name>
         <uri>update_pass</uri>
     </function>
+    <function>
+        <name>sociallogin</name>
+        <uri>sociallogin</uri>
+    </function>
 </functions>

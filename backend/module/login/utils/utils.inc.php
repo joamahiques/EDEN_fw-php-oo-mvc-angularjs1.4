@@ -53,4 +53,28 @@
         //return loadmodel(MODEL_MODULE,'login_model','validate',$user);
 
 }
+require SITE_ROOT . '/auth0/vendor/autoload.php';
+use Auth0\SDK\Auth0;
 
+			
+    function datossocial(){
+        // echo json_encode($domain);
+        // exit;
+        $auth0 = new Auth0([
+            'domain' => authdomain,
+            'client_id' => authclientID,
+            'client_secret' => clientsecret,
+            'redirect_uri' => authredirect,
+            'audience' => authaudience,
+            'scope' => 'openid profile',
+            'persist_id_token' => true,
+            'persist_access_token' => true,
+            'persist_refresh_token' => true,
+        ]);
+        
+        $auth0->login(); 	
+        // $userInfo = $auth0->getUser();
+        // return $userInfo;
+    
+    }
+            

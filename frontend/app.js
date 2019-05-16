@@ -23,7 +23,7 @@ eden.config(['$routeProvider',
                 }
             }})
             .when('/ubication', {templateUrl:'frontend/modules/shop/view/ubication.view.html', controller: 'mapshopCtrler'})
-            
+                
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
         //$locationProvider.html5Mode(true);
     }

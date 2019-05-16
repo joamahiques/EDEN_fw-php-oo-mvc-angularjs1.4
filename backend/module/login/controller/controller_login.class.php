@@ -1,13 +1,21 @@
 <?php
     
   class controller_login {
-
+	
 	function __construct() {
 				include(FUNCTIONS_MODULE . "utils.inc.php");
 				$_SESSION['module'] = "login";
 		}
-		
-  function register() {
+
+	function sociallogin() {
+			
+			
+			$userInfo = datossocial();
+			echo json_encode($userInfo);
+			exit;
+	}
+  
+	function register() {
 	  
 				$user=$_POST['username'];
 				$valide = validate_register($user); 

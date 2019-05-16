@@ -1,4 +1,4 @@
-eden.controller('loginCtrler', function($scope, modalServices,services, toastr,$timeout,loginservices,localstorageServices){
+eden.controller('loginCtrler', function($scope, modalServices,services, toastr,$timeout,loginservices,localstorageServices,socialServices){
     $scope.dataregister={
         username:"",
         password:"",
@@ -69,5 +69,19 @@ eden.controller('loginCtrler', function($scope, modalServices,services, toastr,$
             }
         });
     };
+    
+    
+
+    // $scope.socialLogin = function () {
+    //     console.log('socila');
+    //     services.post('login', 'sociallogin').then(function (response) {
+    //         console.log(response);
+    //         localstorageServices.setuser(response.nickname);
+    //     })
+        
+        
+    // }
+
    
+
 });

@@ -122,7 +122,7 @@ button.btn:hover,button.btn1:hover {
 }
 a {
 	text-decoration: none;
-	color: inherit;
+	color: #2f889a;
 	outline: none;
 	transition: 0.5s ease;
 	-o-transition: 0.5s ease;
@@ -744,7 +744,7 @@ ul.tabs li.active a{
     background: #fff;
 }
 
-/* pagination */
+
 .pagination.ng-scope {
     display: -ms-flexbox;
     display: flex;
@@ -757,25 +757,7 @@ ul.tabs li.active a{
     font-size: 16px;
     margin: 1em;
 }
-
-.bootpag {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-  
-  .bootpag li {
-    display: block;
-    padding: 0.5rem 1rem;
-    /* border: 1px solid #495055;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem; */
-  }
+  /*  */
   
   .bootpag li:hover, .bootpag li:focus {
     text-decoration: none;
@@ -789,38 +771,45 @@ ul.tabs li.active a{
   .bootpag li.disabled a{
     color: #495055;
   }
-  .bootpag li.active a{
-    color: #f0e262;
-  }
+  
 
-
-  div#autocomplete .dropdown-menu.ng-isolate-scope{
+/* desplegable buscador BOOSTRAP*/
+.pagination>li>a, .pagination>li>span{
+    background-color: #fafaf6;
+    color: #2f889a
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #2f889a;
+    border-color: #2f889a;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #2f889a;
+    outline: 0;
+}
+.dropdown-menu {
+    min-width: fit-content;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    color: #92928d;
+    font: 14px/18px Arial, Helvetica, sans-serif;
+}
+.dropdown-menu>li>a {
     display: block;
-    top: 32px;
-    left: 0px;
-    position: absolute;
-    background-color: #fafaf6;
-    
-  }
-  .form-control ul.dropdown-menu.ng-isolate-scope{
-    display: block;
-    top: 32px;
-    left: 0px;
-    position: absolute;
-    background-color: #fafaf6;
-  }
-/* desplegable buscador */
-  li.ng-scope{
-    background-color: #fafaf6;
-    line-height: 32px;
-    padding-left: 10px;
-    border-left: 0.1em solid #d5d4c3;
-    border-right: 0.1em solid #d5d4c3;
-    border-bottom: 0.1em solid #d5d4c3;
-    margin-top: 0.1em;
-  }
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400; 
+    line-height: 1.5;
+    color: #92928d;
+    white-space: nowrap;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    background-color: #e7e6d4;
+    text-decoration: underline;
+}
 
-  .pagination.ng-scope li.ng-scope{
-      border:none;
-      background-color: #fff;
-  }

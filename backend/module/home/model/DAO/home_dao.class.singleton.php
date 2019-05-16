@@ -1,6 +1,4 @@
 <?php
-//echo json_encode("home_dao.class.singleton.php");
-//exit;
 
 class home_dao {
     static $_instance;
@@ -21,7 +19,6 @@ class home_dao {
         //$records_per_page = $data['records'];
         //$sql = "SELECT * from casas ORDER BY provincia ASC LIMIT $start, $records_per_page";
         $sql = "SELECT * from casas order by provincia";
-        
         $stmp = $db->ejecutar($sql);
         return $db->listar($stmp);
     }
@@ -34,7 +31,8 @@ class home_dao {
     }
 
     public function active_user_DAO($db,$data){
-        $sql= "UPDATE users2 SET activate = 1 where tokenMail = '$data'";
+        $token=$data['token'];
+        $sql= "UPDATE users2 SET activate = 1 where tokenMail = '$token'";
         return $db->ejecutar($sql);
     }
 }

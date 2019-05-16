@@ -2,6 +2,7 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
     var serv={};
     serv.openModal = openModal;
     serv.openModalLogin = openModalLogin;
+    serv.closeModal = closeModal;
     return serv;
     function openModal(home,modu,func){
         console.log(home);
@@ -22,9 +23,8 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
     }
 
     function openModalLogin(){
-        //console.log(home);
 
-            var modalInstance=ngDialog.open({
+            var modalInstanceL=ngDialog.open({
                 template: 'frontend/components/modal/view/modalLogin.view.html',
                 className: 'ngdialog-theme-default',
                 controller: 'loginCtrler',
@@ -37,5 +37,8 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
                 //     }
                 // }
             })
+    }
+    function closeModal(){
+        ngDialog.close();
     }
 }])

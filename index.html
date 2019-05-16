@@ -24,13 +24,11 @@
 		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css"> -->
        <!-- toastr -->
-	   <link rel="stylesheet" href="https:////cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
-	   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	   <!-- <link rel="stylesheet" href="https:////cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+	   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
+	   
 		<!-- mis links css-->
-		<link href="frontend/assets/css/form.css" rel="stylesheet">
-		<link href="frontend/assets/css/style.css" rel="stylesheet">
-		<link href="frontend/assets/css/loginform.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+		
 		
 		<!-- general js -->
 		<!-- <script src="<?php echo JS_PATH ?>lang/lang2.js"></script> -->
@@ -94,30 +92,46 @@
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
-					<script src="frontend/assets/js/ui-bootstrap-tpls-0.9.0.js"></script>
+					<script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+					<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+					<link href="frontend/assets/css/form.css" rel="stylesheet">
+					<link href="frontend/assets/css/style.css" rel="stylesheet">
+					<link href="frontend/assets/css/loginform.css" rel="stylesheet">
+					<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+					
 					<script src="frontend/assets/js/dirPagination.js"></script>
+					<!-- translate -->
 					<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate.min.js"></script>
 					<script src="//cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.1/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 					<!-- ngDialog -->
 					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css">
 					<link rel="stylesheet" href="frontend/assets/css/ngDialog-theme-default.css" >
 					<script src="frontend/assets/js/ngDialog.min.js"></script> 
+					<!-- toastr -->
+					<link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
+	   				<script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 					
 
 					<script src="frontend/app.js"></script>
 					<script src="frontend/apiconnector.js"></script>
 					<script src="frontend/components/modal/services/modal.services.js"></script>
+					<script src="frontend/components/modal/controller/modalCtrler.js"></script>
+					<script src="frontend/components/search/controller/searchCtrler.js"></script>
+					<script src="frontend/components/search/services/search.services.js"></script>
+					<script src="frontend/components/translate/controller/translateCtrler.js"></script>
+					<script src="frontend/components/apis/clubrural/controller/clubruralCtrler.js"></script>
+					
 					<script src="frontend/modules/home/controller/homeCtrler.js"></script>
+					<script src="frontend/modules/home/directives/home.directives.js"></script>
 					<script src="frontend/modules/contact/controller/contactCtrler.js"></script>
 					<script src="frontend/modules/contact/services/map.services.js"></script>
 					<script src="frontend/modules/shop/controller/shopCtrler.js"></script>
-					<script src="frontend/modules/login/controller/loginCtrler.js"></script>
 					<script src="frontend/modules/shop/services/ubication.services.js"></script>
+					<script src="frontend/modules/login/controller/loginCtrler.js"></script>
+					<script src="frontend/modules/login/directives/directives.login.js"></script>
+					<script src="frontend/modules/login/services/localstorage.services.js"></script>
 					<script src="frontend/modules/login/services/login.services.js"></script>
-					<script src="frontend/components/search/controller/searchCtrler.js"></script>
-					<script src="frontend/components/search/services/search.services.js"></script>
-					<script src="frontend/components/modal/controller/modalCtrler.js"></script>
-					<script src="frontend/components/translate/controller/translateCtrler.js"></script>
-					<script src="frontend/components/apis/clubrural/controller/clubruralCtrler.js"></script>
-					<script src="frontend/modules/home/directives/home.directives.js"></script>
+					
+					
                     </header>

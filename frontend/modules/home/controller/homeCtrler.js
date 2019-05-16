@@ -8,7 +8,7 @@ eden.controller('homeCtrler', function($scope, homes, modalServices){
         
       };
 });
-eden.controller('menuCtrler', function($scope,loginservices,modalServices){
+eden.controller('menuCtrler', function($scope,$log,loginservices,modalServices,  $timeout){
       //console.log('homecontroller');
      
       loginservices.login();
@@ -16,5 +16,16 @@ eden.controller('menuCtrler', function($scope,loginservices,modalServices){
             modalServices.openModalLogin();
         
       };
+      $scope.toggled = function(open) {
+            $log.log('Dropdown is now: ', open);
+          };
+      $scope.logout = function() {
+            loginservices.logout();
+            loginservices.login();
+            $timeout(function(){
+                  location.href='#/';
+            },1000);
+            //console.log('logout');
+          };
 });
 

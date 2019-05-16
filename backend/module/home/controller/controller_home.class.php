@@ -5,15 +5,6 @@ class controller_home {
         $_SESSION['module'] = "home";
     }
 
-    // function list_home() {
-        
-    //     require_once(VIEW_PATH_INC . "top-page.php");
-    //     require_once(VIEW_PATH_INC . "header-home.php");
-    //     require_once(VIEW_PATH_INC . "menu.php");
-    //     include(MODULE_VIEW_PATH . "home.php");
-    //     require_once(VIEW_PATH_INC . "footer.php");
-    // }
-
 function scroll_home() {
     set_error_handler('ErrorHandler');
     //     $totalResults = loadModel(MODEL_MODULE, "home_model", "count");/// to count the total of houses
@@ -38,12 +29,11 @@ function scroll_home() {
 }
 ///////////active a 1
 function active_user(){
-    if(isset($_GET['aux'])){
+    $token=json_decode($_POST['token'],true);
         set_error_handler('ErrorHandler');
-        loadModel(MODEL_MODULE,"home_model","active_user",$_GET['aux']);
+        loadModel(MODEL_MODULE,"home_model","active_user",$token);
         restore_error_handler();
-        header('Location: '. SITE_PATH);
-    }
+        //echo json_encode($token);
 }
 }
  ?>       

@@ -1,8 +1,4 @@
-/* #menu{
-    position: absolute;
-    top: 0;
-    width: 100%;
-} */
+
 .menu_block  {
 	z-index: 50;
 	padding: 0px 0 0;
@@ -11,10 +7,6 @@
 	/* padding: 31px 0 19px; */
 
 }
-
-/* .page1 .menu_block {
-	padding: 27px 0 20px;
-} */
 
 .menu_block nav {
 	/* padding-left: 73px; */
@@ -29,6 +21,7 @@ nav>.sf-menu {
 	display: flex;
 	justify-content: space-between;
 	align-items:center;
+	margin-bottom: 0px; 
 }
 @media screen and (max-width: 1032px)  { 
 	nav>.sf-menu {
@@ -38,6 +31,7 @@ nav>.sf-menu {
 		display: flex;
 		justify-content: space-around;
 		align-items:center;
+		margin-bottom: 0px; 
 	}
 }
 nav{ position:relative;padding: 0px 0 0 0;}
@@ -72,9 +66,21 @@ nav{ position:relative;padding: 0px 0 0 0;}
 
 
 /*================================>> 2 Level <<========================================*/
-
+.open>.dropdown-menu{
+	opacity: 1;
+    visibility: visible;
+}
+.dropdown-menu {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 500ms ease, visibility 500ms ease;
+  -moz-transition: opacity 500ms ease, visibility 500ms ease;
+  -o-transition: opacity 500ms ease, visibility 500ms ease;
+  transition: opacity 500ms ease, visibility 500ms ease;
+}
 .sf-menu li ul,.sf-menu li.sfHover>ul{
-		display: none;
+		/* display: none; */
 		left: -50%;
 		right: -50%;
     z-index: 999;

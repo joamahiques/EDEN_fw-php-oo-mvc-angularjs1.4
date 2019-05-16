@@ -118,86 +118,86 @@ $(document).ready(function(){
 
 
 
-//////////    TOASTR
-toastr.options = {
-    "closeButton": true,
-    "debug": false,
-    "newestOnTop": true,
-    "progressBar": true,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "show",
-    "hideMethod": "fadeOut"
-  }
+// //////////    TOASTR
+// toastr.options = {
+//     "closeButton": true,
+//     "debug": false,
+//     "newestOnTop": true,
+//     "progressBar": true,
+//     "positionClass": "toast-top-right",
+//     "preventDuplicates": false,
+//     "onclick": null,
+//     "showDuration": "300",
+//     "hideDuration": "1000",
+//     "timeOut": "5000",
+//     "extendedTimeOut": "1000",
+//     "showEasing": "swing",
+//     "hideEasing": "linear",
+//     "showMethod": "show",
+//     "hideMethod": "fadeOut"
+//   }
 /////////// MENU
       //urlgen=tryurl();
-      var token = localStorage.getItem("id_token");
-      //$(".fa-shopping-cart").children('span').html(localStorage.getItem('canti'));
-      //console.log(localStorage.getItem('canti'));
-      if (token) {
-          $.ajax({
-            type : 'POST',
-            url:amigable('?module=login&function=controluser'),
-            data :{'token':token},
-            dataType: 'json',
-          })
-          .done(function(data){	
-                if (data != 'error') {
-                    if ((data[0].type === 'client_rs')||(data[0].type === 'client')) {
-                      $('.sf-menu').empty();
-                      $('.sf-menu').html(
-                        '<li><a href="'+amigable('?module=home&function=list_home')+'" data-tr="Inicio"></a></li>'+							
-                        '<li><a href="'+amigable('?module=shop&function=list_shop')+'" data-tr="Tienda" id="btnshop"></a></li>'+
-                        '<li><a href="'+amigable('?module=contact&function=list_contact')+'" data-tr="Contacto"></a></li>'+
-                        '<li><a href="'+amigable('?module=cart&function=list_cart')+'"><i class="fa fa-shopping-cart"><span>'+localStorage.getItem('canti')+'</span></i></a></li>'+
-                        '<li><a id="menuprofile">  <img id="avatar"></a>'+
-                          '<ul id="submenu">'+
-                            '<li><a id="btnprofile" href="'+amigable('?module=profile&function=view')+'" data-tr="Perfil"></a></li>'+
-                            '<li><a id="btnlogout" data-tr="Salir"></a></li>'+
-                          '</ul>'+
-                        '</li>'
-                      );  
-                     }
-                     if(data[0].type === 'admin'){
-                        $('.sf-menu').empty();
-                        $('.sf-menu').html(
-                          '<li><a href="'+amigable('?module=home&function=list_home')+'" data-tr="Inicio"></a></li>'+
-                          '<li><a href="'+amigable('?module=crud&functions=list_crud')+'" data-tr="CRUD"></a></li>'+
-                          '<li><a href="'+amigable('?module=shop&function=list_shop')+'" data-tr="Tienda" id="btnshop"></a></li>'+
-                          '<li><a href="'+amigable('?module=contact&function=list_contact')+'" data-tr="Contacto"></a></li>'+
-                          '<li><a href="'+amigable('?module=cart&function=list_cart')+'"><i class="fa fa-shopping-cart"><span>'+localStorage.getItem('canti')+'</span></i></a></li>'+
-                          '<li><a id="menuprofile">  <img id="avatar"></a>'+
-                            '<ul id="submenu">'+
-                              '<li><a id="btnprofile" href="'+amigable('?module=profile&function=view')+'" data-tr="Perfil"></a></li>'+
-                              '<li><a id="btnlogout" data-tr="Salir"></a></li>'+
-                            '</ul>'+
-                          '</li>'
-                      )
-                      }
-                      $('#menuprofile').prepend(data[0].user);
-                      $('#avatar').attr("src", data[0].avatar);
+      // var token = localStorage.getItem("id_token");
+      // //$(".fa-shopping-cart").children('span').html(localStorage.getItem('canti'));
+      // //console.log(localStorage.getItem('canti'));
+      // if (token) {
+      //     $.ajax({
+      //       type : 'POST',
+      //       url:amigable('?module=login&function=controluser'),
+      //       data :{'token':token},
+      //       dataType: 'json',
+      //     })
+      //     .done(function(data){	
+      //           if (data != 'error') {
+      //               if ((data[0].type === 'client_rs')||(data[0].type === 'client')) {
+      //                 $('.sf-menu').empty();
+      //                 $('.sf-menu').html(
+      //                   '<li><a href="'+amigable('?module=home&function=list_home')+'" data-tr="Inicio"></a></li>'+							
+      //                   '<li><a href="'+amigable('?module=shop&function=list_shop')+'" data-tr="Tienda" id="btnshop"></a></li>'+
+      //                   '<li><a href="'+amigable('?module=contact&function=list_contact')+'" data-tr="Contacto"></a></li>'+
+      //                   '<li><a href="'+amigable('?module=cart&function=list_cart')+'"><i class="fa fa-shopping-cart"><span>'+localStorage.getItem('canti')+'</span></i></a></li>'+
+      //                   '<li><a id="menuprofile">  <img id="avatar"></a>'+
+      //                     '<ul id="submenu">'+
+      //                       '<li><a id="btnprofile" href="'+amigable('?module=profile&function=view')+'" data-tr="Perfil"></a></li>'+
+      //                       '<li><a id="btnlogout" data-tr="Salir"></a></li>'+
+      //                     '</ul>'+
+      //                   '</li>'
+      //                 );  
+      //                }
+      //                if(data[0].type === 'admin'){
+      //                   $('.sf-menu').empty();
+      //                   $('.sf-menu').html(
+      //                     '<li><a href="'+amigable('?module=home&function=list_home')+'" data-tr="Inicio"></a></li>'+
+      //                     '<li><a href="'+amigable('?module=crud&functions=list_crud')+'" data-tr="CRUD"></a></li>'+
+      //                     '<li><a href="'+amigable('?module=shop&function=list_shop')+'" data-tr="Tienda" id="btnshop"></a></li>'+
+      //                     '<li><a href="'+amigable('?module=contact&function=list_contact')+'" data-tr="Contacto"></a></li>'+
+      //                     '<li><a href="'+amigable('?module=cart&function=list_cart')+'"><i class="fa fa-shopping-cart"><span>'+localStorage.getItem('canti')+'</span></i></a></li>'+
+      //                     '<li><a id="menuprofile">  <img id="avatar"></a>'+
+      //                       '<ul id="submenu">'+
+      //                         '<li><a id="btnprofile" href="'+amigable('?module=profile&function=view')+'" data-tr="Perfil"></a></li>'+
+      //                         '<li><a id="btnlogout" data-tr="Salir"></a></li>'+
+      //                       '</ul>'+
+      //                     '</li>'
+      //                 )
+      //                 }
+      //                 // $('#menuprofile').prepend(data[0].user);
+      //                 // $('#avatar').attr("src", data[0].avatar);
   
-                      $('#menuprofile').on('click', function(){
-                            $('#submenu').toggle( "slow" );
-                      })
-                      $('#contenido').on('click', function(){
-                            $('#submenu').fadeOut( "slow" );
-                      })
-                }else{
-                      }
-            })
-            .fail(function(data,response){
-              console.log(data);
-            })
-      }else{
-      }
+      //                 // $('#menuprofile').on('click', function(){
+      //                 //       $('#submenu').toggle( "slow" );
+      //                 // })
+      //                 // $('#contenido').on('click', function(){
+      //                 //       $('#submenu').fadeOut( "slow" );
+      //                 // })
+      //           }else{
+      //                 }
+      //       })
+      //       .fail(function(data,response){
+      //         console.log(data);
+      //       })
+      // }else{
+      // }
 
 ////////////logout inactivity
   setInterval(function(){ 

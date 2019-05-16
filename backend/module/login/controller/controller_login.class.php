@@ -8,34 +8,35 @@
 		}
 		
   function register() {
-				$user=$_POST['user'];
+	  
+				$user=$_POST['username'];
 				$valide = validate_register($user); 
 				if(!$valide){
-								$arrArgument = array(
-									'user'=>$_POST['user'],
-									'email'=>$_POST['mail'],
-									'passwd'=> $_POST['password']
-							);
-							set_error_handler('ErrorHandler');
-									try {
-											$arrValue['token']= loadModel(MODEL_MODULE,'login_model','insert_user',$arrArgument);//return token
-										
-									} catch (Exception $e) {
-												echo json_encode("Error");
-												exit;
-									}
-							restore_error_handler();
-									if(!$arrValue){
-													echo json_encode("Error");
-													exit;
-									}else{
-										$arrValue['type']='alta';
-										$arrValue['inputEmail']=$arrArgument['email'];
-										$arrValue['inputMessage']='Para activar tu cuenta en EDEN pulse el siguiente enlace:';
-										enviar_email($arrValue);
-									}
-									echo "ok";
-							 		exit;
+					$arrArgument = array(
+						'user'=>$_POST['username'],
+						'email'=>$_POST['email'],
+						'passwd'=> $_POST['password']
+				);
+				set_error_handler('ErrorHandler');
+						try {
+								$arrValue['token']= loadModel(MODEL_MODULE,'login_model','insert_user',$arrArgument);//return token
+							
+						} catch (Exception $e) {
+									echo json_encode("Error");
+									exit;
+						}
+				restore_error_handler();
+						if(!$arrValue){
+										echo json_encode("Error");
+										exit;
+						}else{
+							$arrValue['type']='alta';
+							$arrValue['inputEmail']=$arrArgument['email'];
+							$arrValue['inputMessage']='Para activar tu cuenta en EDEN pulse el siguiente enlace:';
+							enviar_email($arrValue);
+						}
+						echo "ok";
+						exit;
 				}else{
 					echo "ERROR: Este usuario ya está registrado";
 					exit;
@@ -45,6 +46,8 @@
 	function login() {
 			
 				$user= array('user'=>$_POST['user'], 'pass'=>$_POST['password']);
+				// echo json_encode($user);
+				// exit;
 				set_error_handler('ErrorHandler');
 					try{
 						$valide=validate_login($user);
@@ -55,11 +58,13 @@
 				restore_error_handler();
 					if($valide['error']==""){
 						$_SESSION['tiempo'] = time();
-						echo json_encode($valide['data']['token']);
+						$datos['success'] = true;
+						$datos['token']=$valide['data']['token'];
+						echo json_encode($datos);
 						exit;
 					}else{
-						$response='false';
-						$datos=array($response,$valide['error']);
+						$datos['success'] = false;
+		 				$datos['error'] = $valide['error'];
 						echo json_encode($datos);
 					}
 		}
@@ -138,8 +143,10 @@
 	}
 
 	function controluser() {//type, avatar y user
+		// echo json_encode($_GET['aux']);
+		// exit;
 				set_error_handler('ErrorHandler');
-						$arrValue= loadModel(MODEL_MODULE,'login_model','select_user',$_POST['token']);
+						$arrValue= loadModel(MODEL_MODULE,'login_model','select_user',$_GET['aux']);
 				restore_error_handler();
 				if($arrValue){
 						$_SESSION['avatar']=$arrValue[0]['avatar'];
@@ -152,7 +159,7 @@
 	}		
 	function logout() {
 				set_error_handler('ErrorHandler');
-						$arrValue= loadModel(MODEL_MODULE,'login_model','delete_token',$_POST['tok']);
+						$arrValue= loadModel(MODEL_MODULE,'login_model','delete_token',$_GET['aux']);
 				restore_error_handler();
 				if($arrValue){
 					echo json_encode('ok');
@@ -186,4 +193,3 @@
 }//end class
 
 ?>
-            

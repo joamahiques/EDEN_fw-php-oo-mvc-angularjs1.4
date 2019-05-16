@@ -9,12 +9,13 @@
     </select>
     
     <div class="autocomplete"> 
-        <input id="autocom" type="text" ng-model="selectedhome" placeholder="" value=""
+        <!-- <input id="autocom" type="text" ng-model="selectedhome" placeholder="" value=""
         typeahead="home as home.nombre for home in homes | filter:$viewValue | limitTo:10" 
         typeahead-min-length='1' 
         typeahead-on-select=';' 
         peahead-editable="false"
-        class="form-control">  
+        class="form-control">  -->
+        <input type="text" ng-model="selectedhome" uib-typeahead="home as home.nombre for home in homes | filter:$viewValue | limitTo:10" class="form-control"> 
     </div>	
     
     <div ><a id="searchlist" ng-click="searchresults()"  ng-disabled="selectedProvi===undefined">{{"buscar" | translate}}</a></div>   

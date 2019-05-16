@@ -1,4 +1,4 @@
-var eden = angular.module('eden',['ngRoute','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate']);
+var eden = angular.module('eden',['ngRoute','toastr','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate']);
 eden.config(['$routeProvider',
     function($routeProvider,$translateProvider){
         //console.log('$rProvider');
@@ -7,6 +7,14 @@ eden.config(['$routeProvider',
                 homes:function(services){
                     return services.post('home', 'scroll_home');
             }}})
+            .when('/home/active_user/:token', {resolve:{
+                pass:function(services,$route){
+                    return services.put('home', 'active_user',{'token':JSON.stringify({'token':$route.current.params.token})})
+                    .then(function(response){
+                        location.href = '#/';
+                    })
+                }
+            }})
             .when('/contacto', {templateUrl:'frontend/modules/contact/view/contact.view.html', controller: 'contactCtrler'})
             .when('/tienda', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
                 homes:function(services,searchservices){

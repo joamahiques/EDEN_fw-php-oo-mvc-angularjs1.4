@@ -1,0 +1,243 @@
+15/05/19 08:10:31 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:10:43 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:11:04 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:11:19 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:11:40 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:12:01 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:13:04 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:13:35 AM | ERROR: [8] Undefined index: aux
+Notice on line 34 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/controller/controller_home.class.php
+ | home | response 200
+15/05/19 08:16:02 AM | ERROR: [8] Array to string conversion
+Notice on line 37 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/home/model/DAO/home_dao.class.singleton.php
+ | home | response 200
+15/05/19 09:44:17 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:44:17 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:44:17 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:44:17 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:47:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:51:05 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:51:05 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:51:05 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:51:05 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:58:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:58:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:58:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 09:58:03 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:02:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:02:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:02:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:02:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:04:52 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:04:52 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:04:52 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:04:52 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:07:42 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:07:42 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:07:42 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:07:42 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:31:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:32:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:32:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:32:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:32:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:33:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:33:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:33:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:33:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:35:06 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:35:06 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:35:06 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:35:06 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:37:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:37:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:37:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:37:30 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:39:19 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:39:19 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:39:19 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:39:19 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:01 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:01 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:01 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:01 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:47:15 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:48:54 PM | ERROR: [8] Undefined offset: 0
+Notice on line 19 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:48:54 PM | ERROR: [8] Undefined offset: 0
+Notice on line 20 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:48:54 PM | ERROR: [8] Undefined offset: 0
+Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200
+15/05/19 10:48:54 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
+ | login | response 200

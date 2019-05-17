@@ -77,9 +77,3 @@ define('CRURAL_JS_PATH', SITE_PATH . 'components/apis/clubrural/');
 define('URL_AMIGABLES', TRUE);
 //produccion
 define('PRODUCTION', TRUE);
-
-
-
-
-
-

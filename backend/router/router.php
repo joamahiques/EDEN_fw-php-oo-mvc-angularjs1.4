@@ -123,5 +123,4 @@ function handlerFunction($module, $obj, $URI_function) {
         call_user_func(array($obj, $event));
     }
 }
-
 handlerRouter();

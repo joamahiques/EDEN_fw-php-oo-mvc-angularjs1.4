@@ -241,3 +241,33 @@ Notice on line 21 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/lo
 15/05/19 10:48:54 PM | ERROR: [8] Undefined offset: 0
 Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/utils/utils.inc.php
  | login | response 200
+17/05/19 10:26:45 AM | ERROR: [8] Undefined index: aux
+Notice on line 200 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 200
+17/05/19 11:11:45 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:12:05 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:12:36 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:13:53 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:14:24 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:14:53 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:16:07 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 11:16:17 AM | ERROR: [8] Undefined index: aux
+Notice on line 207 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 302
+17/05/19 02:39:13 PM | ERROR: [8] Undefined index: aux
+Notice on line 211 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/controller/controller_login.class.php
+ | login | response 200

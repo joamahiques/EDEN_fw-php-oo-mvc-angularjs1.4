@@ -3,12 +3,15 @@ function($rootScope,localstorageServices,services){
     var service={};
     service.login=login;
     service.logout=logout;
+    var data={};
     return service;
 
     function login() {
-    	var token = localstorageServices.getuser();
+        var token = localstorageServices.getuser();
+        console.log(token);
         if (token) {
-            services.get('login', 'controluser', token).then(function (response) {
+            services.post("login", "controluser", JSON.stringify({'token': token})).then(function (response) {
+            // services.get1('login', 'controluser', token).then(function (response) {
                 console.log(response);
                 response= response[0];
                 $rootScope.avatar = response.avatar;
@@ -34,9 +37,13 @@ function($rootScope,localstorageServices,services){
     }
     function logout(){
         var token = localstorageServices.getuser();
-        services.get('login', 'logout', token).then(function (response) {
+        console.log(token);
+        services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
+        // services.post('login', 'logout', token).then(function (response) {
             if(response='ok'){
                 localstorageServices.clearuser();
+            }else{
+                console.log(response);
             }
         
         });

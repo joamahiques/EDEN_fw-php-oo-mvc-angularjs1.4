@@ -8,7 +8,7 @@ eden.controller('homeCtrler', function($scope, homes, modalServices){
         
       };
 });
-eden.controller('menuCtrler', function($scope,$log,loginservices,modalServices,  $timeout){
+eden.controller('menuCtrler', function($scope,$log,loginservices,services, modalServices,  $timeout){
       //console.log('homecontroller');
      
       loginservices.login();

@@ -1,4 +1,5 @@
-eden.controller('loginCtrler', function($scope, modalServices,services, toastr,$timeout,loginservices,localstorageServices,socialServices){
+eden.controller('loginCtrler', function($scope,$rootScope, modalServices,services, toastr,$timeout,loginservices,localstorageServices){
+    
     $scope.dataregister={
         username:"",
         password:"",

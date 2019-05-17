@@ -16,29 +16,33 @@ eden.factory("services", ['$http','$q', function ($http, $q) {
             return promise;
         };
 
-        obj.get = function (module, functi, dada) {
+        obj.get1 = function (module, functi, dada) {
+           console.log(dada);
+           $dada=dada;
             var defered=$q.defer();
             var promise=defered.promise;
             $http({
                   method: 'GET',
-                  url: serviceBase + module + '&function=' + functi + '&aux=' + dada
+                  url: serviceBase + module + '&function=' + functi + '&aux=' + $dada
               }).success(function(data, status, headers, config) {
                  console.log(data);
                  defered.resolve(data);
               }).error(function(data, status, headers, config) {
+                  console.log(data);
                  defered.reject(data);
               });
             return promise;
         };
         ///////////para components, module=components
         obj.get = function (module, functi, dada, dada2) {
+         console.log('get2');
             var defered=$q.defer();
             var promise=defered.promise;
             $http({
                   method: 'GET',
                   url: serviceBase + module + '&function=' + functi + '&aux=' + dada + '&aux2=' + dada2
               }).success(function(data, status, headers, config) {
-               //console.log(serviceBase + module + '&function=' + functi + '&aux=' + dada + '&aux2=' + dada2);
+               console.log(serviceBase + module + '&function=' + functi + '&aux=' + dada + '&aux2=' + dada2);
                  defered.resolve(data);
               }).error(function(data, status, headers, config) {
                  defered.reject(data);
@@ -52,7 +56,7 @@ eden.factory("services", ['$http','$q', function ($http, $q) {
           $http({
                 method: 'POST',
                 url: serviceBase + module + '&function=' + functi,
-                data: dada
+                data:dada
             }).success(function(data, status, headers, config) {
       	       console.log(serviceBase + module + '&function=' + functi);
               //debugger;
@@ -62,25 +66,6 @@ eden.factory("services", ['$http','$q', function ($http, $q) {
             });
           return promise;
         };
-
-        /////////para componentes
-      //   obj.post = function (components , module, functi, dada) {
-      //    var defered=$q.defer();
-      //    var promise=defered.promise;
-      //    console.log(dada);
-      //    $http({
-      //          method: 'POST',
-      //          url: serviceBase + components + '&function=' + module + '&aux='+functi+ '&param=' + dada,
-      //          data: dada
-      //      }).success(function(data, status, headers, config) {
-      //          console.log(serviceBase + components + '&function=' + module + '&aux='+functi + '&param=' + dada);
-      //        //debugger;
-      //         defered.resolve(data);
-      //      }).error(function(data, status, headers, config) {
-      //         defered.reject(data);
-      //      });
-      //    return promise;
-      //  };
 
         obj.put = function (module, functi, dada) {
           var defered=$q.defer();

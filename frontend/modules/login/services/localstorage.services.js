@@ -14,6 +14,7 @@ function(){
     }
     function setuser(token){
         localStorage.token=token;
+        return token;
     }
     function clearuser(){
         localStorage.removeItem('token');

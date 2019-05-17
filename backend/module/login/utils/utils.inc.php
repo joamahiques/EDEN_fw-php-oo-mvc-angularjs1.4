@@ -31,7 +31,6 @@
         };
         return $return= array('data'=>$data, 'error'=>$error);
 }
-        
    function check_user($user){
         return loadmodel(MODEL_MODULE,'login_model','validate',$user);
    }
@@ -55,8 +54,6 @@
 }
 require SITE_ROOT . '/auth0/vendor/autoload.php';
 use Auth0\SDK\Auth0;
-
-			
     function datossocial(){
         // echo json_encode($domain);
         // exit;
@@ -73,8 +70,41 @@ use Auth0\SDK\Auth0;
         ]);
         
         $auth0->login(); 	
-        // $userInfo = $auth0->getUser();
-        // return $userInfo;
+        
     
     }
-            
+    function socialprofile(){
+        $auth0 = new Auth0([
+            'domain' => authdomain,
+            'client_id' => authclientID,
+            'client_secret' => clientsecret,
+            'redirect_uri' => authredirect,
+            'audience' => authaudience,
+            'scope' => 'openid profile',
+            'persist_id_token' => true,
+            'persist_access_token' => true,
+            'persist_refresh_token' => true,
+        ]);
+        $userInfo = $auth0->getUser();
+        return json_encode($userInfo);	
+    }
+    function sociallogout(){
+
+        $auth0 = new Auth0([
+            'domain' => authdomain,
+            'client_id' => authclientID,
+            'client_secret' => clientsecret,
+            'redirect_uri' => authredirect,
+            'audience' => authaudience,
+            'scope' => 'openid profile',
+            'persist_id_token' => true,
+            'persist_access_token' => true,
+            'persist_refresh_token' => true,
+        ]);
+        $auth0->logout();
+        $return_to = 'http://' . $_SERVER['HTTP_HOST'];
+        $logout_url = sprintf('http://%s/v2/logout?client_id=%s&returnTo=%s', authdomain, authclientID, $return_to);
+        header('Location: ' . $logout_url);
+        die();
+    }
+    ?>

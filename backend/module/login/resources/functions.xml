@@ -41,4 +41,8 @@
         <name>sociallogin</name>
         <uri>sociallogin</uri>
     </function>
+    <function>
+        <name>datossocial</name>
+        <uri>datossocial</uri>
+    </function>
 </functions>

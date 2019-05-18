@@ -178,7 +178,6 @@
 	}
 
 	function controluser() {//type, avatar y user
-		
 		$token=$_POST['token'];
 		
 		 $resultado = str_replace(
@@ -206,9 +205,9 @@
 				}
 	}		
 	function logout() {
-			//$logout=sociallogout();
+			    //$logout=sociallogout();
 				set_error_handler('ErrorHandler');
-						$arrValue= loadModel(MODEL_MODULE,'login_model','delete_token',$_GET['aux']);
+						$arrValue= loadModel(MODEL_MODULE,'login_model','delete_token',$_POST['token']);
 				restore_error_handler();
 				if($arrValue){
 					echo json_encode('ok');

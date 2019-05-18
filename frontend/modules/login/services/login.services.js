@@ -40,8 +40,18 @@ function($rootScope,localstorageServices,services){
         console.log(token);
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
         // services.post('login', 'logout', token).then(function (response) {
+            console.log(response);
             if(response='ok'){
                 localstorageServices.clearuser();
+                var webAuth = new auth0.WebAuth({
+                    domain:       authdomain,
+                    clientID:     authclientID
+                  });
+                  
+                  webAuth.logout({
+                    returnTo: authredirect,
+                    client_id: authclientID
+                  });
             }else{
                 console.log(response);
             }

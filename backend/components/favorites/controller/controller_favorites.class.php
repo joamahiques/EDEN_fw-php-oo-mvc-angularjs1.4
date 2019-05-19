@@ -24,12 +24,12 @@ class controller_favorites{
         }
 
     }
-
+    
     function read_favorites(){
     //set_error_handler('ErrorHandler');
 
         try{
-            $user=$_POST['tok'];
+            $user=$_GET['aux2'];
             $arrValue = false;
             $arrValue = loadModel(MODEL_FAVORITES, "favorites_model", "readFavorites", $user);
 

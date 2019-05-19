@@ -1,31 +1,58 @@
-eden.controller('homeCtrler', function($scope, homes, modalServices){
+eden.controller('homeCtrler', function($scope, modalServices, services,$timeout){
         //console.log('homecontroller');
-       
-        $scope.homes = homes;
+      //   $scope.homes = homes;
+    
+        $scope.row = 0;
+        $scope.rowperpage = 6;
+        $scope.homes = [];
+        $scope.busy = false;
+        $scope.loading = false;
+
+        $scope.loadMore = function(){
+
+            if ($scope.busy) return;
+          
+              $scope.busy = true;
+              services.post('home', 'scroll_home',{row:$scope.row,rowperpage:$scope.rowperpage})
+              .then(function successCallback(response) {
+                    console.log(response);
+                  if(response !='' ){
+                        // New row value 
+                        $scope.row+=$scope.rowperpage;
+                        $scope.loading = true;
+                        $timeout(function() {
+                           $scope.$apply(function(){
+               
+                             // Assign response to posts Array 
+                             angular.forEach(response,function(item) {
+                                $scope.homes.push(item);
+                             });
+                             $scope.busy = false;
+                             $scope.loading = false;
+                           });
+               
+                        },500);
+                     }
+              });
+            }
+          
+            // Call function
+            $scope.loadMore();
+          
+
+
+
+
+
+
+
+
+
+
+
 
          $scope.dialog = function(home) {
             modalServices.openModal(home,'modal','read_modal');
         
       };
 });
-// eden.controller('menuCtrler', function($scope,$log,loginservices,services, modalServices,  $timeout){
-//       //console.log('homecontroller');
-     
-//       loginservices.login();
-//       $scope.dialogLogin = function() {
-//             modalServices.openModalLogin();
-        
-//       };
-//       $scope.toggled = function(open) {
-//             $log.log('Dropdown is now: ', open);
-//           };
-//       $scope.logout = function() {
-//             loginservices.logout();
-//             loginservices.login();
-//             $timeout(function(){
-//                   location.href='#/';
-//             },1000);
-//             //console.log('logout');
-//           };
-// });
-

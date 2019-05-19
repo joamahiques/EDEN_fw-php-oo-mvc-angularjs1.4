@@ -1,4 +1,4 @@
-eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices){
+eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices,CommonServices){
     
     $scope.dataregister={
         username:"",
@@ -46,6 +46,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
                 $timeout(function(){
                     modalServices.closeModal();
                     loginservices.login();
+                    CommonServices.readfavorites();
                     location.href='#/';
                 },3000);
             }else{

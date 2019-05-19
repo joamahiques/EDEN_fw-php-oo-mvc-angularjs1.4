@@ -15,10 +15,10 @@ class home_dao {
     }
 
     public function select_scroll_DAO($db, $data){
-        //$start = $data['start'];
-        //$records_per_page = $data['records'];
-        //$sql = "SELECT * from casas ORDER BY provincia ASC LIMIT $start, $records_per_page";
-        $sql = "SELECT * from casas order by provincia";
+        $start = $data['start'];
+        $records_per_page = $data['records'];
+        $sql = "SELECT * from casas ORDER BY provincia ASC LIMIT $start, $records_per_page";
+        //$sql = "SELECT * from casas order by provincia";
         $stmp = $db->ejecutar($sql);
         return $db->listar($stmp);
     }

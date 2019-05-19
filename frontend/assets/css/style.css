@@ -27,6 +27,15 @@ body {
     font: 14px/20px Arial, Helvetica, sans-serif;
     
 }
+/* transitions ng-repeat div home */
+div.ng-enter {
+    -webkit-transition: 2s;
+    transition: 2s;
+    opacity: 0;
+}
+div.ng-enter-active {
+    opacity: 1;
+}
 
 
 p {
@@ -55,7 +64,6 @@ img#avatar{
     height: auto;
     width: 100%;
     text-align: center;
-    display: none;
     padding-bottom: 18px !important;
 }
 .load img{

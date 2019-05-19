@@ -25,13 +25,18 @@ eden.config(['$routeProvider',
             }})
             .when('/ubication', {templateUrl:'frontend/modules/shop/view/ubication.view.html', controller: 'mapshopCtrler'})
             .when('/social:token', {templateUrl:'frontend/modules/home/view/home.view.html',controller:'homeCtrler', resolve:{
-                homes:function(services,localstorageServices,$route){
+                homes:function(services,localstorageServices,$route,toastr){
                     localstorageServices.setuser($route.current.params.token)
+                    toastr.success('Sesión iniciada', 'BIENVENID@')
                     return services.post('home', 'scroll_home')
                     .then(function(response){
-                        console.log(response);
                         location.href = '#/';
                     })
+                }
+            }})
+            .when("/login/changepass/:token", {templateUrl: "frontend/modules/login/view/changepass.view.html",controller: "changepassCtrler",resolve:{
+                token:function($route){
+                    return $route.current.params.token;
                 }
             }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});

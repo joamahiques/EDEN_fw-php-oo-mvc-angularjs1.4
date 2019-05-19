@@ -1,0 +1,28 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+        <div >
+            <div class="recoverpass">
+					<h2>Cambiar Contraseña:</h2>
+					<form id="newpass" name="newpass">
+						<label class="pass">
+							<input class="full-width has-padding has-border" type="text" placeholder="Contraseña:" name="password" ng-model="datarpass.pass" required id="password" />
+							<span class="cd-error-message" ng-show="newpass.password.$error.required && (newpass.password.$dirty || newpass.password.$touched)">Introduce una contraseña</span>						
+						</label>
+						<label class="pass">
+							<input class="full-width has-padding has-border" type="text" placeholder="Repetir Contraseña:" name="rpassword" ng-pattern="{{datarpass.pass}}" ng-model="datarpass.rpass" required id="rpassword"/>
+							<span class="cd-error-message" ng-show="newpass.rpassword.$error.required && (newpass.rpassword.$dirty || newpass.rpassword.$touched)">Repite la contraseña</span>
+							<span class="cd-error-message" ng-show="newpass.rpassword.$error.pattern && (newpass.rpassword.$dirty || newpass.rpassword.$touched)">Las contraseñas no coinciden</span>
+
+						</label>
+						<p class="contactbtn">
+								<button type="reset" class="btn">BORRAR</button>
+								<button type="submit" class="btn" ng-disabled="newpass.$invalid" ng-click="SubmitchangePass()" >CAMBIAR</button>
+						</p>
+                    </form>
+                    
+    
+            </div><!--div formulario -->
+            
+            </div><!--flex -->
+        </div><!--container12 -->
+ </div> <!--primer -->

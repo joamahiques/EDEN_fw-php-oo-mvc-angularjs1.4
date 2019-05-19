@@ -66,11 +66,11 @@ nav{ position:relative;padding: 0px 0 0 0;}
 
 
 /*================================>> 2 Level <<========================================*/
-.open>.dropdown-menu{
+li.open>  ul.dropdown-menu{
 	opacity: 1;
-    visibility: visible;
+  visibility: visible;
 }
-.dropdown-menu {
+.sf-menu .dropdown-menu {
   display: block;
   opacity: 0;
   visibility: hidden;
@@ -81,8 +81,8 @@ nav{ position:relative;padding: 0px 0 0 0;}
 }
 .sf-menu li ul,.sf-menu li.sfHover>ul{
 		/* display: none; */
-		left: -50%;
-		right: -50%;
+		left: -20%;
+		right: -20%;
     z-index: 999;
     padding-top: 12px;
     /* width: 97px; */

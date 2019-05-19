@@ -1,4 +1,4 @@
-eden.controller('loginCtrler', function($scope,$rootScope, modalServices,services, toastr,$timeout,loginservices,localstorageServices){
+eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices){
     
     $scope.dataregister={
         username:"",
@@ -9,6 +9,10 @@ eden.controller('loginCtrler', function($scope,$rootScope, modalServices,service
         user: "",
         password: ""
     };
+    $scope.datapass={
+        user:"",
+        pass:""
+    }
     $scope.dialogLogin = function() {///abrir modal
         $scope.register=false;
         $scope.resetpass=false;
@@ -24,6 +28,13 @@ eden.controller('loginCtrler', function($scope,$rootScope, modalServices,service
     $scope.tablogin = function() {// pestaña de login
         $scope.register=false;
         $scope.login=true;
+        $scope.resetpass=false;
+        
+    }
+    $scope.tabforgotpass = function() {// pestaña de login
+        $scope.register=false;
+        $scope.login=false;
+        $scope.resetpass=true;
         
     }
     $scope.SubmitLogin = function() {
@@ -54,7 +65,6 @@ eden.controller('loginCtrler', function($scope,$rootScope, modalServices,service
         "password": $scope.dataregister.password};
         var register_form = JSON.stringify(data);
         services.post('login', 'register', register_form).then(function (response) {
-            console.log(response);
             if(response=="ok"){
                 toastr.success('Revisa tu correo para activar tu cuenta', 'HOLA!');
                 $timeout(function(){
@@ -63,26 +73,73 @@ eden.controller('loginCtrler', function($scope,$rootScope, modalServices,service
                 },3000);
             }else if (response=="Error") {
                 toastr.info('Fallo de conexión', 'ERROR');
-                setTimeout(function(){window.location.href = amigable('?module=home&function=list_home'); }, 3000);
+                $timeout(function(){location.href='#/'; }, 3000);
             }else{
                 $scope.erroruserregister=true;
-                    $timeout(function(){ $scope.erroruserregister=false;},3000);
+                $timeout(function(){ $scope.erroruserregister=false;},3000);
             }
         });
     };
     
-    
+    $scope.SubmitRecoverPass = function () {
+        console.log('recoverPass');
+        var login_form = JSON.stringify($scope.datapass);
+        services.post('login', 'forgotpass', login_form).then(function (response) {
+            if(response=="ok"){
+                toastr.success('Revisa tu correo para cambiar tu contraseña', 'Perfecto');
+                modalServices.closeModal();
+            }else{
+                toastr.info('Fallo de conexión, pruebe mas tarde', 'ERROR');
+                modalServices.closeModal();
+            }
+        })
+    }
+});
+eden.controller('changepassCtrler', function($scope,token,services,toastr, $timeout){
+    $token=token;
+    $scope.datarpass={
+        pass:"",
+        rpass:""
+    }
+    $change_pass = {
+        pass:"",
+        token:""
+    }
+    $scope.SubmitchangePass = function () {
+            $change_pass = {
+                pass:$scope.datarpass.pass,
+                token:$token
+            }
+            console.log($change_pass);
+        services.post('login', 'update_pass', $change_pass).then(function (response) {
+            if(response=="ok"){
+                toastr.success('Contraseña actualizada correctamente', 'Perfecto');
+                $timeout(function(){location.href='#/'; }, 3000);
+            }else{
+                toastr.info('Fallo de conexión, pruebe mas tarde', 'ERROR');
+                $timeout(function(){location.href='#/'; }, 3000);
+            }
+        })
+    }
 
-    // $scope.socialLogin = function () {
-    //     console.log('socila');
-    //     services.post('login', 'sociallogin').then(function (response) {
-    //         console.log(response);
-    //         localstorageServices.setuser(response.nickname);
-    //     })
-        
-        
-    // }
+});
 
+eden.controller('menuCtrler', function($scope,$log,loginservices, modalServices,  $timeout){
    
-
+    loginservices.login();
+    $scope.dialogLogin = function() {
+          modalServices.openModalLogin();
+      
+    };
+    $scope.toggled = function(open) {
+          $log.log('Dropdown is now: ', open);
+        };
+    $scope.logout = function() {
+          loginservices.logout();
+          loginservices.login();
+          $timeout(function(){
+                location.href='#/';
+          },1000);
+          //console.log('logout');
+        };
 });

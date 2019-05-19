@@ -14,7 +14,7 @@
     
             case 'changepass':///para cambiarse la contraseña
                 $subject = 'Cambio de Password en EDEN';
-                $ruta = "<a href=http://localhost/www/EDEN_ANGULARJS/login/changepass/" . $arr['token'] . ">aqu&iacute;</a>";
+                $ruta = "<a href=http://localhost/www/EDEN_ANGULARJS/#/login/changepass/" . $arr['token'] . ">aqu&iacute;</a>";
                 $body = 'Para cambiar tu password pulsa ' . $ruta;
                 break;
                 
@@ -27,7 +27,7 @@
             case 'newpass':///new pass para el registro por redes sociales
                 $subject = 'Tu Contraseña en EDEN';
                 $ruta = "<a href='" . amigable("?module=home&function=list_home", true) . "'>aqu&iacute;</a>";
-                $body = 'Para visitar nuestra web, pulsa ' . $ruta;
+                $body = 'Puedes cambiar la contraseña en tu perfil.<br>Para visitar nuestra web, pulsa ' . $ruta  ;
                 break;
     
             case 'admin':///para enviar logs al admin

@@ -16,32 +16,43 @@
 		$userInfo = socialprofile();
 		$data = json_decode($userInfo,true);
 		$id = explode("|", $data[sub]);
+		// echo json_encode($id[0]);
+		// exit;
+		$red=$id[0];
 		$id = $id[1];
-		$arrValue=check_user($id);
+		$arrValue1=check_user($id);
 		$_SESSION['avatar']=$data['picture'];
-				if(!$arrValue){
+				if(!$arrValue1){
 					///si no existe registralo
-					$arrArgument = array(
-						'id_user'=>$id,
-						'email'=>$data['email'],
-						'user'=>$data['nickname'],
-						'avatar'=>$data['picture']
-					);
+					if($red === "github"){
+						$arrArgument = array(
+							'id_user'=>$id,
+							'email'=>$data['name'],
+							'user'=>$data['nickname'],
+							'avatar'=>$data['picture']
+						);					
+					}else{
+						$arrArgument = array(
+							'id_user'=>$id,
+							'email'=>$data['nickname'].'@gmail.com',
+							'user'=>$data['nickname'],
+							'avatar'=>$data['picture']
+						);					
+					}
 					set_error_handler('ErrorHandler');
-						$arrValue=loadModel(MODEL_MODULE,'login_model','social',$arrArgument);
+							$arrValue=loadModel(MODEL_MODULE,'login_model','social',$arrArgument);
 					restore_error_handler();
 					if($arrValue){
-						///enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
-						// send_mail_social($data['user'],$data['email'],$arrValue[1]);
-						//echo json_encode($arrValue[0]);//devolvemos token
+						//enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
+						send_mail_social($arrArgument['user'],$arrArgument['email'],$arrValue[1]);
+						//devolvemos token
 						header('Location: http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue[0]);
-  						die();
+  					die();
 					}	
 				}else{
 					//si existe devuelve el token;
-					//echo json_encode($arrValue[0]['token']);
-					header('Location: http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue[0]['token']);
-  						die();
+					header('Location: http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue1[0]['token']);
+  				die();
 				}
 			$_SESSION['tiempo'] = time();
 			exit;
@@ -104,34 +115,34 @@
 						echo json_encode($datos);
 					}
 		}
-	function social(){
+	// function social(){
 				
-				$data= json_decode($_POST['data1'],true);
-				$arrValue=check_user($data['id_user']);
-				$_SESSION['avatar']=$data['avatar'];
-				if(!$arrValue){
-					///si no existe registralo
-					set_error_handler('ErrorHandler');
-						$arrValue=loadModel(MODEL_MODULE,'login_model','social',$data);
-					restore_error_handler();
-					if($arrValue){
-						///enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
-						send_mail_social($data['user'],$data['email'],$arrValue[1]);
-						echo json_encode($arrValue[0]);//devolvemos token
-					}	
-				}else{
-					//si existe devuelve el token;
-					echo json_encode($arrValue[0]['token']);
-				}
-			$_SESSION['tiempo'] = time();
-			exit;
-	}
+	// 			$data= json_decode($_POST['data1'],true);
+	// 			$arrValue=check_user($data['id_user']);
+	// 			$_SESSION['avatar']=$data['avatar'];
+	// 			if(!$arrValue){
+	// 				///si no existe registralo
+	// 				set_error_handler('ErrorHandler');
+	// 					$arrValue=loadModel(MODEL_MODULE,'login_model','social',$data);
+	// 				restore_error_handler();
+	// 				if($arrValue){
+	// 					///enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
+	// 					send_mail_social($data['user'],$data['email'],$arrValue[1]);
+	// 					echo json_encode($arrValue[0]);//devolvemos token
+	// 				}	
+	// 			}else{
+	// 				//si existe devuelve el token;
+	// 				echo json_encode($arrValue[0]['token']);
+	// 			}
+	// 		$_SESSION['tiempo'] = time();
+	// 		exit;
+	// }
 	////////enviar mail con token para cambiar la contraseña
 	function forgotpass() {
 			set_error_handler('ErrorHandler');
 					$arrArgument = array(
-						'reset-user'=>$_POST['reset-user'],
-						'reset-email'=>$_POST['reset-email'],
+						'reset-user'=>$_POST['user'],
+						'reset-email'=>$_POST['pass'],
 					);
 					$arrValue['token']= loadModel(MODEL_MODULE,'login_model','recover_pass',$arrArgument);
 			restore_error_handler();			
@@ -148,28 +159,15 @@
 					}
 
 	}
-	//////////pagina de cambiar la contraseña
-	function changepass() {
-				if(isset($_GET['aux'])){
-					$_SESSION['tok']=$_GET['aux'];//alamcenamos en session para el update
-				}
-				require_once(VIEW_PATH_INC . "top-page.php");
-				require_once(VIEW_PATH_INC . "header.php");
-				require_once(VIEW_PATH_INC . "menu.php");
-				include(MODULE_VIEW_PATH . "changepass.html");
-				require_once(VIEW_PATH_INC . "footer.php");
-	}
-/////////cambiar contraseña
 	function update_pass(){
 				set_error_handler('ErrorHandler');
 						$arrArgument = array(
-							'password'=>$_POST['password'],
-							'token'=>$_SESSION['tok'],
+							'password'=>$_POST['pass'],
+							'token'=>$_POST['token'],
 						);
 						$arrValue= loadModel(MODEL_MODULE,'login_model','update_pass',$arrArgument);
 				restore_error_handler();
-						//$_SESSION['tok']='';
-				session_unset($_SESSION['tok']);
+				//session_unset($_SESSION['tok']);
 				if($arrValue){
 					echo('ok');
 				}else{
@@ -205,7 +203,6 @@
 				}
 	}		
 	function logout() {
-			    //$logout=sociallogout();
 				set_error_handler('ErrorHandler');
 						$arrValue= loadModel(MODEL_MODULE,'login_model','delete_token',$_POST['token']);
 				restore_error_handler();

@@ -1,6 +1,5 @@
-eden.factory('ubication_map',
-function( services){
-    
+ eden.factory('ubication_map',['$rootScope','services','$timeout',
+function($rootScope,services, $timeout){
   var service={};
   service.initmap1=initMap1;
   var map, infoWindow;
@@ -125,6 +124,7 @@ function( services){
 //       // Get the place details for a hotel. Show the information in an info window,
 //       // anchored on the marker for the hotel that the user selected.
       function showInfoWindow() {
+            
             var marker = this;
             //console.log(marker);
             infoWindow.open(map,marker);
@@ -133,18 +133,25 @@ function( services){
 
 //       // Load the place information into the HTML elements used by the info window.
       function buildIWContent(place) {
-        document.getElementById("info-content").innerHTML=
-            '<div>'+ 
-            '<div class="text1 flex">'+ place.nombre + '<a class="corazon" id="'+place.nombre+'"><i class="far fa-heart" ></i></a></div>'+
-            '<br><span>Localidad:   <span id="localidad">'+place.localidad+'</span></span></br>'+
-            '<br><span>Provincia:   <span id="prov">'+place.provincia+'</span></span></br>'+
-            '<br><span>Capacidad Total:     <span id="capacidad">'+place.capacidad+'</span></span></br>'+
-            '<div>'+
-            '<a  class="read" ng-click="dialog(place.nombre) id="'+place.nombre+'">READ MORE</a>'+
-            '</div>'+
-            '</div>';
+        $rootScope.place={};
+        $timeout(function () {
+          $rootScope.place = place;
+      }, 20);
+        // $rootScope.place = place;
+        //console.log($rootScope.place);
+        
+      //   document.getElementById("info-content").innerHTML=
+      //       '<div>'+ 
+      //       '<div class="text1 flex">'+ place.nombre + '<a class="corazon" id="'+place.nombre+'"><i class="far fa-heart" ></i></a></div>'+
+      //       '<br><span>Localidad:   <span id="localidad">'+place.localidad+'</span></span></br>'+
+      //       '<br><span>Provincia:   <span id="prov">'+place.provincia+'</span></span></br>'+
+      //       '<br><span>Capacidad Total:     <span id="capacidad">'+place.capacidad+'</span></span></br>'+
+      //       '<div>'+
+      //       '<a  class="read" ng-click="dialog(place.nombre) id="'+place.nombre+'">READ MORE</a>'+
+      //       '</div>'+
+      //       '</div>';
 
-       }
+        }
     return service;
 
-});
+}]);

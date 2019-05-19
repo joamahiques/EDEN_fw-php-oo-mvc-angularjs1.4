@@ -13,15 +13,15 @@
         return $check;
    }
    function validate_login($user){
-       
-            $error='';
-            $check =check_user($user['user']);
+        $data=false;
+        $error='';
+        $check =check_user($user['user']);
+        if($check[0]){
             $data = $check[0];
             $act = $check[0]['activate'];
             $pass = $check[0]['password'];
             $_SESSION['avatar'] = $check[0]['avatar'];
-            //$_SESSION['avatar'] = $value['avatar'];
-        
+        }        
         if(!$data){
             $error='El usuario no existe';
         }else if($act==="0"){
@@ -30,7 +30,7 @@
             $error='La contraseña no es correcta';
         };
         return $return= array('data'=>$data, 'error'=>$error);
-}
+    }
    function check_user($user){
         return loadmodel(MODEL_MODULE,'login_model','validate',$user);
    }
@@ -49,8 +49,6 @@
         $mail['inputMessage']='Tu contraseña en EDEN: <b>'.$newpass.'</b>';
         enviar_email($mail);
     }
-        //return loadmodel(MODEL_MODULE,'login_model','validate',$user);
-
 }
 require SITE_ROOT . '/auth0/vendor/autoload.php';
 use Auth0\SDK\Auth0;

@@ -12,7 +12,12 @@ eden.controller('shopCtrler', function($scope, homes,modalServices, searchservic
   };
 });
 
-eden.controller('mapshopCtrler', function(searchservices, ubication_map,services,$scope){
+eden.controller('mapshopCtrler', function(searchservices,$rootScope, ubication_map,services,$scope, modalServices){
+  
+      $scope.dialog = function(home) {
+        modalServices.openModal(home,'modal','read_modal');
+
+    };
   
       if(searchservices.data.provincia){
         ubi={'ubi':searchservices.data.provincia,'muni':searchservices.data.localidad}

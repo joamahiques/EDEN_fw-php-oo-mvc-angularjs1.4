@@ -43,6 +43,7 @@ eden.factory("services", ['$http','$q', function ($http, $q) {
                   url: serviceBase + module + '&function=' + functi + '&aux=' + dada + '&aux2=' + dada2
               }).success(function(data, status, headers, config) {
                console.log(serviceBase + module + '&function=' + functi + '&aux=' + dada + '&aux2=' + dada2);
+               //console.log(data);
                  defered.resolve(data);
               }).error(function(data, status, headers, config) {
                  defered.reject(data);

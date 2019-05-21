@@ -8,11 +8,11 @@ function($rootScope,localstorageServices,services,toastr){
 
     function login() {
         var token = localstorageServices.getuser();
-        console.log(token);
+        //console.log(token);
         if (token) {
             services.post("login", "controluser", JSON.stringify({'token': token})).then(function (response) {
             // services.get1('login', 'controluser', token).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 response = response[0];
                 $rootScope.avatar = response.avatar;
                 $rootScope.user = response.user;
@@ -38,9 +38,9 @@ function($rootScope,localstorageServices,services,toastr){
     }
     function logout(){ ////viene del controlador del menu
         var token = localstorageServices.getuser();
-        console.log(token);
+        //console.log(token);
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
-            console.log(response);
+           // console.log(response);
             if(response='ok'){
                 if($rootScope.type=="client_rs"){
                     localstorageServices.clearuser();
@@ -61,11 +61,11 @@ function($rootScope,localstorageServices,services,toastr){
                     delete $rootScope.user;
                     delete $rootScope.type;
                     toastr.info('Sesión cerrada correctamente', 'BYE!');
-                    console.log($rootScope);
+                    //console.log($rootScope);
                 }
                  
             }else{
-                console.log(response);
+                //console.log(response);
             }
         
         });

@@ -39,6 +39,12 @@ eden.config(['$routeProvider',
                     return $route.current.params.token;
                 }
             }})
+            .when("/profile", {templateUrl: "frontend/modules/profile/view/profile.view.html",controller: "profileCtrler",resolve:{
+                user:function(services,localstorageServices,$route){
+                    $token = localstorageServices.getuser()
+                    return services.post('profile', 'load_data_user',{'token': $token});
+                }
+            }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }
 ]);

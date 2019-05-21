@@ -83,7 +83,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
     };
     
     $scope.SubmitRecoverPass = function () {
-        console.log('recoverPass');
+        //console.log('recoverPass');
         var login_form = JSON.stringify($scope.datapass);
         services.post('login', 'forgotpass', login_form).then(function (response) {
             if(response=="ok"){
@@ -111,7 +111,7 @@ eden.controller('changepassCtrler', function($scope,token,services,toastr, $time
                 pass:$scope.datarpass.pass,
                 token:$token
             }
-            console.log($change_pass);
+            //console.log($change_pass);
         services.post('login', 'update_pass', $change_pass).then(function (response) {
             if(response=="ok"){
                 toastr.success('Contraseña actualizada correctamente', 'Perfecto');

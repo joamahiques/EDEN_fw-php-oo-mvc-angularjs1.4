@@ -1,0 +1,108 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+        <ul class="tabs">
+                <li><a ng-click="tabprofile()">My Profile</a></li>
+                <li><a ng-click="tabfavorites()">My Favorites</a></li>
+                <li><a ng-click="tabpurchase()">My Purchase</a></li>
+        </ul>
+        <div class="tab-container">
+                <div id='myprofile'ng-show="profile" class="tab_content">
+                        <form class="cd-form" name="formprofile" id="formprofile">
+                           <div class="divpro">
+                                <p class="fieldset">
+                                        <label class="image-replace cd-username" for="signup-username"></label>
+                                        <input class="full-width has-padding has-border" id="proname" name="user" type="text" placeholder="Username" readonly ng-model="dataprofile.user">
+                                        <span class="cd-error-message" ng-show="formprofile.user.$error.required && (formprofile.user.$dirty || formprofile.user.$touched)">El usuario no se puede modificar</span>
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace cd-email" for="signup-email"></label>
+                                        <input class="full-width has-padding has-border" id="proemail" name="mail" type="text" placeholder="E-mail" readonly ng-model="dataprofile.mail">
+                                        <span class="cd-error-message" ng-show="formprofile.mail.$error.required && (formprofile.mail.$dirty || formprofile.mail.$touched)">El mail no se puede modificar</span>
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace fas fa-phone fa-3x" for="signup-tf"></label>
+                                        <input class="full-width has-padding has-border" id="protf" name="tf" type="text"  placeholder="Phone" ng-pattern="/^[1-9]\d{9,10}$/" ng-model="dataprofile.tf">
+                                        <span class="cd-error-message" ng-show="formprofile.tf.$error.pattern && (formprofile.tf.$dirty || formprofile.tf.$touched)">El teléfono no es válido</span>
+                                </p>
+                
+                                <p class="fieldset">
+                                        <label class="image-replace cd-password" for="signup-password"></label>
+                                        <input class="full-width has-padding has-border" name="propassword" id="propassword" type="text"  placeholder="Password" ng-model="dataprofile.pass">
+                                        <a href="#0" class="hide-password">Hide</a>
+                                        <span class="cd-error-message" ng-show="formprofile.propassword.$error.required && (formprofile.propassword.$dirty || formprofile.propassword.$touched)">La contraseña es requerida</span>
+                                        <span class="cd-error-message" ng-show="errorpass">La contraseña no es correcta</span>
+                                        <p id="changepass" class="profile-form-bottom-message"><a  href="#0">Cambiar Contraseña</a></p>
+                                </p>
+                            </div>
+                            
+                            <div class="divpro">
+                                <p class="fieldset">
+                                        <select class="full-width has-padding has-border provinciaprofile" ng-init="dataprofile.provi = provinces[0]" ng-model="dataprofile.provi" ng-options="provi.PRO for provi in provinces track by provi.PRO" ng-change="loadcity()">    
+                                                <option value="" selected="selected">{{dataprofile.proviselected}}</option>
+                                        </select>
+                                        <!-- <span class="cd-error-message"></span> -->
+                                </p>
+                                <p class="fieldset">
+                                        <select class="full-width has-padding has-border" name="selcity" id="selcity" ng-model="dataprofile.city" ng-options="item.DMUN50 for item in cities"> 
+                                                <option value="" selected="selected">{{dataprofile.cityselected}}</option>
+                                        </select>
+                                        <!-- <span class="cd-error-message"></span> -->
+                                </p>
+                                <p class="divpro">
+                                        <button id="dropzone" dropzone="dropzoneConfig" class="dropzone"></button>
+                                        <!-- <div id="dropzone" class="dropzone" ng-model="dataprofile.dropzone"></div> -->
+                                        <span id="error_img"><span class="img-error-message"></span></span>
+                                </p>
+                            </div>  
+                        
+                             <div class="cien">
+                                <p class="fieldset">
+                                        <button class="full-width" ng-click="updateprofile">Update account</button>
+                                </p>
+                            </div>
+                        </form> 
+                        
+                </div>
+                <div id='myfavorites' ng-show="favorites" class="tab_content">
+                       <h2>Favorites</h2>
+                </div>
+                <div id='mypurchases' ng-show="purchases" class="tab_content">
+                        <h2>Purchases</h2>
+                </div>
+        </div>  
+        <div class="cd-pass-modal">
+        <div class="cd-pass-modal-container"> <!-- this is the container wrapper -->
+        <div id="cd-change-password"> <!-- reset password form -->
+                <p class="cd-form-message">Quieres cambiar la contraseña? Primero introduce la actual y después la nueva.</p>
+    
+                <form class="cd-form" name="profilepass" id="profilepass">
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border" name="old-pass" id="old-pass" type="text" placeholder="Contraseña actual">
+                        <span class="cd-error-message">Error message here!</span>
+                        <span id="error_update_pass"><span class="cd-error-message"></span></span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border" name="newpass1" id="newpass1" type="text" placeholder="Contraseña Nueva">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="reset-email"></label>
+                        <input class="full-width has-padding has-border"name="newpass2" id="newpass2" type="text" placeholder="Repite Contraseña">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+    
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Change password">
+                    </p>
+                </form>
+    
+                <p class="profile-form-bottom-message center"><a id="closepass" href="#0">Cerrar</a></p>
+            </div> <!-- cd-reset-password -->
+        </div>
+</div> 
+</div>
+</div> 

@@ -11,7 +11,7 @@
                     <li><a href="#cart"><i class="fa fa-shopping-cart"><span>0</span></i></a></li>
                     <li ng-show="profile" uib-dropdown on-toggle="toggled(open)"><a uib-dropdown-toggle id="menuprofile"> {{user}} <img src="{{avatar}}" id="avatar"></a>
                         <ul id="submenu" class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                            <li><a href="#perfil" id="btnprofile">{{"perfil" | translate}}</a></li>
+                            <li><a href="#profile" id="btnprofile">{{"perfil" | translate}}</a></li>
                             <li ng-click="logout()"><a id="btnlogout">Salir</a></li>
                         </ul>
                     </li>

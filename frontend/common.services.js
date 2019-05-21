@@ -13,7 +13,9 @@ function(services,$rootScope,localstorageServices){
                 angular.forEach(response,function(value, key){
                     console.log(value.nombre);
                     var cor = angular.element(document.getElementById(value.nombre));
-                    document.getElementById(value.nombre).className='fas fa-heart';
+                    if(value.nombre==document.getElementById(value.nombre)){
+                        document.getElementById(value.nombre).className='fas fa-heart';
+                    }
                     console.log(cor);
                 })
                  //$scope.provinces = response;

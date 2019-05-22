@@ -2,10 +2,10 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
     localstorageServices.setuser(user[1]);
     loginservices.login();
 
-    console.log(user[0][0]);
+    //console.log(user[0][0]);
     $user=user[0][0];
-    console.log($user.user);
-
+    //console.log($user.user);
+    $scope.errorimgmess='';
     $scope.dataprofile={
         user:$user.user,
         password:"",
@@ -44,7 +44,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
     ///////provincias
     geoapiServices.loadprovince()
     .then( function(response){
-        console.log(response);
+        //console.log(response);
         $scope.provinces=response;
     });
     //////////poblaciones
@@ -58,7 +58,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
     }
     $scope.dropzoneConfig = {
         'options': {
-            'url': 'backend/index.php?module=profile&function=upload',
+            'url': 'backend/index.php?module=profile&function=uploadimg',
             addRemoveLinks: true,
             maxFileSize: 1000,
             dictResponseError: "Ha ocurrido un error en el server",
@@ -67,20 +67,30 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
         'eventHandlers': {
             'sending': function (file, formData, xhr) {},
             'success': function (file, response) {
-
+                console.log(response);
                 response = JSON.parse(response);
+                // console.log(response);
 
-                // if (response.result) {
-                //     // $(".msg").addClass('msg_ok').removeClass('msg_error').text('Success Upload image!!');
-                //     // $('.msg').animate({'right': '300px'}, 300);
+                if (response.result) {
+                    toastr.success('Foto subida correctamente', 'Perfecto');
+                    
+                    // $(".msg").addClass('msg_ok').removeClass('msg_error').text('Success Upload image!!');
+                    // $('.msg').animate({'right': '300px'}, 300);
 
-                //     // $scope.user[0].photo = "http://127.0.0.1/" + response.data;
+                    // $scope.user[0].photo = "http://127.0.0.1/" + response.data;
 
 
-                // } else {
-                //     $(".msg").addClass('msg_error').removeClass('msg_ok').text(response['error']);
-                //     $('.msg').animate({'right': '300px'}, 300);
-                // }
+                } else {
+                    $scope.errorimg=true;
+                    $scope.errorimgmess=response.error;
+                    var element2;
+                    if ((element2 = file.previewElement) !== null) {
+							element2.parentNode.removeChild(file.previewElement,1000);
+												//$('.dropzone.dz-started .dz-message').show();
+                    } else {
+                        return false;
+                    }
+                 }
             },
             'removedfile': function (file, serverFileName) {
                 if (file.xhr.response) {

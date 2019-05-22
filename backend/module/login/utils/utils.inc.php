@@ -50,7 +50,8 @@
         enviar_email($mail);
     }
 }
-require SITE_ROOT . '/auth0/vendor/autoload.php';
+//require SITE_ROOT . '/auth0/vendor/autoload.php';
+require SITE_ROOT . 'module/login/utils/auth0/vendor/autoload.php';
 use Auth0\SDK\Auth0;
     function datossocial(){
         // echo json_encode($domain);

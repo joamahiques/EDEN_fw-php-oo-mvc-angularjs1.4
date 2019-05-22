@@ -137,20 +137,7 @@ function($rootScope,services, $timeout){
         $timeout(function () {
           $rootScope.place = place;
       }, 20);
-        // $rootScope.place = place;
-        //console.log($rootScope.place);
-        
-      //   document.getElementById("info-content").innerHTML=
-      //       '<div>'+ 
-      //       '<div class="text1 flex">'+ place.nombre + '<a class="corazon" id="'+place.nombre+'"><i class="far fa-heart" ></i></a></div>'+
-      //       '<br><span>Localidad:   <span id="localidad">'+place.localidad+'</span></span></br>'+
-      //       '<br><span>Provincia:   <span id="prov">'+place.provincia+'</span></span></br>'+
-      //       '<br><span>Capacidad Total:     <span id="capacidad">'+place.capacidad+'</span></span></br>'+
-      //       '<div>'+
-      //       '<a  class="read" ng-click="dialog(place.nombre) id="'+place.nombre+'">READ MORE</a>'+
-      //       '</div>'+
-      //       '</div>';
-
+      
         }
     return service;
 

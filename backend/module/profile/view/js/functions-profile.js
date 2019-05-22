@@ -264,7 +264,7 @@ $(document).ready(function(){
 								$(document).on('click', function(){
 										// console.log('out');
 										$("#error_img").fadeOut(500);
-									}	);
+									});
 										var element2;
                     if ((element2 = file.previewElement) !== null) {
 												element2.parentNode.removeChild(file.previewElement,1000);

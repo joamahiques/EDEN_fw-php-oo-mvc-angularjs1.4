@@ -312,17 +312,17 @@ div.ngdialog-overlay{
   .dropzone{
     min-height: 125px;
   }
+  @media only screen and (min-width: 600px){
+    .cd-form select.full-width {
+        padding: 16px 20px 16px 20px;
+    }
+  }
   select.full-width{
     width: 100%;
-    padding: 15px 20px 15px 20px;
+    padding: 12px 20px 12px 20px;
     border: 1px solid #d2d8d8;
     background-color: white;
     color: #929292;
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none; */
   }
   
   select.has-border:focus {
@@ -430,4 +430,12 @@ div.ngdialog-overlay{
     -webkit-transition: opacity 0.2s 0, visibility 0 0;
     -moz-transition: opacity 0.2s 0, visibility 0 0;
     transition: opacity 0.2s 0, visibility 0 0;
+  }
+  .cd-form button#dropzone{
+    min-height: 135px;
+    border: 1px solid #d2d8d8;
+    background: white;
+    padding: 20px 20px;
+    color:rgba(0, 0, 0, 0.3);
+    width: 100%;
   }

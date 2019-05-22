@@ -1,5 +1,5 @@
-eden.factory('geoapiServices', ['services','$rootScope','localstorageServices','$http','$q',
-function(services,$rootScope,localstorageServices,$http,$q){
+eden.factory('geoapiServices', ['$http','$q',
+function($http,$q){
     var service = {};
     service.loadprovince = loadprovince;
     service.loadcity = loadcity;
@@ -13,15 +13,15 @@ function(services,$rootScope,localstorageServices,$http,$q){
                   method: 'GET',
                   url: "http://apiv1.geoapi.es/provincias?type=JSON&key="+keygeo+"&sandbox=0"
               }).success(function(data, status, headers, config) {
-                  //console.log(data.data);
                  if(data.data.length == '0'){/////////si esta vacio cargamos de xml
-                    //load_provinces_xml();
+                    console.log('xml');
+                    //defered.resolve(load_provinces_xml());
                 }else{
                     defered.resolve(data.data);                    
                 }
               }).error(function(data, status, headers, config) {
-                //load_provinces_xml();
-                 //defered.reject(data);
+                console.log('xml1');
+                //defered.resolve(load_provinces_xml());
               });
         return promise;
     }
@@ -47,5 +47,50 @@ function(services,$rootScope,localstorageServices,$http,$q){
         return promise;
     }
 
+    // function load_provinces_xml() {
+    //     //console.log('province');
+    //     $http({
+    //         method  : 'post',
+    //         url     : 'http://localhost/www/EDEN_ANGULAJS/backend/resources/provinciasypoblaciones.xml',
+    //         timeout : 10000,
+    //         params  : {},  // Query Parameters (GET)
+    //         transformResponse : function(data) {
+    //             // string -> XML document object
+    //             return data;
+    //         }
+    //     }).success(function(data, status, headers, config) {
+    //         console.dir(data);  // XML document object
+    //         //$scope.xml = data.documentElement.innerHTML;
+    //     }).error(function(data, status, headers, config) {
+    //         alert('通信に失敗しました.');
+    //     });
+        // $http({
+        //     method: 'POST',
+        //     url: "http://localhost/www/EDEN_ANGULAJS/backend/resources/provinciasypoblaciones.xml"
+        // })
+        // .success(function(data, status, headers, config) {
+        //     console.log(data);
+        //     return data;
+        // })
+        // .error(function(data) {
+        //     alert( "error load_provinces" );
+        // });
+    // }
+
+    // function load_cities_xml(prov) {
+    //     $.post("http://localhost/www/EDEN_ANGULARJS/resources/provinciasypoblaciones.xml", function (xml) {
+    //         $("#selcity").empty();
+    //         $("#selcity").append('<option value="" selected="selected">Selecciona Municipio</option>');
+    
+    //         $(xml).find('provincia[id=' + prov + ']').each(function(){
+    //             $(this).find('localidad').each(function(){
+    //                  $("#selcity").append("<option value='" + $(this).text().toUpperCase() + "'>" + $(this).text().toUpperCase() + "</option>");
+    //             });
+    //         });
+    //     })
+    //     .fail(function() {
+    //         alert( "error load_cities" );
+    //     });
+    // }
 
 }]);

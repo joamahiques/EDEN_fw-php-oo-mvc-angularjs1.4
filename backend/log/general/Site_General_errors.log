@@ -56,3 +56,63 @@ Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/pr
 20/05/19 08:39:25 PM | ERROR: [8] Undefined offset: 0
 Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
  | profile | response 200
+22/05/19 12:08:14 PM | ERROR: [8] Undefined index: tok
+Notice on line 5 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/utils/utils.inc.php
+ | profile | response 200
+22/05/19 12:21:52 PM | ERROR: [8] Undefined index: tf
+Notice on line 38 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 12:23:20 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:23:28 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:29:52 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:30:42 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:30:55 PM | ERROR: [8] Undefined index: token
+Notice on line 100 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 12:31:02 PM | ERROR: [8] Undefined index: token
+Notice on line 100 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 12:31:18 PM | ERROR: [8] Undefined index: token
+Notice on line 100 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 12:45:40 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:47:41 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:49:02 PM | ERROR: [8] Undefined offset: 0
+Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:49:12 PM | ERROR: [8] Undefined index: token
+Notice on line 103 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 12:51:23 PM | ERROR: [8] Array to string conversion
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 12:51:23 PM | ERROR: [8] Array to string conversion
+Notice on line 48 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 01:07:04 PM | ERROR: [8] Undefined index: token
+Notice on line 96 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+22/05/19 01:12:04 PM | ERROR: [8] Array to string conversion
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 01:12:04 PM | ERROR: [8] Array to string conversion
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 01:12:35 PM | ERROR: [8] Array to string conversion
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200
+22/05/19 01:12:35 PM | ERROR: [8] Array to string conversion
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
+ | profile | response 200

@@ -50,7 +50,6 @@
         enviar_email($mail);
     }
 }
-//require SITE_ROOT . '/auth0/vendor/autoload.php';
 require SITE_ROOT . 'module/login/utils/auth0/vendor/autoload.php';
 use Auth0\SDK\Auth0;
     function datossocial(){
@@ -87,24 +86,4 @@ use Auth0\SDK\Auth0;
         $userInfo = $auth0->getUser();
         return json_encode($userInfo);	
     }
-    // function sociallogout(){
-
-    //     $auth0 = new Auth0([
-    //         'domain' => authdomain,
-    //         'client_id' => authclientID,
-    //         'client_secret' => clientsecret,
-    //         'redirect_uri' => authredirect,
-    //         'audience' => authaudience,
-    //         'scope' => 'openid profile',
-    //         'persist_id_token' => true,
-    //         'persist_access_token' => true,
-    //         'persist_refresh_token' => true,
-    //     ]);
-    //     $auth0->logout();
-    //     $return_to = 'http://localhost/www/EDEN_ANGULARJS/';
-    //     $logout_url = sprintf('http://%s/v2/logout?client_id=%s&returnTo=%s', authdomain, authclientID, $return_to);
-    //     // https://dev-joamahi.eu.auth0.com/v2/logout?client_id=9jz8YMFTP9gdmpBtvdzh7guntVbCZpy9&returnTo=http%3A%2F%2Flocalhost%2Fwww%2FEDEN_ANGULARJS%2F&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4yLjIifQ%3D%3D
-    //     header('Location: ' . $logout_url);
-    //     die();
-    // }
-    ?>
+?>

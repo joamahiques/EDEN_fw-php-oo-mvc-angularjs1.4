@@ -58,17 +58,6 @@ function upload_files() {
             $error .=   "Maximum width and height exceeded. Please upload images below 100x100 px size <br>";
         }
     }
-        /*
-            $image_size_info    = getimagesize($imagen); //get image size
-            if($image_size_info){
-                $image_width        = $image_size_info[0]; //image width
-                $image_height       = $image_size_info[1]; //image height
-                $image_type         = $image_size_info['mime']; //image type
-            }else{
-                die("Make sure image file is valid!");
-            }
-        */
-
     ////////////////////////////////////////////////////////////////////////////
     //$upfile = $_SERVER['DOCUMENT_ROOT'].'/www/EDEN_ANGULARJS/backend/media/'.$_FILES['file']['name'];//Cambiado avatar por file
     $upfile = MEDIA_PATH . $_FILES['file']['name'];//Cambiado avatar por file
@@ -76,12 +65,10 @@ function upload_files() {
         if (is_file($_FILES['file']['tmp_name'])) {
             $idUnico = rand();
             $nombreFichero = $idUnico."-".$_FILES['file']['name'];
-            //$nombreFichero = $_FILES['file']['name'];
             $_SESSION['nombreFichero'] = $nombreFichero;
             $copiarFichero = true;
             // I use absolute route to move_uploaded_file because this happens when i run ajax
             $upfile =  MEDIA_PATH . $nombreFichero;
-            //$upfile = 'http://' . $_SERVER['HTTP_HOST'] . '/www/EDEN_ANGULARJS/backend/media/'.$nombreFichero;
         }else{
                 $error .=   "Invalid File...";
         }

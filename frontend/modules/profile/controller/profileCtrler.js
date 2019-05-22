@@ -1,4 +1,4 @@
-eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,loginservices,localstorageServices,geoapiServices){
+eden.controller('profileCtrler', function($scope,user,services, toastr,$location,loginservices,localstorageServices,geoapiServices){
     localstorageServices.setuser(user[1]);
     loginservices.login();
 
@@ -8,13 +8,13 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
     $scope.errorimgmess='';
     $scope.dataprofile={
         user:$user.user,
-        password:"",
         mail:$user.email,
         tf:$user.phone,
         provi:"",
         proviselected:'Escoja una provincia',
         city:"",
         cityselected:'Escoja una población',
+        dropzone:''
     }
     if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
         $scope.dataprofile.proviselected = $user.province;
@@ -67,26 +67,18 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
         'eventHandlers': {
             'sending': function (file, formData, xhr) {},
             'success': function (file, response) {
-                console.log(response);
-                response = JSON.parse(response);
+                // console.log(file);
                 // console.log(response);
+                // response = JSON.parse(response);
 
                 if (response.result) {
-                    toastr.success('Foto subida correctamente', 'Perfecto');
-                    
-                    // $(".msg").addClass('msg_ok').removeClass('msg_error').text('Success Upload image!!');
-                    // $('.msg').animate({'right': '300px'}, 300);
-
-                    // $scope.user[0].photo = "http://127.0.0.1/" + response.data;
-
-
+                    toastr.success('Foto subida correctamente, Actualiza el perfil para guardar cambios', 'Perfecto');
+                
                 } else {
-                    $scope.errorimg=true;
-                    $scope.errorimgmess=response.error;
+                    toastr.error(response.error, 'ERROR');
                     var element2;
                     if ((element2 = file.previewElement) !== null) {
 							element2.parentNode.removeChild(file.previewElement,1000);
-												//$('.dropzone.dz-started .dz-message').show();
                     } else {
                         return false;
                     }
@@ -94,12 +86,37 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$timeout,
             },
             'removedfile': function (file, serverFileName) {
                 if (file.xhr.response) {
-                    $('.msg').text('').removeClass('msg_ok');
-                    $('.msg').text('').removeClass('msg_error');
-                    var data = jQuery.parseJSON(file.xhr.response);
-                    services.post("news", "delete", JSON.stringify({'filename': data}));
+                    var data=JSON.parse(file.xhr.response)
+                    services.post("profile", "delete", JSON.stringify({'filename': data}));
                 }
             }
     }};
+
+    $scope.updateprofile = function(){
+        console.log($scope.dataprofile);
+        var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
+        "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO,"city": $scope.dataprofile.city.DMUN50,"tok": localstorageServices.getuser()};
+        var profile_form = JSON.stringify(data);
+        console.log(profile_form);
+        services.post('profile', 'update_profile', profile_form).then(function (response) {
+            console.log(response);
+            if(response[0]){
+                localstorageServices.setuser(response[1]);
+                loginservices.login();;
+                toastr.success('Perfil actualizado correctamente', 'Perfecto');
+                $location.href='#/profile'
+            }else if (!response[0]){
+                localstorageServices.setuser(response[1]);
+                loginservices.login();;
+                toastr.error('No se ha podido actualizar el perfil, prueba mas tarde', 'ERROR');
+                $location.href='#/profile'
+            }else{
+                toastr.error('Bicho malo FUERA', 'ERROR');
+                $location.href='#/'
+            }
+            
+        })
+
+    }
 
 })

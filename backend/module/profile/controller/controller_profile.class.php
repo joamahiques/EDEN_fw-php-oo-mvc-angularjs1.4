@@ -6,14 +6,7 @@
 				include(FUNCTIONS_MODULE . "utils.inc.php");
 				$_SESSION['module'] = "profile";
 		}
-        function view() {
-            require_once(VIEW_PATH_INC . "top-page.php");
-            require_once(VIEW_PATH_INC . "header-home.php");
-            require_once(VIEW_PATH_INC . "menu.php");
-            include(MODULE_VIEW_PATH . "profile.html");
-            require_once(VIEW_PATH_INC . "footer.php");
-        }
-   
+        
     function update_profile() {
         if ((empty($_SESSION['result_prodpic']))&&(empty($_SESSION['avatar']))){
             $hashavatar= md5( strtolower( trim( $email ) ) );
@@ -29,15 +22,15 @@
             $result_prodpic['data'] = $_SESSION['result_prodpic'];
         }
         
-        $result=validate_profile($_POST['propassword']);
+        $result=validate_profile();
         
        if ($result[0]=='ok'){
             set_error_handler('ErrorHandler');
                 $nombre =$_POST["user"];
                 $mail =$_POST["mail"];
                 $tf = $_POST["tf"];
-                $province = $_POST["selprovince"];
-                $city = $_POST["selcity"];
+                $province = $_POST["provi"];
+                $city = $_POST["city"];
                 $arrArgument = array(
                     'name' => $nombre,
                     'email'=>$mail,
@@ -52,18 +45,21 @@
                 $arrValue = loadModel(MODEL_MODULE, "profile_model", "update_user", $arrArgument);
             restore_error_handler();   
                 if ($arrValue){
-                    echo json_encode($arrValue);
+                    echo json_encode($arrValue);//devuelve true y token
+                    exit;
                 }else{
-                    $message = "Dont updated";
-                    echo json_encode($message);
-                }
-                
-        }else if ($result[0]!='ok'){
-            $message2 = array(
-                '0' => 'bad',
-                '1'=>$result[1] 
+                    $arrValue=array(
+                        false,
+                        $result[1] 
+                    );   
+                    echo json_encode($arrValue); //devuelve false y token
+                    exit;
+                }    
+         }else if (!$result[0]){
+            $arrValue=array(
+                'ERROR',
             );
-            echo json_encode($message2);
+            echo json_encode($arrValue);///error token no valido
             exit;
         }
     }
@@ -141,13 +137,14 @@
     }
     function uploadimg(){
         $result_prodpic = upload_files();
-        $_SESSION['result_prodpic'] = $result_prodpic;
+        $_SESSION['result_prodpic'] = $result_prodpic['data'];
         echo json_encode($result_prodpic);
     }
 
     function delete(){
         $_SESSION['result_prodpic'] = array();
         $result = remove_files();
+        
         if($result === true){
           echo json_encode(array("res" => true));
         }else{

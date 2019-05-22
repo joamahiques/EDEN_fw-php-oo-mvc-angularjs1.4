@@ -23,43 +23,40 @@
                 
                                 <p class="fieldset">
                                         <label class="image-replace fas fa-phone fa-3x" for="signup-tf"></label>
-                                        <input class="full-width has-padding has-border" id="protf" name="tf" type="text"  placeholder="Phone" ng-pattern="/^[1-9]\d{9,10}$/" ng-model="dataprofile.tf">
+                                        <input class="full-width has-padding has-border" id="protf" name="tf" type="text"  placeholder="Phone" ng-pattern="/^[0-9]\d{8,10}$/" ng-model="dataprofile.tf">
                                         <span class="cd-error-message" ng-show="formprofile.tf.$error.pattern && (formprofile.tf.$dirty || formprofile.tf.$touched)">El teléfono no es válido</span>
                                 </p>
                 
                                 <p class="fieldset">
-                                        <label class="image-replace cd-password" for="signup-password"></label>
+                                        <!-- <label class="image-replace cd-password" for="signup-password"></label>
                                         <input class="full-width has-padding has-border" name="propassword" id="propassword" type="text"  placeholder="Password" ng-model="dataprofile.pass">
                                         <a href="#0" class="hide-password">Hide</a>
                                         <span class="cd-error-message" ng-show="formprofile.propassword.$error.required && (formprofile.propassword.$dirty || formprofile.propassword.$touched)">La contraseña es requerida</span>
-                                        <span class="cd-error-message" ng-show="errorpass">La contraseña no es correcta</span>
+                                        <span class="cd-error-message" ng-show="errorpass">La contraseña no es correcta</span> -->
                                         <p id="changepass" class="profile-form-bottom-message"><a  href="#0">Cambiar Contraseña</a></p>
                                 </p>
                             </div>
                             
                             <div class="divpro">
                                 <p class="fieldset">
-                                        <select class="full-width has-padding has-border provinciaprofile" ng-init="dataprofile.provi = provinces[0]" ng-model="dataprofile.provi" ng-options="provi.PRO for provi in provinces track by provi.PRO" ng-change="loadcity()">    
+                                        <select class="full-width has-padding has-border provinciaprofile" ng-model="dataprofile.provi" ng-model="dataprofile.provi" ng-options="provi.PRO for provi in provinces track by provi.PRO" ng-change="loadcity()">    
                                                 <option value="" selected="selected">{{dataprofile.proviselected}}</option>
                                         </select>
-                                        <!-- <span class="cd-error-message"></span> -->
                                 </p>
                                 <p class="fieldset">
                                         <select class="full-width has-padding has-border" name="selcity" id="selcity" ng-model="dataprofile.city" ng-options="item.DMUN50 for item in cities"> 
                                                 <option value="" selected="selected">{{dataprofile.cityselected}}</option>
                                         </select>
-                                        <!-- <span class="cd-error-message"></span> -->
                                 </p>
                                 <p class="divpro">
-                                        <button id="dropzone" dropzone="dropzoneConfig" class="dropzone"></button>
-                                        <!-- <div id="dropzone" class="dropzone" ng-model="dataprofile.dropzone"></div> -->
-                                        <span class="cd-error-message" ng-model="dataprofile.img" ng-show="errorimg">{{errorimgmess}}</span>
+                                        <button id="dropzone" dropzone="dropzoneConfig" class="dropzone" ng-model="dataprofile.dropzone"></button>
+                                        <!-- <span class="cd-error-message" ng-show="errorimg">hola</span> -->
                                 </p>
                             </div>  
                         
                              <div class="cien">
                                 <p class="fieldset">
-                                        <button class="full-width" ng-click="updateprofile">Update account</button>
+                                        <button class="full-width" ng-click="updateprofile()">Update account</button>
                                 </p>
                             </div>
                         </form> 

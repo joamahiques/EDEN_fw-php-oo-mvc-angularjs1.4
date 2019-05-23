@@ -6,7 +6,7 @@
        
             <div id="inicio" infinite-scroll='loadMore()' infinite-scroll-distance='0'>
                         <div class="grid" ng-repeat='home in homes'>
-                            <div class="text1 flex">{{home.nombre}}<a class="corazon"><i id="{{home.nombre}}" class='far fa-heart'></i></a></div>
+                            <div class="text1 flex">{{home.nombre}}<a class="corazon"><i ng-click="addfavorites(home.nombre)" id="{{home.nombre}}" class='far fa-heart'></i></a></div>
                                  <br>Localidad: {{home.localidad}}</br>
                                 <br id="jolo">Provincia: {{home.provincia}}</br>
                                 <br>Capacidad:  {{home.capacidad}}</br>

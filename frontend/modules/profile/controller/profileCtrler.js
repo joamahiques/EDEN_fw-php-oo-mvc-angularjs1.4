@@ -1,10 +1,14 @@
-eden.controller('profileCtrler', function($scope,user,services, toastr,$location,loginservices,localstorageServices,geoapiServices){
+eden.controller('profileCtrler', function($scope,user,services, toastr,loginservices,localstorageServices,geoapiServices,$rootScope){
     localstorageServices.setuser(user[1]);
     loginservices.login();
     $scope.updatepass=false;
+    $scope.aupdatepass=true;
     $user=user[0][0];
-    if($user==undefined){
+    if($user==undefined){//si no existe token(error al comprobar token) fuera de profile
         location.href='#/'
+    }
+    if($rootScope.type=='client_rs'){//cambiar contraseña no visible para client_rs
+        $scope.aupdatepass=false;
     }
     $scope.dataprofile={
         user:$user.user,
@@ -27,37 +31,34 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
         $scope.dataprofile.cityselected = $user.city;
     }
    
-    $scope.tabprofile = function() {/// pestaña del perfil
+    $scope.tabprofile = function() {/// profile tab
         $scope.profile=true;
         $scope.favorites=false;
         $scope.purchases=false;
         
     }
-    $scope.tabfavorites = function() {// pestaña favorites
+    $scope.tabfavorites = function() {// favorites tab
         $scope.profile=false;
         $scope.favorites=true;
         $scope.purchases=false;
         
     }
-    $scope.tabpurchase = function() {// pestaña de compras
+    $scope.tabpurchase = function() {// purchases tab
         $scope.profile=false;
         $scope.favorites=false;
         $scope.purchases=true;
         
     }
-    $scope.tabpassword = function(){
-        // $scope.profile=false;
-        // $scope.favorites=false;
-        // $scope.purchases=false;
+    $scope.tabpassword = function(){///open updatepass modal
         $scope.updatepass=true;
     }
-    ///////provincias
+    ///////provinces
     geoapiServices.loadprovince()
     .then( function(response){
         //console.log(response);
         $scope.provinces=response;
     });
-    //////////poblaciones
+    //////////cities
     $scope.loadcity = function(){
         var provi=$scope.dataprofile.provi;
         geoapiServices.loadcity(provi)
@@ -115,21 +116,21 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
                 toastr.success('Perfil actualizado correctamente', 'Perfecto');
-                $location.href='#/profile'
+                location.href='#/profile'
             }else if (response[0]==false){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
                 toastr.error('No se ha podido actualizar el perfil, prueba mas tarde', 'ERROR');
-                $location.href='#/profile'
+                location.href='#/profile'
             }else{
                 toastr.error('Bicho malo FUERA', 'ERROR');
                 loginservices.logout();
-                //$location.href='#/'
+                location.href='#/'
             }    
         })
     }
 
-/////////actulizar contraseña
+/////////update password
     $scope.submitupdatepass = function(){
         var data = {"oldpass": $scope.profilepass.old, "newpass": $scope.profilepass.new,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);

@@ -1,15 +1,21 @@
 
-eden.controller('shopCtrler', function($scope, homes,modalServices, searchservices){
+eden.controller('shopCtrler', function($scope, homes,modalServices, searchservices, CommonServices){
 
     $scope.provincia=searchservices.data.provincia;
     $scope.localidad=searchservices.data.localidad;
     $scope.homesearch=searchservices.data.home;
     $scope.homes = homes;
-
+    CommonServices.readfavorites();
+    $scope.addfavorites = function(home){
+      CommonServices.addfavorite(home);
+    }
      $scope.dialog = function(home) {
          modalServices.openModal(home,'modal','read_modal');
     
   };
+  $scope.pageChange = function() {
+    CommonServices.readfavorites();
+  }
 });
 
 eden.controller('mapshopCtrler', function(searchservices,$rootScope, ubication_map,services,$scope, modalServices){

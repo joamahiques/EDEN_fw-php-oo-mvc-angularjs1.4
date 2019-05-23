@@ -1,4 +1,4 @@
-eden.controller('homeCtrler', function($scope, modalServices, services,$timeout){
+eden.controller('homeCtrler', function($scope, modalServices, services,$timeout, CommonServices){
         //console.log('homecontroller');
       //   $scope.homes = homes;
     
@@ -22,11 +22,11 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout)
                         $scope.loading = true;
                         $timeout(function() {
                            $scope.$apply(function(){
-               
                              // Assign response to posts Array 
                              angular.forEach(response,function(item) {
                                 $scope.homes.push(item);
                              });
+                             CommonServices.readfavorites();
                              $scope.busy = false;
                              $scope.loading = false;
                            });
@@ -39,17 +39,9 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout)
             // Call function
             $scope.loadMore();
           
-
-
-
-
-
-
-
-
-
-
-
+          $scope.addfavorites = function(home){
+              CommonServices.addfavorite(home);
+          }
 
          $scope.dialog = function(home) {
             modalServices.openModal(home,'modal','read_modal');

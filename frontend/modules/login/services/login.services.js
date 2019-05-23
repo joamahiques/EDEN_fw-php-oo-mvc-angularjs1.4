@@ -1,5 +1,5 @@
-eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr',
-function($rootScope,localstorageServices,services,toastr){
+eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr','favoritesServices',
+function($rootScope,localstorageServices,services,toastr,favoritesServices){
     var service={};
     service.login=login;
     service.logout=logout;
@@ -36,6 +36,7 @@ function($rootScope,localstorageServices,services,toastr){
             $rootScope.profile = false;
         }
     }
+
     function logout(){ ////viene del controlador del menu
         var token = localstorageServices.getuser();
         //console.log(token);
@@ -67,8 +68,8 @@ function($rootScope,localstorageServices,services,toastr){
             }else{
                 //console.log(response);
             }
+            favoritesServices.readfavorites()
         
         });
     }
-
 }]);

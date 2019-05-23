@@ -24,6 +24,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         old:"",
         new:""
     }
+
     if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
         $scope.dataprofile.proviselected = $user.province;
     }
@@ -41,6 +42,11 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         $scope.profile=false;
         $scope.favorites=true;
         $scope.purchases=false;
+
+        services.get1('profile','load_data_favorites',localstorageServices.getuser()).then(function (response) {
+            console.log(response);
+            $scope.favorites=response;
+        });
         
     }
     $scope.tabpurchase = function() {// purchases tab
@@ -156,3 +162,23 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     }
 
 })
+
+eden.filter('searchFor', function(){
+	// All filters must return a function. The first parameter
+	// is the data that is to be filtered, and the second is an
+	// argument that may be passed with a colon (searchFor:searchString)
+	return function(arr, searchString){
+		if(!searchString){
+			return arr;
+		}
+		var result = [];
+		 searchString = searchString.toLowerCase();
+		// Using the forEach helper method to loop through the array
+		angular.forEach(arr, function(item){
+			if(item.nombre.toLowerCase().indexOf(searchString) !== -1){
+				result.push(item);
+			}
+		});
+		return result;
+	};
+});

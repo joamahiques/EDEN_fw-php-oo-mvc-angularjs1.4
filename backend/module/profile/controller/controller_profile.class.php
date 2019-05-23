@@ -98,7 +98,7 @@
     }
     function load_data_favorites(){
         set_error_handler('ErrorHandler');
-            $user = $_POST['tok'];
+            $user = $_GET['aux'];
             $arrValue = false;
             $arrValue = loadModel(MODEL_MODULE, "profile_model", "select_user_fav", $user);
         restore_error_handler();

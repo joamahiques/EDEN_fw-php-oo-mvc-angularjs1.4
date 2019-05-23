@@ -45,7 +45,6 @@
                                 </p>
                                 <p class="divpro">
                                         <button id="dropzone" dropzone="dropzoneConfig" class="dropzone" ng-model="dataprofile.dropzone"></button>
-                                        <!-- <span class="cd-error-message" ng-show="errorimg">hola</span> -->
                                 </p>
                             </div>  
                         
@@ -58,7 +57,32 @@
                         
                 </div>
                 <div id='myfavorites' ng-show="favorites" class="tab_content">
-                       <h2>Favorites</h2>
+                        <div class="input-group mb-3">
+                                <input type="text" class="form-control" ng-model="searchString" placeholder="Enter your search terms" >
+                        </div>
+                </br>
+                        <table class="table table-striped table-hover">
+                                <thead>
+                                        <tr>
+                                        <th>Nombre</th>
+                                        <th>Localidad</th>
+                                        <th>Provincia</th>
+                                        <th>Precio</th>
+                                        <th>Acción</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr dir-paginate="favo in favorites | searchFor:searchString | itemsPerPage:2 as filtered">
+                                        <td>{{favo.nombre}}</td>
+                                        <td>{{favo.localidad}}</td>
+                                        <td>{{favo.provincia}}</td>
+                                        <td>{{favo.precionoche}}</td>
+                                        <td><a ng-click="boorarfavo()">BORRAR</a></td>
+                                        </tr>
+                                </tbody>
+                        </table> 
+                        <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>
+                       <!-- <h2>Favorites</h2> -->
                 </div>
                 <div id='mypurchases' ng-show="purchases" class="tab_content">
                         <h2>Purchases</h2>

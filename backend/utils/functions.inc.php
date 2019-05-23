@@ -15,7 +15,7 @@ function generate_JWK($name){
        }';
     $JWT = new jwt;
     $token = $JWT->encode($header, $payload, $secret);
-    $json = $JWT->decode($token, $secret);
+    // $json = $JWT->decode($token, $secret);
     return $token;
 }
 

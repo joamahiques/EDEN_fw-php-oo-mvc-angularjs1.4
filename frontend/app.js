@@ -36,10 +36,16 @@ eden.config(['$routeProvider',
                 }
             }})
             .when("/profile", {templateUrl: "frontend/modules/profile/view/profile.view.html",controller: "profileCtrler",resolve:{
-                user:function(services,localstorageServices,$route){
+                user:function(services,localstorageServices){
                     $token = localstorageServices.getuser()
-                    return services.post('profile', 'load_data_user',{'token': $token});
-                }
+                    return services.post('profile', 'load_data_user',{'token': $token})
+                },
+                // favo:function(services,localstorageServices,$timeout){
+                //     $timeout(function(){
+                //         $token = localstorageServices.getuser()
+                //         return services.get('components', 'favorites','read_favorites',$token);
+                //     },2000);    
+                // },
             }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }

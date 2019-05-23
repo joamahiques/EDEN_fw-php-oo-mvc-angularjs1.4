@@ -26,7 +26,7 @@ class profile_dao {
     }
     public function select_user_fav_DAO($db, $user){
         
-        $sql = "SELECT nombre,localidad,provincia,capacidad,entera FROM casas, favoritos1 WHERE ID = home_id and user_id = ( SELECT IDuser FROM users2 WHERE token='$user')";
+        $sql = "SELECT nombre,localidad,provincia,capacidad,precionoche FROM casas, favoritos1 WHERE ID = home_id and user_id = ( SELECT IDuser FROM users2 WHERE token='$user')";
         $stmp = $db->ejecutar($sql);
         return $db->listar($stmp);
     }

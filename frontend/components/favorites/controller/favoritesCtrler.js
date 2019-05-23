@@ -1,7 +1,7 @@
-eden.controller('homeCtrler', function($scope, modalServices, services,$timeout, CommonServices){
+eden.controller('homeCtrler', function($scope, modalServices, services,$timeout, favoritesServices){
 
     $scope.addfavorites = function(){
-        CommonServices.addfavorite(home);
+        favoritesServices.addfavorite(home);
     }
 
 })

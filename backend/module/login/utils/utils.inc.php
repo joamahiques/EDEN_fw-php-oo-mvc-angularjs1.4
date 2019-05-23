@@ -36,19 +36,15 @@
    }
 
    function send_mail_social($user,$email,$newpass){
-        set_error_handler('ErrorHandler');
         $arrArgument = array(
             'reset-user'=>$user,
             'reset-email'=>$email,
         );
-        $mail['token']= loadModel(MODEL_MODULE,'login_model','recover_pass',$arrArgument);///envia contraseña para los registrados por social-log para que puedan modificar su profile
-        restore_error_handler();
-        if($mail){//enviar mail
-        $mail['type']='newpass';
+        //enviar mail
+        $mail['type']='newuser';
         $mail['inputEmail']=$arrArgument['reset-email'];
-        $mail['inputMessage']='Tu contraseña en EDEN: <b>'.$newpass.'</b>';
+        $mail['inputMessage']='Bienvenido a <b>EDEN</b>';
         enviar_email($mail);
-    }
 }
 require SITE_ROOT . 'module/login/utils/auth0/vendor/autoload.php';
 use Auth0\SDK\Auth0;

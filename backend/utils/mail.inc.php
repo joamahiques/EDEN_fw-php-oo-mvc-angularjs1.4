@@ -24,10 +24,10 @@
                 $body = 'Para visitar nuestra web, pulsa ' . $ruta;
                 break;
 
-            case 'newpass':///new pass para el registro por redes sociales
-                $subject = 'Tu Contraseña en EDEN';
+            case 'newuser':///new pass para el registro por redes sociales
+                $subject = 'Bienvenid@ a EDEN';
                 $ruta = "<a href='" . amigable("?module=home&function=list_home", true) . "'>aqu&iacute;</a>";
-                $body = 'Puedes cambiar la contraseña en tu perfil.<br>Para visitar nuestra web, pulsa ' . $ruta  ;
+                $body = 'Para visitar nuestra web, pulsa ' . $ruta  ;
                 break;
     
             case 'admin':///para enviar logs al admin

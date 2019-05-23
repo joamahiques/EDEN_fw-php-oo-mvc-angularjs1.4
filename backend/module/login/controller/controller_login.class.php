@@ -43,16 +43,18 @@
 							$arrValue=loadModel(MODEL_MODULE,'login_model','social',$arrArgument);
 					restore_error_handler();
 					if($arrValue){
-						//enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
+						//enviar mail para dar bienvenida
 						send_mail_social($arrArgument['user'],$arrArgument['email'],$arrValue[1]);
 						//devolvemos token
-						header('Location: http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue[0]);
-  					die();
+						$url='http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue[0];
+						redirect($url);
+  						die();
 					}	
 				}else{
 					//si existe devuelve el token;
-					header('Location: http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue1[0]['token']);
-  				die();
+					$url='http://localhost/www/EDEN_ANGULARJS/#/social'.$arrValue1[0]['token'];
+					redirect($url);					
+  					die();
 				}
 			$_SESSION['tiempo'] = time();
 			exit;
@@ -115,28 +117,7 @@
 						echo json_encode($datos);
 					}
 		}
-	// function social(){
-				
-	// 			$data= json_decode($_POST['data1'],true);
-	// 			$arrValue=check_user($data['id_user']);
-	// 			$_SESSION['avatar']=$data['avatar'];
-	// 			if(!$arrValue){
-	// 				///si no existe registralo
-	// 				set_error_handler('ErrorHandler');
-	// 					$arrValue=loadModel(MODEL_MODULE,'login_model','social',$data);
-	// 				restore_error_handler();
-	// 				if($arrValue){
-	// 					///enviar mail para cambiar contraseña( que no hay ) y poder modificar los datos del usuario en el perfil
-	// 					send_mail_social($data['user'],$data['email'],$arrValue[1]);
-	// 					echo json_encode($arrValue[0]);//devolvemos token
-	// 				}	
-	// 			}else{
-	// 				//si existe devuelve el token;
-	// 				echo json_encode($arrValue[0]['token']);
-	// 			}
-	// 		$_SESSION['tiempo'] = time();
-	// 		exit;
-	// }
+
 	////////enviar mail con token para cambiar la contraseña
 	function forgotpass() {
 			set_error_handler('ErrorHandler');

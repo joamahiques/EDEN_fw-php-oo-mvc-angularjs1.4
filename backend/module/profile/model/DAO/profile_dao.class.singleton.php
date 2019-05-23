@@ -45,10 +45,11 @@ class profile_dao {
         $useravatar = $arrArgument['prodpic'];
         $token = $arrArgument['tok'];
         $sql = " UPDATE users2 SET phone='$usertf', province='$userprovince', city='$usercity', avatar='$useravatar'
-                         WHERE token='$token'";;
+                WHERE token='$token'";;
         $res = $db->ejecutar($sql);
-        $newtok=$this->update_token_DAO($db,$user,$token);
-        return array ($res, $newtok); 
+        //$newtok=$this->update_token_DAO($db,$user,$token);
+        //return array ($res, $newtok); 
+        return $res;
          
     }
     public function update_pass_pro_DAO($db, $arrArgument){
@@ -58,8 +59,8 @@ class profile_dao {
         $hashed_pass = password_hash($passw, PASSWORD_DEFAULT);
         $sql = "UPDATE users2 set password ='$hashed_pass' WHERE token='$tok'";
         $res = $db->ejecutar($sql);
-        $newtok=$this->update_token_DAO($db,$user,$tok);
-        return array ($res, $newtok);
+        //$newtok=$this->update_token_DAO($db,$user,$tok);
+        return $res;
 
     }
     public function delete_favo_DAO($db, $arrArgument){

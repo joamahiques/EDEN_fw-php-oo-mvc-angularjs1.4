@@ -38,58 +38,54 @@
                     'province'=>$province,
                     'city'=>$city,
                     'prodpic' => $result_prodpic['data'],
-                    'tok'=>$result[1]
-                    
+                    'tok'=>$result[1]   
                 );
                 $arrValue = false;
                 $arrValue = loadModel(MODEL_MODULE, "profile_model", "update_user", $arrArgument);
             restore_error_handler();   
                 if ($arrValue){
+                    $arrValue=array(true,$result[1]); //token 
                     echo json_encode($arrValue);//devuelve true y token
                     exit;
                 }else{
-                    $arrValue=array(
-                        false,
-                        $result[1] 
-                    );   
+                    $arrValue=array( false, $result[1]);   
                     echo json_encode($arrValue); //devuelve false y token
                     exit;
                 }    
          }else if (!$result[0]){
-            $arrValue=array(
-                'ERROR',
-            );
+            $arrValue=array('ERROR');
             echo json_encode($arrValue);///error token no valido
             exit;
         }
     }
 
     function update_pass_pro(){
-        $result=validate_profile($_POST['old-pass']);
+        $result=validate_profile_pass($_POST['oldpass']);
         
         if ($result[0]=='ok'){
             set_error_handler('ErrorHandler');
                 $arrArgument = array(
-                    'password'=>$_POST['newpass1'],
+                    'password'=>$_POST['newpass'],
                     'tok'=>$result[1]
                 );
                 $arrValue = false;
                 $arrValue = loadModel(MODEL_MODULE, "profile_model", "update_pass_pro", $arrArgument);
             restore_error_handler();
             if ($arrValue){
+                $arrValue=array(true,$result[1]); //token 
                 echo json_encode($arrValue);
                 exit;
-            }
+            }else{
+                $arrValue=array(false, $result[1]);   
+                echo json_encode($arrValue); //devuelve false y token
+                exit;
+            }  
         }else if ($result[0]!='ok'){
-            $message2 = array(
-                '0' => 'bad',
-                '1'=>$result[1] 
-            );
-            echo json_encode($message2);
+            $arrValue=array('ERROR');
+            echo json_encode($arrValue);///error token no valido
             exit;
         }
 }
-
 
     function load_data_user(){
         set_error_handler('ErrorHandler');

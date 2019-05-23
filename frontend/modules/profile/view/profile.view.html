@@ -28,12 +28,7 @@
                                 </p>
                 
                                 <p class="fieldset">
-                                        <!-- <label class="image-replace cd-password" for="signup-password"></label>
-                                        <input class="full-width has-padding has-border" name="propassword" id="propassword" type="text"  placeholder="Password" ng-model="dataprofile.pass">
-                                        <a href="#0" class="hide-password">Hide</a>
-                                        <span class="cd-error-message" ng-show="formprofile.propassword.$error.required && (formprofile.propassword.$dirty || formprofile.propassword.$touched)">La contraseña es requerida</span>
-                                        <span class="cd-error-message" ng-show="errorpass">La contraseña no es correcta</span> -->
-                                        <p id="changepass" class="profile-form-bottom-message"><a  href="#0">Cambiar Contraseña</a></p>
+                                        <p id="changepass" class="profile-form-bottom-message"><a ng-click="tabpassword()">Cambiar Contraseña</a></p>
                                 </p>
                             </div>
                             
@@ -69,7 +64,7 @@
                         <h2>Purchases</h2>
                 </div>
         </div>  
-        <div class="cd-pass-modal">
+        <div class="cd-pass-modal ng-hide" ng-show="updatepass" >
         <div class="cd-pass-modal-container"> <!-- this is the container wrapper -->
         <div id="cd-change-password"> <!-- reset password form -->
                 <p class="cd-form-message">Quieres cambiar la contraseña? Primero introduce la actual y después la nueva.</p>
@@ -77,27 +72,29 @@
                 <form class="cd-form" name="profilepass" id="profilepass">
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="reset-email"></label>
-                        <input class="full-width has-padding has-border" name="old-pass" id="old-pass" type="text" placeholder="Contraseña actual">
-                        <span class="cd-error-message">Error message here!</span>
-                        <span id="error_update_pass"><span class="cd-error-message"></span></span>
+                        <input class="full-width has-padding has-border" name="oldpass" id="old-pass" type="text" placeholder="Contraseña actual" required ng-model="profilepass.old">
+                        <span class="cd-error-message" ng-show="profilepass.oldpass.$error.required && (profilepass.oldpass.$dirty || profilepass.oldpass.$touched)">Campo requerido</span>
+                        <span class="cd-error-message" ng-show="erroroldpass"></span>
                     </p>
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="reset-email"></label>
-                        <input class="full-width has-padding has-border" name="newpass1" id="newpass1" type="text" placeholder="Contraseña Nueva">
-                        <span class="cd-error-message">Error message here!</span>
+                        <input class="full-width has-padding has-border" name="newpass1" id="newpass1" type="text" placeholder="Contraseña Nueva" required ng-model="profilepass.new">
+                        <span class="cd-error-message" ng-show="profilepass.newpass1.$error.required && (profilepass.newpass1.$dirty || profilepass.newpass1.$touched)">Campo requerido</span>
                     </p>
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="reset-email"></label>
-                        <input class="full-width has-padding has-border"name="newpass2" id="newpass2" type="text" placeholder="Repite Contraseña">
-                        <span class="cd-error-message">Error message here!</span>
+                        <input class="full-width has-padding has-border"name="newpass2" id="newpass2" type="text" placeholder="Repite Contraseña" required ng-pattern="{{profilepass.new}}" ng-model="profilepass.new2">
+                        <span class="cd-error-message" ng-show="profilepass.newpass2.$error.required && (profilepass.newpass2.$dirty || profilepass.newpass2.$touched)">Campo requerido</span>
+                        <span class="cd-error-message" ng-show="profilepass.newpass2.$error.pattern && (profilepass.newpass2.$dirty || profilepass.newpass2.$touched)">Las contraseñas no son iguales</span>
+
                     </p>
     
                     <p class="fieldset">
-                        <input class="full-width has-padding" type="submit" value="Change password">
+                        <input class="full-width has-padding" type="submit" ng-click="submitupdatepass()" value="Change password">
                     </p>
                 </form>
     
-                <p class="profile-form-bottom-message center"><a id="closepass" href="#0">Cerrar</a></p>
+                <p class="profile-form-bottom-message center"><a id="closepass" ng-click="updatepass = !updatepass">Cerrar</a></p>
             </div> <!-- cd-reset-password -->
         </div>
 </div> 

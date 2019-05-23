@@ -350,20 +350,21 @@ div.ngdialog-overlay{
     z-index: 1000;
     overflow-y: auto;
     cursor: pointer;
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s 0, visibility 0 0.3s;
-    -moz-transition: opacity 0.3s 0, visibility 0 0.3s;
-    transition: opacity 0.3s 0, visibility 0 0.3s;
   }
-  .cd-pass-modal.is-visible {
-    visibility: visible;
-    opacity: 1;
-    -webkit-transition: opacity 0.3s 0, visibility 0 0;
-    -moz-transition: opacity 0.3s 0, visibility 0 0;
-    transition: opacity 0.3s 0, visibility 0 0;
-  }
-  .cd-pass-modal.is-visible .cd-pass-modal-container {
+  .cd-pass-modal.ng-hide-add,
+  .cd-pass-modal.ng-hide-remove {
+    -webkit-transition : 1s ease-in-out opacity;
+    -moz-transition    : 1s ease-in-out opacity;
+    -ms-transition     : 1s ease-in-out opacity;
+    -o-transition      : 1s ease-in-out opacity;
+    transition         : 1s ease-in-out opacity;
+    opacity            : 1;
+}
+
+    .cd-pass-modal.ng-hide {
+        opacity : 0;
+    }
+   .cd-pass-modal-container {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
@@ -373,6 +374,7 @@ div.ngdialog-overlay{
   .cd-pass-modal-container {
     position: relative;
     width: 90%;
+    top: 5%;
     max-width: 600px;
     background: #FFF;
     margin: 3em auto 4em;
@@ -390,7 +392,9 @@ div.ngdialog-overlay{
     -moz-transition-duration: 0.3s;
     transition-duration: 0.3s;
   }
-
+  #cd-change-password{
+    padding-bottom: 10px;
+  }
   .cd-form .img-error-message {
     display: inline-block;
     position: absolute;

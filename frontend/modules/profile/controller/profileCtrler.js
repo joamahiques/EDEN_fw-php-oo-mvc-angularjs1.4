@@ -1,11 +1,11 @@
 eden.controller('profileCtrler', function($scope,user,services, toastr,$location,loginservices,localstorageServices,geoapiServices){
     localstorageServices.setuser(user[1]);
     loginservices.login();
-
-    //console.log(user[0][0]);
+    $scope.updatepass=false;
     $user=user[0][0];
-    //console.log($user.user);
-    $scope.errorimgmess='';
+    if($user==undefined){
+        location.href='#/'
+    }
     $scope.dataprofile={
         user:$user.user,
         mail:$user.email,
@@ -16,6 +16,10 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
         cityselected:'Escoja una población',
         dropzone:''
     }
+    $scope.profilepass={
+        old:"",
+        new:""
+    }
     if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
         $scope.dataprofile.proviselected = $user.province;
     }
@@ -23,23 +27,29 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
         $scope.dataprofile.cityselected = $user.city;
     }
    
-    $scope.tabprofile = function() {/// pestaña de new acoutn
+    $scope.tabprofile = function() {/// pestaña del perfil
         $scope.profile=true;
         $scope.favorites=false;
         $scope.purchases=false;
         
     }
-    $scope.tabfavorites = function() {// pestaña de login
+    $scope.tabfavorites = function() {// pestaña favorites
         $scope.profile=false;
         $scope.favorites=true;
         $scope.purchases=false;
         
     }
-    $scope.tabpurchase = function() {// pestaña de login
+    $scope.tabpurchase = function() {// pestaña de compras
         $scope.profile=false;
         $scope.favorites=false;
         $scope.purchases=true;
         
+    }
+    $scope.tabpassword = function(){
+        // $scope.profile=false;
+        // $scope.favorites=false;
+        // $scope.purchases=false;
+        $scope.updatepass=true;
     }
     ///////provincias
     geoapiServices.loadprovince()
@@ -56,6 +66,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
         })
 
     }
+    ////////dropzone
     $scope.dropzoneConfig = {
         'options': {
             'url': 'backend/index.php?module=profile&function=uploadimg',
@@ -91,7 +102,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
                 }
             }
     }};
-
+///////update
     $scope.updateprofile = function(){
         console.log($scope.dataprofile);
         var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
@@ -100,23 +111,47 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,$location
         console.log(profile_form);
         services.post('profile', 'update_profile', profile_form).then(function (response) {
             console.log(response);
-            if(response[0]){
+            if(response[0]==true){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
                 toastr.success('Perfil actualizado correctamente', 'Perfecto');
                 $location.href='#/profile'
-            }else if (!response[0]){
+            }else if (response[0]==false){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
                 toastr.error('No se ha podido actualizar el perfil, prueba mas tarde', 'ERROR');
                 $location.href='#/profile'
             }else{
                 toastr.error('Bicho malo FUERA', 'ERROR');
-                $location.href='#/'
-            }
-            
+                loginservices.logout();
+                //$location.href='#/'
+            }    
         })
+    }
 
+/////////actulizar contraseña
+    $scope.submitupdatepass = function(){
+        var data = {"oldpass": $scope.profilepass.old, "newpass": $scope.profilepass.new,"tok": localstorageServices.getuser()};
+        var profile_form = JSON.stringify(data);
+        services.post('profile', 'update_pass_pro', profile_form).then(function (response) {
+            console.log(response);
+            if(response[0]==true){
+                localstorageServices.setuser(response[1]);
+                loginservices.login();;
+                toastr.success('Contraseña actualizada correctamente', 'Perfecto');
+                $scope.updatepass=false;
+            }else if (response[0]==false){
+                localstorageServices.setuser(response[1]);
+                loginservices.login();;
+                toastr.error('No se ha podido actualizar la contraseña, prueba mas tarde', 'ERROR');
+                $scope.updatepass=false;
+            }else{
+                toastr.error('Bicho malo FUERA', 'ERROR');
+                loginservices.login();
+                loginservices.logout();
+                location.href='#/'
+            }
+        })
     }
 
 })

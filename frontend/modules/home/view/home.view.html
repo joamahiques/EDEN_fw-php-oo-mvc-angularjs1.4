@@ -16,9 +16,9 @@
                         </div>
             </div>
             <div class='load' ng-show='loading'><img src='frontend/assets/img/Ellipsis-1s-91px.gif'></div>
-            <div ng-include='"frontend/components/apis/clubrural/view/clubrural.view.html"'>
-               
-            </div>
+            <div class='club' ng-controller="clubruralCtrler">
+                <clubrural></clubrural>
+            </div> 
     	</div>
     </div>
 </div>

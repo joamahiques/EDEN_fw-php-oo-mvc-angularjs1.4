@@ -1,6 +1,6 @@
 # FRAMEWORK PHP OO MVC AngularJS_1.4
 
-##### Continuación del proyecto EDEN MVC: 
+##### Continuación del proyecto EDEN MVC: Migramos Cliente a AngularJS
 ##### Proyecto Buscador de casas rurales, con buscador, carrito, favoritos, login...
 
 ###### **Funcionalidad de la aplicación:**
@@ -13,23 +13,24 @@
 * LOGS
 * MAILGUN (alta, cambioContraseña, contacto, nuevaContraseña, admin, compra)
 * Arquitectura MVC
-* Home con infinite-scroll de los productos([ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/))
-* Login y registro (desde aplicación y redes sociales.)(con [Auth0](https://auth0.com/) en PHP y logout en js)
+* Home con infinite-scroll de los productos, ordenados por provincias, con loading.
+* Login y registro (desde aplicación (angularjs) y redes sociales(PHP y logout en angularjs).
 * Perfil (Actualización de datos, dropzone, lista d favoritos, lista de compras(con descarga de PDF))
-* Tienda con paginación, con vista lista o vista en mapa de todas las casas o los resultados del buscador( mapa de Google maps en js y con infowindows).
+* Tienda con paginación, con vista lista o vista en mapa de todas las casas o los resultados del buscador( mapa de Google maps en js y con infowindows(con details y favoritos)).
 * Carrito (con tabla de carro de cada usuario, que se borra con la compra y se inserta en la tabla compras)
 * Contact con formulario de contacto con validación y MailGun y mapa de ubicación.
-* Modal para details, para toda la aplicación, como Component.[ngDialog](https://likeastore.github.io/ngDialog/)
-* Translate con Angular-Translate(i18n). [Angular-Translate](https://angular-translate.github.io/)
+* Modal ngDialog para details y login, para toda la aplicación, como Component.
+* Translate con Angular-Translate(i18n).
 * Search para toda la aplicación para mostrar los resultados en Shop.
-* Directiva CompareTo en el login.
+* Directiva propia CompareTo en el login.
+* Directiva propia clubrural, para  home y shop
 * apiconnector.
 * token y tokenMail (token se borra con el logout)
 * Funcion general Generate_token, función update_token(login, profile, cart)
 * Update de token en acciones conflictivas.
 * Respaldo en xml en fallo de APIs.
 * Cambio de tabla en bbdd al confirmpurchase.
-* Diferente menú en relación al usuario.
+* Diferentes vistas en relación al usuario ( menú, cambiar contraseña en el perfil).
 * Logout(session destroy, insert_cart, delete_token)
 * validación contra base de datos, (validación del formulario de login),
 * validación formularios angularjs,
@@ -37,7 +38,6 @@
 * Delete y Deleta All
 * APIS para Provincias, buscador de casas rurales y google maps
 * Buscador en todas las páginas.
-* Idiomas en js y json
 * Proteccion de URL para CRUD
 * Logout inactividad.
 * Módulos:
@@ -50,8 +50,9 @@
     * Cart
 
 ###### **Otras tecnologías:**
-
-* [Datatables.net](https://datatables.net/)
+* ui-Boostrap (https://angular-ui.github.io/bootstrap/)
+    * Pagination (https://github.com/angular-ui/bootstrap/tree/master/src/pagination)
+    * Typeahead (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
 * Hash password y verify password
 * API [Clubrural.com](https://www.clubrural.com/api.php) (Por geolocalización y por provincias)
 * API [geoapi.es](https://geoapi.es/documentacion)
@@ -63,14 +64,17 @@
 * Constantes php para Keys
 * [Gravatar](https://es.gravatar.com/)
 * Moesif CORS.
-* Auth0(https://auth0.com/)
+* ngDialog [ngDialog](https://likeastore.github.io/ngDialog/)
+* [Angular-Translate](https://angular-translate.github.io/)
+* [Auth0](https://auth0.com/)
 * Mailgun(https://www.mailgun.com/)
-* Pagination
+* ngInfinite-Scroll ([ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/))
 * Componenetes:
     * Modal
-    * Favoritos
+    * Favorites
     * APIs
-    * Buscador
+    * Search
+    * Translate
 
 * * *
 

@@ -56,13 +56,6 @@
                     exit;
                 }else{
                     echo json_encode($arrValue);
-                    // foreach ($arrValue as $row) {
-                    //         echo json_encode($arrValue);
-                    //         // '<div class="autoelement">
-                                
-                    //         //     <a  class="element" data="'.$row['provincia'].'" id="'.$row['nombre'].'">'.utf8_encode($row['nombre']).'</a>
-                    //         // </div>';
-                    // }
                     exit;
                 }
         }

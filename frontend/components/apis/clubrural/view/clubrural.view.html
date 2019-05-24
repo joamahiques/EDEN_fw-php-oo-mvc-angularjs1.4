@@ -1,4 +1,12 @@
-<div class='club' ng-controller="clubruralCtrler">
+<!-- <div class='club' ng-controller="clubruralCtrler"> -->
     <h2>Ofertas cerca de tí</h2>
-    <div id ="inicioclub"></div>
-</div>
+    <div id ="inicioclub">
+        <div class="grid" ng-repeat='homeclub in homesclub |limitTo:3' ng-model="club">
+            <div class="text1 flex">{{homeclub.nombre}}</div>
+            <br><img src="{{homeclub.img}}">
+            <br><span>Provincia:   <span> {{homeclub.provincia}}</span></span></br>
+            <br><span>Localidad:   <span> {{homeclub.localidad}}</span></span></br>
+            <a class="btn" href="{{homeclub.url}}" target="_blank">CLUBRURAL</a>
+        </div>
+    </div>
+<!-- </div> -->

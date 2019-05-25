@@ -6,18 +6,35 @@ class controller_geoapi{
         
     }
     function load_provinces(){
-            $provis =file_get_contents(SITE_ROOT.'/components/geoapi/resources/provinciasypoblaciones.xml');
-            $xml = simplexml_load_string($provis); // where $xml_string is the XML data you'd like to use (a well-formatted XML string). If retrieving from an external source, you can use file_get_contents to retrieve the data and populate this variable.
-            echo json_encode($xml);
+            $json = array();
+            $tmp = array();
+            $provincias = simplexml_load_file(SITE_ROOT.'/components/geoapi/resources/provinciasypoblaciones.xml');
+            $result = $provincias->xpath("/lista/provincia/nombre | /lista/provincia/@id");
+            for ($i=0; $i<count($result); $i+=2) {
+                $e=$i+1;
+                $provincia=$result[$e];
+                $tmp = array(
+                  'CPRO' => (string) $result[$i], 'PRO' => (string) $provincia
+                );
+                array_push($json, $tmp);
+              }
+            echo json_encode($json);
             exit;
     }
-//     function load_homes_geo(){
-            
-//         $idprovi=$_GET['aux2'];
-//         $datos = json_decode($_GET['aux2'],true);
-//         $homes =file_get_contents("https://api.clubrural.com/api.php?claveapi=".keyclub."&type=gmaps&lat=".$datos['lat']."&lng=".$datos['long']."&limitkm=".$datos['dis']);
-//         $xml = simplexml_load_string($homes); // where $xml_string is the XML data you'd like to use (a well-formatted XML string). If retrieving from an external source, you can use file_get_contents to retrieve the data and populate this variable.
-//         echo json_encode($xml);
-//         exit;
-// }
+    function load_cities(){
+            $json = array();
+            $tmp = array();
+    
+            $filter = (string) $_GET['aux2'];;
+            $xml = simplexml_load_file(RESOURCES . 'provinciasypoblaciones.xml');
+            $result = $xml->xpath("/lista/provincia[@id='$filter']/localidades");
+            for ($i = 0; $i < count($result[0]); $i++) {
+                $tmp = array(
+                    'DMUN50' => (string) $result[0]->localidad[$i]
+                );
+                array_push($json, $tmp);
+            }
+            echo json_encode($json);
+            exit;
+    }
 }

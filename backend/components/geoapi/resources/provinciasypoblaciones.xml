@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lista>
 	<provincia id="01">
-		<nombre><![CDATA[Álava]]></nombre>
+		<nombre><![CDATA[Alava]]></nombre>
 		<localidades>
 			<localidad c="0"><![CDATA[Aberasturi]]></localidad>
 			<localidad c="0"><![CDATA[Abetxuko]]></localidad>

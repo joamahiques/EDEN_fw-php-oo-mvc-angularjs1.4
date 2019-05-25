@@ -84,7 +84,6 @@ $scope.downloadpdf = function() {
     ///////provinces
     geoapiServices.loadprovince()
     .then( function(response){
-        //console.log(response);
         $scope.provinces=response;
     });
     //////////cities
@@ -92,6 +91,7 @@ $scope.downloadpdf = function() {
         var provi=$scope.dataprofile.provi;
         geoapiServices.loadcity(provi)
         .then( function(response){
+            $scope.dataprofile.cityselected = 'Escoja una población';
             $scope.cities=response
         })
 
@@ -133,9 +133,9 @@ $scope.downloadpdf = function() {
     }};
 ///////update
     $scope.updateprofile = function(){
-        console.log($scope.dataprofile);
+        //console.log($scope.dataprofile.provi.PRO.toUpperCase());
         var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
-        "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO,"city": $scope.dataprofile.city.DMUN50,"tok": localstorageServices.getuser()};
+        "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO.toUpperCase(),"city": $scope.dataprofile.city.DMUN50.toUpperCase(),"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
         console.log(profile_form);
         services.post('profile', 'update_profile', profile_form).then(function (response) {

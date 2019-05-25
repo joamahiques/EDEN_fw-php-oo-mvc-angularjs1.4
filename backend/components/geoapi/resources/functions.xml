@@ -4,8 +4,8 @@
         <name>load_provinces</name>
         <uri>load_provinces</uri>
     </function>
-    <!-- <function>
-        <name>load_homes_geo</name>
-        <uri>load_homes_geo</uri>
-    </function> -->
+    <function>
+        <name>load_cities</name>
+        <uri>load_cities</uri>
+    </function>
 </functions>

@@ -3,6 +3,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     loginservices.login();
     $scope.updatepass=false;
     $scope.aupdatepass=true;
+    $scope.tablePur='';
     $user=user[0][0];
     if($user==undefined){//si no existe token(error al comprobar token) fuera de profile
         location.href='#/'
@@ -31,7 +32,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     if (typeof $user.city != 'undefined' && $user.city) {///si no es null ni undefined ni esta vacio.... 
         $scope.dataprofile.cityselected = $user.city;
     }
-   
+/////////////////////////////tabs   
     $scope.tabprofile = function() {/// profile tab
         $scope.profile=true;
         $scope.favorites=false;
@@ -50,14 +51,36 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         
     }
     $scope.tabpurchase = function() {// purchases tab
+        $scope.active=true;
         $scope.profile=false;
         $scope.favorites=false;
         $scope.purchases=true;
+        services.get1('profile','load_data_purchases',localstorageServices.getuser()).then(function (response) {
+            console.log(response);
+            $scope.purchases=response;
+        });
         
     }
     $scope.tabpassword = function(){///open updatepass modal
         $scope.updatepass=true;
     }
+////////////////////////////PDF Purchases
+$scope.downloadpdf = function() {
+    var doc = new jsPDF();
+    var rows = [];
+    angular.forEach($scope.purchases, function (value, key) {
+        var temp = [value.fecha,value.nombre,value.cantidad,value.precio,value.total];
+        rows.push(temp);
+    }); 
+    doc.autoTable({
+        margin: {top: 30},
+        head: [['Fecha', 'Nombre','Cantidad','Precio','Total']],
+        body: rows,
+    })
+     doc.text(20,20,"Mis Compras en EDEN");
+     doc.save('mypurchases.pdf');
+}
+/////////////////////////profile    
     ///////provinces
     geoapiServices.loadprovince()
     .then( function(response){
@@ -88,7 +111,6 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
                 // console.log(file);
                 // console.log(response);
                 // response = JSON.parse(response);
-
                 if (response.result) {
                     toastr.success('Foto subida correctamente, Actualiza el perfil para guardar cambios', 'Perfecto');
                 
@@ -164,16 +186,12 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
 })
 
 eden.filter('searchFor', function(){
-	// All filters must return a function. The first parameter
-	// is the data that is to be filtered, and the second is an
-	// argument that may be passed with a colon (searchFor:searchString)
 	return function(arr, searchString){
 		if(!searchString){
 			return arr;
 		}
 		var result = [];
 		 searchString = searchString.toLowerCase();
-		// Using the forEach helper method to loop through the array
 		angular.forEach(arr, function(item){
 			if(item.nombre.toLowerCase().indexOf(searchString) !== -1){
 				result.push(item);

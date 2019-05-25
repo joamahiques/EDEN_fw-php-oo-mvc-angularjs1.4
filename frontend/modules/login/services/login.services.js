@@ -1,5 +1,5 @@
-eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr','favoritesServices',
-function($rootScope,localstorageServices,services,toastr,favoritesServices){
+eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr','favoritesServices','$route',
+function($rootScope,localstorageServices,services,toastr,favoritesServices,$route){
     var service={};
     service.login=login;
     service.logout=logout;
@@ -43,6 +43,7 @@ function($rootScope,localstorageServices,services,toastr,favoritesServices){
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
            // console.log(response);
             if(response='ok'){
+                
                 if($rootScope.type=="client_rs"){
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
@@ -62,13 +63,14 @@ function($rootScope,localstorageServices,services,toastr,favoritesServices){
                     delete $rootScope.user;
                     delete $rootScope.type;
                     toastr.info('Sesión cerrada correctamente', 'BYE!');
-                    //console.log($rootScope);
+                    $route.reload();
                 }
                  
             }else{
+                toastr.info('Sesión cerrada correctamente', 'BYE!');
                 //console.log(response);
             }
-            favoritesServices.readfavorites()
+            
         
         });
     }

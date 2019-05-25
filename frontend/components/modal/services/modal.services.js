@@ -5,8 +5,7 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
     serv.closeModal = closeModal;
     return serv;
     function openModal(home,modu,func){
-        console.log(home);
-
+        //console.log(home);
             var modalInstance=ngDialog.open({
                 template: 'frontend/components/modal/view/modal.view.html',
                 className: 'ngdialog-theme-default',
@@ -15,7 +14,7 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
                 height:'fit-content',
                 type: 'full-screen',
                 resolve: {
-                    details: function(services, $route){
+                    details: function(services){
                         return services.get('components',modu,func,home);
                     }
                 }

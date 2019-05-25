@@ -8,9 +8,8 @@ function(services,$rootScope,localstorageServices,$timeout,$document){
         var token = localstorageServices.getuser();
         if(token){
             services.get('components', 'favorites','read_favorites',token).then(function (response) {
-                console.log(response);
+                //console.log(response);
                 angular.forEach(response,function(value, key){
-                    
                     var myElement=document.getElementById(value.nombre);
                       if(myElement){  
                           myElement.className='fas fa-heart';
@@ -21,7 +20,7 @@ function(services,$rootScope,localstorageServices,$timeout,$document){
     }
 
     function addfavorite(home){
-            console.log(home);
+            //console.log(home);
             var token = localstorageServices.getuser();
             var myElement=document.getElementById(home);
             data={'id':home,'tok':token};

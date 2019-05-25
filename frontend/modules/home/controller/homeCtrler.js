@@ -7,9 +7,8 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
         $scope.homes = [];
         $scope.busy = false;
         $scope.loading = false;
-
+        //scroll
         $scope.loadMore = function(){
-
             if ($scope.busy) return;
           
               $scope.busy = true;
@@ -41,10 +40,9 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
           
           $scope.addfavorites = function(home){
             favoritesServices.addfavorite(home);
-          }
+          };
 
          $scope.dialog = function(home) {
             modalServices.openModal(home,'modal','read_modal');
-        
-      };
+          };
 });

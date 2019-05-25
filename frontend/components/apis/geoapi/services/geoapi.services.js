@@ -1,5 +1,5 @@
-eden.factory('geoapiServices', ['$http','$q',
-function($http,$q){
+eden.factory('geoapiServices', ['$http','$q', 'services',
+function($http,$q,services){
     var service = {};
     service.loadprovince = loadprovince;
     service.loadcity = loadcity;
@@ -14,6 +14,13 @@ function($http,$q){
                   url: "http://apiv1.geoapi.es/provincias?type=JSON&key="+keygeo+"&sandbox=0"
               }).success(function(data, status, headers, config) {
                  if(data.data.length == '0'){/////////si esta vacio cargamos de xml
+                    services.get("components","geoapi","load_provinces", data).then(function(response) {
+                        //console.log(response.alojamiento);
+                            // lista = response.alojamiento.sort(function() {return Math.random() - 0.5});
+                            // $scope.homesclub=lista;
+            
+                        })
+                     
                     console.log('xml');
                     //defered.resolve(load_provinces_xml());
                 }else{
@@ -21,6 +28,12 @@ function($http,$q){
                 }
               }).error(function(data, status, headers, config) {
                 console.log('xml1');
+                services.get("components","geoapi","load_provinces", data).then(function(response) {
+                    console.log(response);
+                        // lista = response.alojamiento.sort(function() {return Math.random() - 0.5});
+                        // $scope.homesclub=lista;
+                        defered.resolve(response.provincia); 
+                    })
                 //defered.resolve(load_provinces_xml());
               });
         return promise;

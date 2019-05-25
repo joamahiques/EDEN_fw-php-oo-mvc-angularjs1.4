@@ -60,7 +60,7 @@
                         <div class="input-group mb-3">
                                 <input type="text" class="form-control" ng-model="searchString" placeholder="Enter your search terms" >
                         </div>
-                </br>
+                        </br>
                         <table class="table table-striped table-hover">
                                 <thead>
                                         <tr>
@@ -85,9 +85,37 @@
                        <!-- <h2>Favorites</h2> -->
                 </div>
                 <div id='mypurchases' ng-show="purchases" class="tab_content">
-                        <h2>Purchases</h2>
+                        
+                        <div class="input-group mb-3">
+                                <input type="text" class="form-control" ng-model="searchStringPur" placeholder="Enter your search terms" >
+                                
+                        </div>                
+                        </br>
+                        <table id="tablePurchases" class="table table-striped table-hover" >
+                                <thead>
+                                        <tr>
+                                        <th>Fecha</th>
+                                        <th>Nombre</th>
+                                        <th>Cantidad</th>
+                                        <th>Precio</th>
+                                        <th>Total</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr dir-paginate="pur in purchases | searchFor:searchStringPur | itemsPerPage:2 as filtered">
+                                        <td>{{pur.fecha}}</td>
+                                        <td>{{pur.nombre}}</td>
+                                        <td>{{pur.cantidad}}</td>
+                                        <td>{{pur.precio}}</td>
+                                        <td>{{pur.total}}</td>
+                                        </tr>
+                                </tbody>
+                        </table> 
+                        <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>
+                        <p ng-click="downloadpdf()" class="profile-form-bottom-message"><a>Descargar PDF</a></p>
                 </div>
         </div>  
+        <!-- cambiar contraseña -->
         <div class="cd-pass-modal ng-hide" ng-show="updatepass" >
         <div class="cd-pass-modal-container"> <!-- this is the container wrapper -->
         <div id="cd-change-password"> <!-- reset password form -->

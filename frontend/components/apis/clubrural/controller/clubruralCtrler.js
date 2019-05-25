@@ -1,5 +1,6 @@
 eden.controller('clubruralCtrler',function($scope, $http,services,CommonServices,searchservices){
     $scope.items = '';
+    $scope.site='';
     var idprovi;
     $http.get('backend/components/clubrural/resources/provinces.json').success(function(response) {
         angular.forEach(response, function(i, index){
@@ -14,6 +15,7 @@ eden.controller('clubruralCtrler',function($scope, $http,services,CommonServices
                     //console.log(response);
                     lista = response.alojamiento.sort(function() {return Math.random() - 0.5});
                     $scope.homesclub=lista;
+                    $scope.site='en '+response.alojamiento[0].provincia;
             })
         }else{
             //por geolocalización
@@ -24,10 +26,10 @@ eden.controller('clubruralCtrler',function($scope, $http,services,CommonServices
                 var data = JSON.stringify({"lat": latitude, "long": longitude,"dis": num});
             
             services.get("components","clubrural","load_homes_geo", data).then(function(response) {
-                //console.log(response.alojamiento);
+                console.log(response.alojamiento);
                     lista = response.alojamiento.sort(function() {return Math.random() - 0.5});
                     $scope.homesclub=lista;
-    
+                    $scope.site='a menos de '+num+ ' km de tí';
                 })
             })   
         }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<functions>
+    <function>
+        <name>load_provinces</name>
+        <uri>load_provinces</uri>
+    </function>
+    <!-- <function>
+        <name>load_homes_geo</name>
+        <uri>load_homes_geo</uri>
+    </function> -->
+</functions>

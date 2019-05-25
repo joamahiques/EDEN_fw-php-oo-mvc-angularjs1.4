@@ -18,13 +18,16 @@ eden.controller('shopCtrler', function($scope, homes,modalServices, searchservic
   }
 });
 
-eden.controller('mapshopCtrler', function(searchservices,$rootScope, ubication_map,services,$scope, modalServices){
+eden.controller('mapshopCtrler', function(searchservices, ubication_map,services,$scope, modalServices,favoritesServices){
   
-      $scope.dialog = function(home) {
-        modalServices.openModal(home,'modal','read_modal');
+    $scope.dialog = function(home) {
+      modalServices.openModal(home,'modal','read_modal');
 
     };
-  
+    $scope.addfavorites = function(home){
+      favoritesServices.addfavorite(home);
+    }
+
       if(searchservices.data.provincia){
         ubi={'ubi':searchservices.data.provincia,'muni':searchservices.data.localidad}
       }else{

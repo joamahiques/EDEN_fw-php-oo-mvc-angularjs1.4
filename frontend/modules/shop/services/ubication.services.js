@@ -1,5 +1,5 @@
- eden.factory('ubication_map',['$rootScope','services','$timeout',
-function($rootScope,services, $timeout){
+ eden.factory('ubication_map',['$rootScope','services','$timeout','favoritesServices',
+function($rootScope,services, $timeout,favoritesServices){
   var service={};
   service.initmap1=initMap1;
   var map, infoWindow;
@@ -89,7 +89,7 @@ function($rootScope,services, $timeout){
 
       function addResult(result, i) {
        // console.log(result);
-
+       
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
         var markerIcon = MARKER_PATH + markerLetter + '.png';
@@ -112,6 +112,7 @@ function($rootScope,services, $timeout){
         tr.appendChild(iconTd);
         tr.appendChild(nameTd);
         results.appendChild(tr);
+        
       }
 
       function clearResults() {
@@ -135,8 +136,11 @@ function($rootScope,services, $timeout){
       function buildIWContent(place) {
         $rootScope.place={};
         $timeout(function () {
+          //favoritesServices.readfavorites();
           $rootScope.place = place;
-      }, 20);
+          
+
+      },20);
       
         }
     return service;

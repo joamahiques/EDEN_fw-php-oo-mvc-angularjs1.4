@@ -1,6 +1,6 @@
 # FRAMEWORK PHP OO MVC AngularJS_1.4
 
-##### Continuación del proyecto EDEN MVC: Migramos Cliente a AngularJS
+##### Continuación del proyecto EDEN MVC: Migramos Cliente a AngularJS, SIN JQuery
 ##### Proyecto Buscador de casas rurales, con buscador, carrito, favoritos, login...
 
 ###### **Funcionalidad de la aplicación:**
@@ -33,13 +33,12 @@
 * Diferentes vistas en relación al usuario ( menú, cambiar contraseña en el perfil).
 * Logout(session destroy, insert_cart, delete_token)
 * validación contra base de datos, (validación del formulario de login),
-* validación formularios angularjs,
-* 404 y 503
-* Delete y Deleta All
+* validación formularios angularjs
+* Directiva DropZone
+* Constantes js para Keys
+* Constantes php para Keys
 * APIS para Provincias, buscador de casas rurales y google maps
 * Buscador en todas las páginas.
-* Proteccion de URL para CRUD
-* Logout inactividad.
 * Módulos:
     * Home
     * CRUD (solo migrado el list y el delete a FW PHP)
@@ -50,25 +49,22 @@
     * Cart
 
 ###### **Otras tecnologías:**
-* ui-Boostrap (https://angular-ui.github.io/bootstrap/)
-    * Pagination (https://github.com/angular-ui/bootstrap/tree/master/src/pagination)
-    * Typeahead (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
+* [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)
+    * [Pagination] (https://github.com/angular-ui/bootstrap/tree/master/src/pagination)
+    * [Typeahead] (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
 * Hash password y verify password
 * API [Clubrural.com](https://www.clubrural.com/api.php) (Por geolocalización y por provincias)
 * API [geoapi.es](https://geoapi.es/documentacion)
 * Google Maps (ubicacion, localización de casas)
 * Slider en páguina Home
-* Toastr AngularJS
-* DropZone
-* Constantes js para Keys
-* Constantes php para Keys
+* [Toastr] (https://github.com/Foxandxss/angular-toastr)
 * [Gravatar](https://es.gravatar.com/)
 * Moesif CORS.
-* ngDialog [ngDialog](https://likeastore.github.io/ngDialog/)
+* [ngDialog](https://likeastore.github.io/ngDialog/)
 * [Angular-Translate](https://angular-translate.github.io/)
 * [Auth0](https://auth0.com/)
-* Mailgun(https://www.mailgun.com/)
-* ngInfinite-Scroll ([ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/))
+* [Mailgun](https://www.mailgun.com/)
+* [ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/)
 * Componenetes:
     * Modal
     * Favorites

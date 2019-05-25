@@ -14,12 +14,12 @@
                 <div style="display: none">
                     <div id="info-content">
                             <div> 
-                                    <div class="text1 flex">{{place.nombre}}<a class="corazon" id="{{place.nombre}}"><i class="far fa-heart" ></i></a></div>
+                                    <div class="text1 flex blue">{{place.nombre}}<a class="corazon"></a></div>
                                     <br><span>Localidad:   <span id="localidad">{{place.localidad}}</span></span></br>
                                     <br><span>Provincia:   <span id="prov">{{place.provincia}}</span></span></br>
                                     <br><span>Capacidad Total:     <span id="capacidad">{{place.capacidad}}</span></span></br>
                                     <div>
-                                    <a  class="read" ng-click="dialog(place.nombre)" id="{{place.nombre}}">READ MORE</a>
+                                    <div style="text-align:center"><a  class='read' ng-click="dialog(place.nombre)"  id="{{place.nombre}}">READ MORE</a></div>&nbsp;
                                     </div>
                             </div>
                         

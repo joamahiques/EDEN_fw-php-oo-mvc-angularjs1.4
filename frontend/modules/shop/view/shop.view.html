@@ -6,11 +6,11 @@
                 <div id="inicioshop" class="flex1">
                         <div class="grid" dir-paginate="home in homes | filter:provincia | filter:localidad | filter:homesearch | itemsPerPage:6 as filtered">
                             <div class="text1 flex">{{home.nombre}}<a class="corazon"><i ng-click="addfavorites(home.nombre)" id="{{home.nombre}}" class='far fa-heart'></i></a></div>
-                                 <br>Localidad: {{home.localidad}}</br>
+                                <br>Localidad: {{home.localidad}}</br>
                                 <br >Provincia: {{home.provincia}}</br>
                                 <br>Capacidad:  {{home.capacidad}}</br>
                                 <br>Precio Noche:  {{home.precionoche}}</br>
-                                </br></br>
+                                </br>
                                 <div style="text-align:right"><a  class='read' ng-click="dialog(home.nombre)"  id="{{home.nombre}}">READ MORE</a></div>&nbsp;
                         </div>
                 </div>

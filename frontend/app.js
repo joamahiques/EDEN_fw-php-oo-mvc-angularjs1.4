@@ -1,4 +1,4 @@
-var eden = angular.module('eden',['ngRoute','toastr','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate','infinite-scroll']);
+var eden = angular.module('eden',['ngRoute','toastr','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate','infinite-scroll',]);
 eden.config(['$routeProvider',
     function($routeProvider){
         //console.log('$rProvider');
@@ -46,6 +46,12 @@ eden.config(['$routeProvider',
                 //         return services.get('components', 'favorites','read_favorites',$token);
                 //     },2000);    
                 // },
+            }})
+            .when('/cart', {templateUrl:'frontend/modules/cart/view/cart.view.html', controller: 'cartCtrler',resolve:{
+                cart:function(services,localstorageServices){
+                    $token = localstorageServices.getuser()
+                    return services.get1('cart', 'read_cart', $token)
+                },
             }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }

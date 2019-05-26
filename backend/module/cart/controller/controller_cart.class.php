@@ -35,9 +35,10 @@ class controller_cart {
         }
     }
     function read_cart() {
+        // echo json_encode($_GET['aux']);
         set_error_handler('ErrorHandler');
             try {
-                $arrValue = loadModel(MODEL_MODULE, "cart_model", "read_cart", $_POST['tok']);
+                $arrValue = loadModel(MODEL_MODULE, "cart_model", "read_cart", $_GET['aux']);
             } catch (Exception $e) {
                 echo json_encode("error");
                 exit();

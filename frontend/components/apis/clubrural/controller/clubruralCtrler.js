@@ -26,7 +26,7 @@ eden.controller('clubruralCtrler',function($scope, $http,services,CommonServices
                 var data = JSON.stringify({"lat": latitude, "long": longitude,"dis": num});
             
             services.get("components","clubrural","load_homes_geo", data).then(function(response) {
-                console.log(response.alojamiento);
+                //console.log(response.alojamiento);
                     lista = response.alojamiento.sort(function() {return Math.random() - 0.5});
                     $scope.homesclub=lista;
                     $scope.site='a menos de '+num+ ' km de tí';

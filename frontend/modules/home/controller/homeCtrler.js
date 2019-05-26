@@ -14,14 +14,13 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
               $scope.busy = true;
               services.post('home', 'scroll_home',{row:$scope.row,rowperpage:$scope.rowperpage})
               .then(function successCallback(response) {
-                    console.log(response);
+                    //console.log(response);
                   if(response !='' ){
-                        // New row value 
                         $scope.row+=$scope.rowperpage;
                         $scope.loading = true;
                         $timeout(function() {
                            $scope.$apply(function(){
-                             // Assign response to posts Array 
+                             //  Array 
                              angular.forEach(response,function(item) {
                                 $scope.homes.push(item);
                              });
@@ -35,7 +34,7 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
               });
             }
           
-            // Call function
+            // llamamos funcion
             $scope.loadMore();
           
           $scope.addfavorites = function(home){

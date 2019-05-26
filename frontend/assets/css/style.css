@@ -390,21 +390,16 @@ div#map{
 	clear: both;
 }
 
-.nowrap {
-    white-space: nowrap;
-}
 
-    /*header Home   carusel*/
-.contenedor-slider {
+/* .contenedor-slider {
     margin: auto;
     width: 100%;
     max-height: 400px;
     position: relative;
     overflow: hidden;
     
-  }
-  .fotohome{
-    /* background: url(../img/masqi-predeter.jpg) center  no-repeat; */
+  } */
+  /* .fotohome{
     background: url(http://localhost/www/EDEN_ANGULARJS/frontend/assets/img/masqi-predeter.jpg)center  no-repeat;
     background-size: cover;
     min-height: 500px;
@@ -418,10 +413,9 @@ div#map{
     width: 500%;
     min-height: 500px;
     overflow: hidden;
-    /* max-height: 400px; */
-  }
+  } */
  
-  .slider__section {
+  /* .slider__section {
     width: 100%;
   }
   
@@ -456,9 +450,9 @@ div#map{
         margin-top: -15px;
        
       }
-}
+} */
   
-  .btn-prev, .btn-next {
+  /* .btn-prev, .btn-next {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.7);
@@ -473,9 +467,9 @@ div#map{
     font-family: monospace;
     cursor: pointer;
     z-index: 50;
-  }
+  } */
   
-  .btn-prev:hover, .btn-next:hover {
+  /* .btn-prev:hover, .btn-next:hover {
     background: white;
   }
   
@@ -485,7 +479,7 @@ div#map{
   
   .btn-next {
     right: 10px;
-  }
+  } */
 header h1{
   position: absolute;
   text-align: center;
@@ -513,46 +507,6 @@ header h1 a img {
     position: relative;
 }
 
-    /*header*/
-header.header {
-    /* background: url(../img/masqi-predeter.jpg) center  no-repeat; */
-    background: url(http://localhost/www/EDEN_ANGULARJS/view/img/masqi-predeter.jpg)center  no-repeat;
-	display: block;
-    /* overflow: hidden; */
-    /* padding: 42px 0 0; */
-    position: relative;
-    background-size: cover;
-    transform: translateY(0);
-    margin-bottom: 0px;
-    min-height: 400px;
-
-}
-
-header.header h1 {
-        position: absolute;
-        text-align: center;
-        z-index: 50;
-        top: 37%;
-        left: 0;
-        width: 100%;
-        transform: translateY(-50%);    
-}
-
-header.header h1 a {
-	display: inline-block;
-	overflow: hidden;
-	width: 205px;
-	font-size: 0;
-	line-height: 0;
-	text-indent: -999px;
-	transition: 0s ease;
-	-o-transition: 0s ease;
-	-webkit-transition: 0s ease;
-}
-
-header.header h1 a img {
-	display: block;
-}
 .search{
     position: absolute;
     min-width: 550px;
@@ -568,7 +522,7 @@ header.header h1 a img {
     flex-flow: row nowrap;
     justify-content: space-around;
 }
-.search1{
+/* .search1{
     position: relative;
     min-width: 550px;
   z-index:100;
@@ -582,7 +536,7 @@ header.header h1 a img {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-}
+} */
 .search div, .search1 div{
     /* width: 25%; */
     height: 32px;
@@ -637,7 +591,7 @@ header.header h1 a img {
 }
 
 
-#optionsauto{
+/* #optionsauto{
     position: absolute;
     left: 0;
     right: 0;
@@ -649,19 +603,12 @@ header.header h1 a img {
     display: none;
     padding: 0;
     height: auto;
-} 
-.search div.autoelement, .search1 div.autoelement{
+}  */
+/* .search div.autoelement, .search1 div.autoelement{
     margin: 0;
     z-index: 99;
 
-}
-.slogan {
-    text-align: center;
-    font: 36px/36px 'Yellowtail', cursive;
-    color: #e7e6d4;
-    padding-bottom: 113px;
-}
-
+} */
 
 
 /**Footer**/
@@ -813,4 +760,52 @@ ul.tabs li.active a{
     background-color: #e7e6d4;
     text-decoration: underline;
 }
+/* carousel */
+.slideshow {
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    position:relative;
+    width:600px;
+    overflow:hidden;
+    background: #1a1a1a;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: .3em;
+    margin-top: 30px;
+  }
+  .imageslide{
+	width:100%;
+	height:400px;
+	margin: 0 auto;
+	overflow:hidden;
+	position:relative;
+	text-align: center;
+}
 
+.imageslide .slider-content {
+  position: absolute;
+  width:100%;
+  height:400px;
+  
+}
+.imageslide .slider-content img{
+    min-height:400px;
+    width: 100%;
+}
+ header div.ng-enter {
+    -webkit-transition: 3s;
+    transition: 3s;
+    opacity: 0;
+}
+header div.ng-enter-active {
+    opacity: 1;
+}
+header div.ng-leave {
+    -webkit-transition: 3s;
+    transition:3s;
+    opacity:1;
+  }
+header div.ng-leave-active {
+    opacity:0;
+  }

@@ -287,3 +287,18 @@ Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/pr
 ERROR: [8] Undefined offset: 0
 Notice on line 24 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/model/DAO/profile_dao.class.singleton.php
  | 23.05.2019 04:47:34  |  User:   | profile | response 200
+ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | 25.05.2019 08:12:05  |  User:   | cart | response 200
+ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | 25.05.2019 08:12:17  |  User:   | cart | response 200
+ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | 25.05.2019 08:13:29  |  User:   | cart | response 200
+ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | 25.05.2019 08:13:46  |  User:   | cart | response 200
+ERROR: [8] Undefined index: token
+Notice on line 92 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | 25.05.2019 08:41:19  |  User:   | profile | response 200

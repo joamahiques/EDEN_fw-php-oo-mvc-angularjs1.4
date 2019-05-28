@@ -1,5 +1,5 @@
 eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices,favoritesServices){
-    
+    $scope.alpha = true;
     $scope.dataregister={
         username:"",
         password:"",
@@ -19,6 +19,8 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
         modalServices.openModalLogin();  
     };
     $scope.tabregister = function() {/// pestaña de new acoutn
+        $scope.alpha = false;
+        $scope.alpha1 = true;
         $scope.formlogin.$setUntouched();
         $scope.register=true;
         $scope.resetpass=false;
@@ -29,6 +31,8 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
         $scope.register=false;
         $scope.login=true;
         $scope.resetpass=false;
+        $scope.alpha1 = false;
+        $scope.alpha = true;
         
     }
     $scope.tabforgotpass = function() {// pestaña de login

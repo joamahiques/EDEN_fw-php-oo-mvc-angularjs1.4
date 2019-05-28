@@ -20,7 +20,9 @@ eden.config(['$routeProvider',
                 }
             }})
             .when('/ubication', {templateUrl:'frontend/modules/shop/view/ubication.view.html', controller: 'mapshopCtrler'})
-            .when('/social:token', {templateUrl:'frontend/modules/home/view/home.view.html',controller:'homeCtrler', resolve:{
+            .when('/social:token', {templateUrl:'frontend/modules/home/view/home.view.html',
+            controller:'homeCtrler', 
+            resolve:{
                 homes:function(services,localstorageServices,$route,toastr){
                     localstorageServices.setuser($route.current.params.token)
                     toastr.success('Sesión iniciada', 'BIENVENID@')
@@ -58,6 +60,7 @@ eden.config(['$routeProvider',
 ]);
 eden.run (['$rootScope', function ($rootScope) { 
     $rootScope.lang = 'es'; 
+    $rootScope.carrito=[];
 }])
 eden.config(function ($translateProvider) {
     $translateProvider

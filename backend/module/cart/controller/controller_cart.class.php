@@ -49,6 +49,7 @@ class controller_cart {
             echo json_encode($arrValue);
             exit();
         }else{
+            //$_SESSION['cart'][$arrValue[0]];
             echo json_encode($arrValue);
             exit;
         }

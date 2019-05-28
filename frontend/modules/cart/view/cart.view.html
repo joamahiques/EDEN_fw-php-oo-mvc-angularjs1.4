@@ -2,7 +2,7 @@
     <div class="container_12">
         <div class="grid_12">   
 
-            <h2 class="flex1"> Carrito </h2>
+            <h2 class="flex1"> Carrito de Reservas </h2>
             <div></div>
             <div id="tablecart">
                 <div id="cart_wrapper" class="dataTables_wrapper no-footer">
@@ -12,19 +12,26 @@
                             <td><b>Nombre</b></th> 
                             <td><b>Precio</b></th>
                             <td><b>Noches</b></th>
-                            <td><b>Eliminar</b></th>
-                            <td><b>Total</b></th>   
+                            <td><b>Total</b></th>  
+                            <td><b>Eliminar</b></th> 
                         </tr>
                     </thead>
                     <tbody id="cartBody">
-                            <td colspan="5" id="emptycart"> <p style="text-align:center, font-size=20px;">Tu Carrito está vacio</p></th>
+                            <tr dir-paginate="res in reserves | itemsPerPage:6 as filtered">
+                                    <td>{{res.nombre}}</td>
+                                    <td>{{res.precio}}</td>
+                                    <td>{{res.cantidad}}</td>
+                                    <td>{{res.total}}</td>
+                                    <td><a ng-click="deleteres(res.nombre)"><i class='fas fa-check'></i></a></td>
+                            </tr>
+                            <td colspan="5"> <p style="text-align:center, font-size=20px;">{{cartempty}}</p></th>
                     </tbody>
-                    <tfoot><td></td><td></td><td></td><td></td><td ><b>Total:   <span id='pricetotal'>0</span>€</b></td></tfoot>
+                    <tfoot><td></td><td></td><td></td><td></td><td ><b>Total:   <span>{{pricetotalfinal}}</span>€</b></td></tfoot>
                     </table>
                   </div> 
                 
             </div>
-            <div><p style="text-align:center" id="btnscart"><a class="btn" href="#shop">Seguir comprando</a><a ng-click="comprar()" class="btn">Comprar</a></p></div>
+            <div><p style="text-align:center" id="btnscart"><a class="btn" href="#shop">Seguir reservando</a><a ng-click="comprar()" class="btn">Reservar</a></p></div>
         </div>
     </div>
 </div>

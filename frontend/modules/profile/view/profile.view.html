@@ -1,9 +1,9 @@
 <div id="contenido" class="content">
     <div class="container_12">
         <ul class="tabs">
-                <li><a ng-click="tabprofile()">My Profile</a></li>
-                <li><a ng-click="tabfavorites()">My Favorites</a></li>
-                <li><a ng-click="tabpurchase()">My Purchase</a></li>
+                <li ng-class="{alpha: alpha}"><a ng-click="tabprofile()">My Profile</a></li>
+                <li ng-class="{alpha: alpha1}"><a ng-click="tabfavorites()" >My Favorites</a></li>
+                <li ng-class="{alpha: alpha2}"><a ng-click="tabpurchase()">My Purchase</a></li>
         </ul>
         <div class="tab-container">
                 <div id='myprofile'ng-show="profile" class="tab_content">

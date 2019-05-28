@@ -11,7 +11,7 @@ function(){
 }])
 
 eden.controller('CarouselDemoCtrl', function ($scope,$timeout) {
-    var slidesInSlideshow = 4;
+    var slidesInSlideshow = 5;
     var slidesTimeIntervalInMs = 5000; 
      
      $scope.slideshow = 1;

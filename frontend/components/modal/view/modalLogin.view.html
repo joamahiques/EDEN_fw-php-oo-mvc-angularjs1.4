@@ -1,8 +1,8 @@
 <div> <!-- this is the entire modal form, including the background -->
     <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
         <ul class="cd-switcher">
-            <li ng-click="tablogin()"><a>Sign in</a></li>
-            <li ng-click="tabregister()"><a>New account</a></li>
+            <li ng-click="tablogin()" ><a ng-class="{sele: alpha}">Sign in</a></li>
+            <li ng-click="tabregister()" ><a ng-class="{sele: alpha1}">New account</a></li>
         </ul>
 
         <div id="cd-login" ng-show="login"> <!-- login form -->

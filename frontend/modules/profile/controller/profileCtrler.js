@@ -3,6 +3,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     loginservices.login();
     $scope.updatepass=false;
     $scope.aupdatepass=true;
+    $scope.alpha = true;
     $scope.tablePur='';
     $user=user[0][0];
     if($user==undefined){//si no existe token(error al comprobar token) fuera de profile
@@ -37,13 +38,18 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         $scope.profile=true;
         $scope.favorites=false;
         $scope.purchases=false;
+        $scope.alpha = true;
+        $scope.alpha1 = false;
+        $scope.alpha2 = false;
         
     }
     $scope.tabfavorites = function() {// favorites tab
         $scope.profile=false;
         $scope.favorites=true;
         $scope.purchases=false;
-
+        $scope.alpha = false;
+        $scope.alpha1 = true;
+        $scope.alpha2 = false;
         services.get1('profile','load_data_favorites',localstorageServices.getuser()).then(function (response) {
             console.log(response);
             $scope.favorites=response;
@@ -51,10 +57,13 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         
     }
     $scope.tabpurchase = function() {// purchases tab
-        $scope.active=true;
+        // $scope.active=true;
         $scope.profile=false;
         $scope.favorites=false;
         $scope.purchases=true;
+        $scope.alpha2 = true;
+        $scope.alpha = false;
+        $scope.alpha1 = false;
         services.get1('profile','load_data_purchases',localstorageServices.getuser()).then(function (response) {
             console.log(response);
             $scope.purchases=response;

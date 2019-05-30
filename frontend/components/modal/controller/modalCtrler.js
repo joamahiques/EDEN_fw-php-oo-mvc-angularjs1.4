@@ -9,3 +9,10 @@ eden.controller('modalController', function($scope, details,cartservices,modalSe
         modalServices.closeModal();
     }
 })
+
+eden.controller('cartmodalCtrler', function($scope, confirm){
+    console.log(confirm);
+    $scope.totalreserves=confirm;
+    
+    
+})

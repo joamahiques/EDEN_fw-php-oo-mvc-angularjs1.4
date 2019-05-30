@@ -1,0 +1,37 @@
+<section id="confirmcompra">
+    <div id="details_compra">
+        <div id="details">
+            <div id="container">
+                <div class="grid2">
+                        <div id="tablecart">
+                                <div id="cart_wrapper" class="dataTables_wrapper no-footer">
+                                 <table id="cart" class="dataTable no-footer" role="grid">
+                                    <thead>
+                                        <tr role="row">
+                                            <td ><b>Nombre</b></th> 
+                                            <td><b>Precio</b></th>
+                                            <td><b>Noches</b></th>
+                                            <td><b>Total</b></th>   
+                                        </tr>
+                                    </thead>
+                                    <tbody id="contentcompra">
+                                            <tr ng-repeat="res in reserves">
+                                                    <td>{{res.nombre}}</td>
+                                                    <td>{{res.precio}}</td>
+                                                    <td>{{res.cantidad}}</td>
+                                                    <td>{{res.total}}</td>
+                                            </tr>
+                                    </tbody>
+                                    <tfoot><td></td><td></td><td></td><td ><b>Total:   <span id='pricetotalfinal'>0</span>€</b></td></tfoot>
+                                    </table>
+                                  </div> 
+                                  <div class="ngdialog-buttons"><button type="button" class="ngdialog-button" ng-click="pay()">Pagar</button></div>
+                            </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+</section>

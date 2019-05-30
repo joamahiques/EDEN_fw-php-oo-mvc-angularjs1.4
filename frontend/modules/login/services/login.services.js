@@ -73,5 +73,6 @@ function($rootScope,localstorageServices,services,toastr,favoritesServices,$rout
             
         
         });
+        localStorage.removeItem('cart');    
     }
 }]);

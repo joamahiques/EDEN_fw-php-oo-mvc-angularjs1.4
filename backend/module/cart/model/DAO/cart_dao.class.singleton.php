@@ -17,7 +17,8 @@ class cart_dao {
     }
 
     function insert_cart_DAO($db, $data){///li passem el datos del carro i el usuari
-        //fer un select xa traure el nom i cambiar el token??
+        // echo json_encode($data['cart']);
+        // exit;
         $user=$this->select_user_DAO($db, $data['tok']);
         $nomuser=$user[0][0]['IDuser'];
         $tok=$user[1];
@@ -41,10 +42,10 @@ class cart_dao {
         //die();
         foreach ($datos as $row) {
             //$tok=$user[0][1];
-            $nombre = $row['Home'];
-            $precio = $row['Price'];
-            $cantidad = $row['Qty'];
-            $total = $row['Total']; 
+            $nombre = $row['nombre'];
+            $precio = $row['precio'];
+            $cantidad = $row['cantidad'];
+            $total = $row['total']; 
    
             $sql ="INSERT INTO `$nomuser`(`ID`,`IDclient`, `IDproducto`, `nombre`, `cantidad`, `precio`, `total`) VALUES (null,(SELECT IDuser from users2 WHERE token='$tok') ,(SELECT id from casas WHERE nombre='$nombre'),'$nombre' ,'$cantidad',(SELECT precionoche from casas WHERE nombre='$nombre'),(SELECT (precionoche*$cantidad)as total from casas WHERE nombre='$nombre'))";
             $stmp = $db->ejecutar($sql);
@@ -101,6 +102,7 @@ class cart_dao {
         $newtok=$this->update_token_DAO($db,$res[0]['IDuser'],$token);///user
         return array ($res, $newtok); 
     }
+    
     public function update_token_DAO($db,$nombre,$tok){
        
         $token= generate_JWK($nombre);

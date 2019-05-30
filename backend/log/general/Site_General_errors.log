@@ -1,1 +1,133 @@
 
+29/05/19 06:57:04 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Home
+Notice on line 44 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Price
+Notice on line 45 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Qty
+Notice on line 46 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Total
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Home
+Notice on line 44 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Price
+Notice on line 45 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Qty
+Notice on line 46 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:33:34 PM | ERROR: [8] Undefined index: Total
+Notice on line 47 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:34:47 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:35:22 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:37:17 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:37:32 PM | ERROR: [8] Undefined offset: 0
+Notice on line 101 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:37:32 PM | ERROR: [8] Undefined offset: 0
+Notice on line 22 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:37:32 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 42 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:38:14 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:39:33 PM | ERROR: [8] Undefined offset: 0
+Notice on line 69 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:40:48 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 42 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:43:49 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 42 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:45:23 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 42 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:49:15 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 41 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:50:05 PM | ERROR: [2] Invalid argument supplied for foreach()
+Warning on line 41 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:54:31 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:54:54 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 07:56:44 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 08:10:11 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 08:10:34 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 08:15:50 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+29/05/19 08:16:59 PM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:29:06 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:30:14 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:34:27 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:35:38 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:36:17 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:38:56 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:39:49 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:41:54 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:44:08 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:47:48 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:51:48 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:52:42 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:53:25 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:55:17 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+30/05/19 07:57:39 AM | ERROR: [8] Undefined offset: 0
+Notice on line 70 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200

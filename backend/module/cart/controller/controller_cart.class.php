@@ -14,12 +14,13 @@ class controller_cart {
         require_once(VIEW_PATH_INC . "footer.php");
     }
     function insert_cart() {
+        // echo json_encode($_POST['cart']);
+        // exit;
         set_error_handler('ErrorHandler');
             $arrArgument = array(
                 'cart'=>$_POST['cart'],
-                'tok'=>$_POST['tok']
+                'tok'=>$_POST['token']
             );
-            
             try {
                 $arrValue = loadModel(MODEL_MODULE, "cart_model", "insert_cart", $arrArgument);
             } catch (Exception $e) {
@@ -46,11 +47,17 @@ class controller_cart {
         restore_error_handler();
 
         if(!$arrValue){
-            echo json_encode($arrValue);
+            $datos['success'] = false;
+            $datos['mess'] = $arrValue;
+           echo json_encode($datos);
+            //echo json_encode($arrValue);
             exit();
         }else{
+            $datos['success'] = true;
+            $datos['mess'] = $arrValue;
+            echo json_encode($datos);
             //$_SESSION['cart'][$arrValue[0]];
-            echo json_encode($arrValue);
+        //    echo json_encode($arrValue);
             exit;
         }
 

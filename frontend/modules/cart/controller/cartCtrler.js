@@ -1,28 +1,48 @@
-eden.controller('cartCtrler', function($scope, $http, cart,services){
-   
+eden.controller('cartCtrler', function($scope, cart,cartservices){
+    var reserves;
+    console.log(cart);
     if (localStorage.cart){
-        console.log('hay cart');
         cart = JSON.parse(localStorage.cart);
         localStorage.setItem('cart', JSON.stringify(cart));
-        var reserves=JSON.parse(localStorage.cart);
+        reserves=JSON.parse(localStorage.cart);
         $scope.reserves=reserves;
     }else{
-        var a = [];
-        if(cart){
-            a.push(cart[0]);
-            localStorage.setItem('cart', JSON.stringify(a));
-            var reserves=JSON.parse(localStorage.cart);
+        if(cart.success==true){
+            angular.forEach(cart.mess, function (value, key) {
+                cartservices.addToCart(value.nombre, value.precio, value.cantidad)
+            })
+            reserves=JSON.parse(localStorage.cart);
             $scope.reserves=reserves;
         }else{
             $scope.cartempty="No tienes reservas en el carrito";;
         }
+    }
+    
+    function print() {
+        if(localStorage.cart){
+            var reserves=JSON.parse(localStorage.cart);
+            $scope.reserves=reserves;
+        }else{
+            $scope.cartempty="No tienes reservas en el carrito";;
+            $scope.reserves=[];
+        }
         
     }
-    //console.log($scope.reserves)///todos los del carrito;
-    
-    
-    
+
     $scope.deleteres = function(reserva){
-        console.log(reserva);
+        cartservices.deletereserva(reserva);
+        print();
+    }
+    $scope.onemore = function(item){
+        cartservices.onemorecant(item);
+        print();
+    }
+    $scope.oneless = function(item){
+        cartservices.onelesscant(item);
+        print();
+    }
+    $scope.comprar = function(){
+        cartservices.comprar();
     }
 });
+

@@ -1,11 +1,11 @@
-eden.factory('modalServices',['services','ngDialog', function(services,ngDialog){
+eden.factory('modalServices',['services','ngDialog','localstorageServices', function(services,ngDialog,localstorageServices){
     var serv={};
     serv.openModal = openModal;
     serv.openModalLogin = openModalLogin;
     serv.closeModal = closeModal;
+    serv.openModalPurchase=openModalPurchase;
     return serv;
     function openModal(home,modu,func){
-        //console.log(home);
             var modalInstance=ngDialog.open({
                 template: 'frontend/components/modal/view/modal.view.html',
                 className: 'ngdialog-theme-default',
@@ -28,15 +28,24 @@ eden.factory('modalServices',['services','ngDialog', function(services,ngDialog)
                 className: 'ngdialog-theme-default',
                 controller: 'loginCtrler',
                 width: '50%',
-                // height:'500px',
                 type: 'full-screen',
-                // resolve: {
-                //     details: function(services, $route){
-                //         return services.get('components',modu,func,home);
-                //     }
-                // }
             })
     }
+    function openModalPurchase(){
+
+        var modalInstanceP=ngDialog.open({
+            template: 'frontend/components/modal/view/modalPurchase.view.html',
+            className: 'ngdialog-theme-default',
+            controller: 'cartCtrler',
+            type: 'full-screen',
+            resolve: {
+                cart: function(services,localstorageServices){
+                    $token = localstorageServices.getuser();
+                    return services.get1('cart', 'read_cart', $token)
+                }
+            }
+        })
+}
     function closeModal(){
         ngDialog.close();
     }

@@ -2,8 +2,12 @@
     min-height: 200px;
     text-align: center;
 }
-
-
+#details_compra{
+    padding: 10px 20px;
+}
+#cart_wrapper{
+    margin-bottom: 20px;
+}
  th.td1.sorting{
     min-width: 230px;
 }

@@ -1,11 +1,20 @@
-eden.controller('cartCtrler', function($scope, cart,cartservices){
+eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootScope){
     var reserves;
-    console.log(cart);
+    $scope.confirmres=false;
+    console.log('cart');
     if (localStorage.cart){
         cart = JSON.parse(localStorage.cart);
         localStorage.setItem('cart', JSON.stringify(cart));
-        reserves=JSON.parse(localStorage.cart);
-        $scope.reserves=reserves;
+        // reserves=JSON.parse(localStorage.cart);
+        // $scope.reserves=reserves;
+        // $rootScope.cartlength=reserves.length;//numero del carrito
+        // if(reserves.length!=0){
+        //     $scope.confirmres=true;//muestra el boton de comprar
+        // }else{
+        //     $scope.cartempty="No tienes reservas en el carrito";;
+        //     $rootScope.cartlength=0;//numero del carrito
+        // }  
+        print();
     }else{
         if(cart.success==true){
             angular.forEach(cart.mess, function (value, key) {
@@ -15,18 +24,24 @@ eden.controller('cartCtrler', function($scope, cart,cartservices){
             $scope.reserves=reserves;
         }else{
             $scope.cartempty="No tienes reservas en el carrito";;
+            $rootScope.cartlength=0;//numero del carrito
         }
     }
-    
+
     function print() {
         if(localStorage.cart){
-            var reserves=JSON.parse(localStorage.cart);
+            reserves=JSON.parse(localStorage.cart);
             $scope.reserves=reserves;
         }else{
-            $scope.cartempty="No tienes reservas en el carrito";;
             $scope.reserves=[];
         }
-        
+        if(reserves.length==0){
+            $scope.cartempty="No tienes reservas en el carrito";;
+            $scope.confirmres=false;//muestra el boton de comprar
+        }else{
+            $rootScope.cartlength=reserves.length;//numero del carrito
+            $scope.confirmres=true;//muestra el boton de comprar
+        }  
     }
 
     $scope.deleteres = function(reserva){
@@ -43,6 +58,10 @@ eden.controller('cartCtrler', function($scope, cart,cartservices){
     }
     $scope.comprar = function(){
         cartservices.comprar();
+    }
+    $scope.pay = function(){
+        cartservices.pay();
+        print();
     }
 });
 

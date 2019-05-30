@@ -55,11 +55,8 @@ class cart_dao {
             'res'=>$stmp,
             'tok'=>$tok
         );
-        // echo json_encode($res);
-        // exit;
-        return $res;
-       //return array($tmp, $tok);//true or false/ token nuevo
-        
+ 
+        return $res;        
     }
 
     function read_cart_DAO($db,$user){ ///leer carro del ususario
@@ -93,6 +90,11 @@ class cart_dao {
         );
         return $res;
          
+    }
+    public function count_DAO($db, $user){
+        $sql = "SELECT count(*) FROM $user";
+        $stmt = $db->ejecutar($sql);
+        $res= $db->listar($stmt);
     }
     public function select_user_DAO($db, $token){
         $sql = "SELECT * FROM users2 WHERE token = '$token'";

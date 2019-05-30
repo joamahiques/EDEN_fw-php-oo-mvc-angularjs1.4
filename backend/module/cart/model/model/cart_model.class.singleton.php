@@ -23,4 +23,7 @@ class cart_model {
     public function confirm_purchase($data) {
         return $this->bll->confirm_purchase_BLL($data);
     }
+    public function count($data) {
+        return $this->bll->count_BLL($data);
+    }
 }

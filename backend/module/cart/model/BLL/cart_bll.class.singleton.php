@@ -23,6 +23,9 @@ class cart_bll{
         return $this->dao->read_cart_DAO($this->db, $data);
       }
     public function confirm_purchase_BLL($data){
-    return $this->dao->confirm_purchase_DAO($this->db, $data);
+        return $this->dao->confirm_purchase_DAO($this->db, $data);
+    }
+    public function count_BLL($data){
+        return $this->dao->count_DAO($this->db, $data);
     }
 }

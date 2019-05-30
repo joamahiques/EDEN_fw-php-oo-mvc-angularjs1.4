@@ -1,18 +1,20 @@
-eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr','favoritesServices','$route',
-function($rootScope,localstorageServices,services,toastr,favoritesServices,$route){
+eden.factory('loginservices',['$rootScope','localstorageServices','services','toastr','$route',
+function($rootScope,localstorageServices,services,toastr,$route){
     var service={};
     service.login=login;
     service.logout=logout;
-    var data={};
     return service;
 
     function login() {
         var token = localstorageServices.getuser();
-        //console.log(token);
+        if($rootScope.cartlength && $rootScope.cartlength!=0){
+            $rootScope.cartlength=$rootScope.cartlength; //si el cliente habia puesto algo en el carrito antes de loguearse
+        }else{
+            
+            $rootScope.cartlength=0;
+        }
         if (token) {
             services.post("login", "controluser", JSON.stringify({'token': token})).then(function (response) {
-            // services.get1('login', 'controluser', token).then(function (response) {
-                //console.log(response);
                 response = response[0];
                 $rootScope.avatar = response.avatar;
                 $rootScope.user = response.user;
@@ -39,11 +41,8 @@ function($rootScope,localstorageServices,services,toastr,favoritesServices,$rout
 
     function logout(){ ////viene del controlador del menu
         var token = localstorageServices.getuser();
-        //console.log(token);
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
-           // console.log(response);
-            if(response='ok'){
-                
+            if(response=='ok'){
                 if($rootScope.type=="client_rs"){
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
@@ -68,11 +67,10 @@ function($rootScope,localstorageServices,services,toastr,favoritesServices,$rout
                  
             }else{
                 toastr.info('Sesión cerrada correctamente', 'BYE!');
-                //console.log(response);
             }
             
         
         });
-        localStorage.removeItem('cart');    
+        localStorage.removeItem('token');    
     }
 }]);

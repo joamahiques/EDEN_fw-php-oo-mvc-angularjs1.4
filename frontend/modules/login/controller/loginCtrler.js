@@ -1,4 +1,4 @@
-eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices,favoritesServices){
+eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$timeout,loginservices,localstorageServices,favoritesServices,cartservices){
     $scope.alpha = true;
     $scope.dataregister={
         username:"",
@@ -129,22 +129,25 @@ eden.controller('changepassCtrler', function($scope,token,services,toastr, $time
 
 });
 
-eden.controller('menuCtrler', function($scope,$log,loginservices, modalServices,  $timeout){
-   
+eden.controller('menuCtrler', function($scope,$log,loginservices, modalServices,  $timeout,cartservices){
+
     loginservices.login();
+    
     $scope.dialogLogin = function() {
           modalServices.openModalLogin();
       
     };
     $scope.toggled = function(open) {
           $log.log('Dropdown is now: ', open);
-        };
+    };
     $scope.logout = function() {
-          loginservices.logout();
-          loginservices.login();
+          cartservices.savecartlogout();
+          $timeout(function(){
+            loginservices.logout();
+            loginservices.login();
+        },1000);
           $timeout(function(){
                 location.href='#/';
           },1000);
-          //console.log('logout');
         };
 });

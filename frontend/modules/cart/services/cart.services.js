@@ -1,5 +1,5 @@
-eden.factory('cartservices',['$rootScope','services','toastr','localstorageServices','modalServices',
-function($rootScope,services,toastr,localstorageServices,modalServices){
+eden.factory('cartservices',['$rootScope','services','toastr','localstorageServices','modalServices','loginservices',
+function($rootScope,services,toastr,localstorageServices,modalServices,loginservices){
     var service={};
     service.addToCart=addToCart;
     service.savecart=savecart;
@@ -7,6 +7,8 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
     service.onemorecant=onemorecant;
     service.onelesscant=onelesscant;
     service.comprar=comprar;
+    service.savecartlogout=savecartlogout;
+    service.pay=pay;
     if(!localStorage.cart){
        var a=[]   
      }else{
@@ -24,7 +26,6 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
                         return;
                     }
                 }
-            
             var item = { nombre: name, precio: price, cantidad: qty, total: total };
             console.log(item);
             a.push(item);
@@ -32,11 +33,8 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
      }
 
      function savecart() {
-        //if (localStorage.cart){
-            console.log(a);
             localStorage.cart = JSON.stringify(a);
-        //}
-        console.log(localStorage.cart);
+            $rootScope.cartlength=a.length;
      }
 
      function deletereserva(reserva) {
@@ -50,7 +48,6 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
             savecart();
         }else{
             savecart();
-            //localStorage.removeItem('cart');  
         }
         
      }
@@ -58,7 +55,6 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
      function onemorecant(item) {
         angular.forEach(a, function (value, key) {
             if(value.nombre==item){
-                console.log('sumano 1');
                 value.cantidad=(value.cantidad+1);
                 value.total=(value.precio*value.cantidad);
             }
@@ -70,7 +66,6 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
         angular.forEach(a, function (value, key) {
             if(value.nombre==item){
                 if(value.cantidad>1){
-                    console.log('restano 1');
                     value.cantidad=(value.cantidad-1);
                     value.total=(value.precio*value.cantidad);
                     savecart();
@@ -86,17 +81,48 @@ function($rootScope,services,toastr,localstorageServices,modalServices){
         }else{
             $token = localstorageServices.getuser();
             services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
-                //console.log(response);
-                localstorageServices.setuser(response.tok);
-                $token = localstorageServices.getuser();
-                //services.get('cart', 'read_cart', {'token': $token}).then(function (response) {
-                   // console.log(response);
-                     modalServices.openModalPurchase();
-                     //$rootScope.totalreserves=response;
-                });
-            ///});
-            
+                console.log(response);
+                if(response.res){
+                    localstorageServices.setuser(response.tok);
+                    modalServices.openModalPurchase();
+                }else{
+                    loginservices.logout();
+                }
+            });            
         }
      }
-    
+
+     function pay(){
+        if(!localStorage.token){
+            toastr.info("Para confirmar la compra regístrate","Por favor")
+        }else{
+            console.log('pagar');
+            $token = localstorageServices.getuser();
+            services.post('cart', 'confirm_purchase', {'token': $token}).then(function (response) {
+                if(response.res){
+                    localstorageServices.setuser(response.tok);
+                    toastr.success("Reservas realizadas correctamente","GRACIAS")
+                    modalServices.closeModal();
+                    localStorage.removeItem('cart');
+                    location.reload();
+                }else{
+                    loginservices.logout();
+                }
+            });            
+        }
+     }
+
+     function savecartlogout(){
+        $token = localstorageServices.getuser();
+        services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
+                console.log(response);
+                if(response.res){
+                    localstorageServices.setuser(response.tok);
+                    $rootScope.cartlength=0;
+                    localStorage.removeItem('cart');
+                }else{
+                    console.log(response);
+                }
+        });  
+     }
 }]);

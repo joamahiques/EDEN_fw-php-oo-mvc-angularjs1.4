@@ -29,8 +29,7 @@
                 </p>
                 <p style="text-align:center;"><a id="login_auth" tabindex="-1" href="http://localhost/www/EDEN_ANGULARJS/backend/index.php?module=login&function=sociallogin" target="_self">LOGIN CON REDES SOCIALES</a></label></p>
                 <p class="fieldset">
-                    <button type="submit" class="full-width" ng-disabled="formlogin.$invalid"
-                    ng-click="SubmitLogin()" ng-class="{'disabled-class': formlogin.$invalid}">Login</button>
+                    <button type="submit" class="full-width" ng-disabled="formlogin.$invalid" ng-click="SubmitLogin()" ng-class="{'disabled-class': formlogin.$invalid}">Login</button>
                 </p>
             </form>
             
@@ -73,17 +72,16 @@
                     <span class="cd-error-message" ng-show="formregister.terms.$error.required && (formregister.terms.$dirty || formregister.terms.$touched)">Acepta los términos y condiciones</span>
                     <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
                 </p>
-                <p><a id="login_auth">REGISTRO CON REDES SOCIALES</a></label></p>
+                <p><a id="login_auth" tabindex="-1" href="http://localhost/www/EDEN_ANGULARJS/backend/index.php?module=login&function=sociallogin" target="_self">LOGIN CON REDES SOCIALES</a></label></p>
                 <p class="fieldset">
                     <button type="submit" class="full-width" ng-disabled="formregister.$invalid"
                     ng-click="SubmitRegister()" ng-class="{'disabled-class': formregister.$invalid}">Create account</button>
                 </p>
             </form>
 
-            <!-- <a href="#0" class="cd-close-form">Close</a> -->
-        </div> <!-- cd-signup -->
-
-        <div id="cd-reset-password" ng-show="resetpass"> <!-- reset password form -->
+        </div> 
+        <!-- reset password form -->
+        <div id="cd-reset-password" ng-show="resetpass"> 
             <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
 
             <form class="cd-form" name="formforgotpass" id="formforgotpass">

@@ -1,5 +1,5 @@
-eden.factory('favoritesServices', ['services','$rootScope','localstorageServices', '$timeout','$document',
-function(services,$rootScope,localstorageServices,$timeout,$document){
+eden.factory('favoritesServices', ['services','$rootScope','localstorageServices', 'toastr','$document',
+function(services,$rootScope,localstorageServices,toastr,$document){
     var service = {};
     service.readfavorites = readfavorites;
     service.addfavorite = addfavorite;
@@ -20,19 +20,22 @@ function(services,$rootScope,localstorageServices,$timeout,$document){
     }
 
     function addfavorite(home){
-            //console.log(home);
-            var token = localstorageServices.getuser();
-            var myElement=document.getElementById(home);
-            data={'id':home,'tok':token};
-            var data = JSON.stringify(data);
-            if(myElement.className=='fas fa-heart'){
-                myElement.className='far fa-heart';
-                services.post1('components','favorites','delete_favorites',data).then(function (response) {
-                });
+            if(localStorage.token){
+                var token = localstorageServices.getuser();
+                var myElement=document.getElementById(home);
+                data={'id':home,'tok':token};
+                var data = JSON.stringify(data);
+                if(myElement.className=='fas fa-heart'){
+                    myElement.className='far fa-heart';
+                    services.post1('components','favorites','delete_favorites',data).then(function (response) {
+                    });
+                }else{
+                    myElement.className='fas fa-heart';
+                    services.post1('components','favorites','favorites',data).then(function (response) {
+                    });
+                }
             }else{
-                myElement.className='fas fa-heart';
-                services.post1('components','favorites','favorites',data).then(function (response) {
-                });
+                toastr.info('Regístrate para añadir favoritos','INFO');
             }
     }
 }])

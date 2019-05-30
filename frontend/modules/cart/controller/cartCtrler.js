@@ -30,17 +30,26 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
 
     function print() {
         if(localStorage.cart){
+            var taxTotal = 0; 
             reserves=JSON.parse(localStorage.cart);
             $scope.reserves=reserves;
+            
         }else{
             $scope.reserves=[];
         }
         if(reserves.length==0){
             $scope.cartempty="No tienes reservas en el carrito";;
             $scope.confirmres=false;//muestra el boton de comprar
+            $scope.pricetotalfinal=0;
         }else{
+            var tal=0
             $rootScope.cartlength=reserves.length;//numero del carrito
             $scope.confirmres=true;//muestra el boton de comprar
+            for (i=0; i < reserves.length; i++) {            
+              tal = tal + reserves[i].total;  
+              console.log(tal);
+              $scope.pricetotalfinal=tal;
+             };
         }  
     }
 

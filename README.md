@@ -15,11 +15,13 @@
 * Arquitectura MVC
 * Home con infinite-scroll de los productos, ordenados por provincias, con loading.
 * Login y registro (desde aplicación (angularjs) y redes sociales(PHP y logout en angularjs).
-* Perfil (Actualización de datos, dropzone, lista d favoritos, lista de compras(con descarga de PDF))
+* Perfil (Actualización de datos, dependent dropdowns con la api GEOAPI y respaldo de xmls, dropzone, lista de favoritos(se pueden borrar y paginación), lista de compras(con descarga de PDF y paginación))
 * Tienda con paginación, con vista lista o vista en mapa de todas las casas o los resultados del buscador( mapa de Google maps en js y con infowindows(con details y favoritos)).
-* Carrito (con tabla de carro de cada usuario, que se borra con la compra y se inserta en la tabla compras)
+* Carrito (en localStorage, con tabla de carro para cada usuario, que se borra con la compra y se inserta en la tabla compras, el precio siempre es el de bd.)
+* carrito: suma y resta cantidad de noches, actualización del precio y del total en el momento, actualización del numero de reservas en el icono del carro, modal de confirmar compra con el precio real de bd)
+* Boton comprar solo cuando hay productos en el carro.
 * Contact con formulario de contacto con validación y MailGun y mapa de ubicación.
-* Modal ngDialog para details y login, para toda la aplicación, como Component.
+* Modal ngDialog para details, login y confirmpurchase, para toda la aplicación, como Component.
 * Translate con Angular-Translate(i18n).
 * Search para toda la aplicación para mostrar los resultados en Shop ( y en mapa ).
 * Directiva propia CompareTo en el login.
@@ -30,7 +32,7 @@
 * token y tokenMail (token se borra con el logout)
 * Funcion general Generate_token, función update_token(login, profile, cart)
 * Update de token en acciones conflictivas.
-* Cambio de tabla en bbdd al confirmpurchase.
+* Cambio de tabla en bbdd al confirmpurchase ( de la tabla propia de guardarcarro a la de compras).
 * Diferentes vistas en relación al usuario ( menú, cambiar contraseña en el perfil).
 * Logout(session destroy, insert_cart, delete_token)
 * validación contra base de datos, (validación del formulario de login),

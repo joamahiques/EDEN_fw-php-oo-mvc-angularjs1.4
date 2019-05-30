@@ -73,6 +73,17 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     $scope.tabpassword = function(){///open updatepass modal
         $scope.updatepass=true;
     }
+ ///////////////////////////delete favorites
+
+$scope.deletefavo = function(name){
+    console.log(name);
+    services.post('profile','delete_favorites',{'tok':localstorageServices.getuser(),'nombre':name}).then(function (response) {
+        console.log(response);
+        toastr.success(response, 'INFO');
+        $scope.tabfavorites();
+    })
+}
+
 ////////////////////////////PDF Purchases
 $scope.downloadpdf = function() {
     var doc = new jsPDF();

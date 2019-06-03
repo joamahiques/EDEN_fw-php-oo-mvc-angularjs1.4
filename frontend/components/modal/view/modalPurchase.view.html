@@ -22,7 +22,8 @@
                                                     <td>{{res.total}}</td>
                                             </tr>
                                     </tbody>
-                                    <tfoot><td></td><td></td><td></td><td ><b>Total:   <span id='pricetotalfinal'>{{pricetotalfinal}}</span>€</b></td></tfoot>
+                                    <tfoot><td></td><td></td><td></td><td ><b>Total:   <span>{{pricetotalfinal}}</span>€</b></td>
+                                        <tr ng-show="desc"><td></td><td></td><td><b>-10%</b></td><td ><b>Total:   <span>{{pricetotalfinaldes}}</span>€</b></td></tr></tfoot>
                                     </table>
                                   </div> 
                                   <div class="ngdialog-buttons"><button type="button" class="ngdialog-button" ng-click="pay()">Pagar</button></div>

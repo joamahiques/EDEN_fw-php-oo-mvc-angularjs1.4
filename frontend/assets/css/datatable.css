@@ -61,69 +61,17 @@ table.dataTable td{
     padding: 8px;
 }
 /* 
- 
+ CRUD */
 
-.jqx-widget-content-ui-lightness{
-
-    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
-    background-color: #f8f8f8;
-    background-image: -webkit-gradient(linear,0 0,0 100%,from(#f8f8f8),to(#eee));
-    background-image: -moz-linear-gradient(top,#f8f8f8,#eee);
-    background-image: -o-linear-gradient(top,#f8f8f8,#eee);
-    border-color: #ddd;
-    color: #333;
-    font-size: 12px;
-    
-}
-.jqx-widget-ui-lightness {
-    line-height: 17px;
-    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
-    font-size: 12px;
-    font-style: normal;
-    margin: 3em auto;
-    
-}
-    
-.jqx-widget-header-ui-lightness{
-
-    font-family: 'Marvel';
-    background: #e7e6d4 url();
-    color:  #5f604b;
-    font-size: 1rem;
-    
-   
-}
-.jqx-dropdownlist-content-ui-lightness{
-    font-family: 'Marvel';
-    font-size: 1rem;
-    color:  #5f604b;
-    min-width:100px;
-    height: 26px;
-}
-.jqx-grid-table{
-    font-size: 15px;
-    font-family: 'Marvel';
-}
-.jqx-grid-cell-alt {
-    background: #e7e6d44f;
-}
-#jqxWidget319c6e820093{
-    min-width: 133px;
-    min-height: 20px;
-}
-.jqx-fill-state-normal{
-    background-color: #e7e6d4;
-}
-.filtercolumns.jqx-dropdownlist.jqx-dropdownlist-classic.jqx-widget.jqx-widget-classic.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-classic.jqx-rc-all.jqx-rc-all-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic.jqx-default.jqx-default-classic{
-    min-width: 133px;
-    min-height: 20px;
-    background-color: white;
-}
-div#jqxWidget4ebdedf70022 .filtercolumns.jqx-dropdownlist.jqx-dropdownlist-ui-lightness.jqx-widget.jqx-widget-ui-lightness.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-ui-lightness.jqx-rc-all.jqx-rc-all-ui-lightness.jqx-fill-state-normal.jqx-fill-state-normal-ui-lightness.jqx-default.jqx-default-ui-lightness{
-    min-width: 133px;
-    min-height: 20px;
-    
-}
-.jqx-rc-all.jqx-rc-all-classic.jqx-button.jqx-button-classic.jqx-widget.jqx-widget-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic, .jqx-dropdownlist.jqx-dropdownlist-classic.jqx-widget.jqx-widget-classic.jqx-dropdownlist-state-normal.jqx-dropdownlist-state-normal-classic.jqx-rc-all.jqx-rc-all-classic.jqx-fill-state-normal.jqx-fill-state-normal-classic.jqx-default.jqx-default-classic{
-    background-color: white;
-}    */
+ #table_crud tr th:first-child,#table_crud tr th:nth-child(2){
+     width: 20%;
+ }
+ #table_crud tr th:nth-child(3){
+    width: 25%;
+ }
+ #table_crud tr th:nth-child(4){
+    width: 20%;
+ }
+ /* #table_crud tr th:nth-child(5){
+    width: 20%;
+ } */

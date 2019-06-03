@@ -1,0 +1,40 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+    	<div class="flex">
+                <h3>CRUD</h3>
+    	</div>
+    	<div class="tab-containercrud" >
+                <div class="input-group mb-3 flex">
+                        <input type="text" class="form-control" ng-model="searchString" placeholder="Enter your search terms" style="width:25%" >
+                        <a class="btn1" href="#create">AÑADIR CASA</a>
+                </div>
+                </br>
+            <table class="table table-striped table-hover" width=100% id="table_crud">
+                <thead>
+                        <tr>
+                        <th>Nombre</th>
+                        <th>Localidad</th>
+                        <th>Provincia</th>
+                        <th class="center">Acción</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr dir-paginate="res in homescrud | searchFor:searchString | itemsPerPage:6 as filtered">
+                        <td>{{res.nombre}}</td>
+                        <td>{{res.localidad}}</td>
+                        <td>{{res.provincia}}</td>
+                        <td class='flex'><a ng-click="dialog(res.nombre)" title="details"><i class="fas fa-info-circle"></i></a>
+                        <a ng-click="update(res.nombre)" title="actualizar"><i class="far fa-edit"></i></a>
+                        <a ng-click="deletehome(res.nombre)" title="delete"><i class="far fa-trash-alt"></i></a></td>
+                        </tr>
+                </tbody>
+        </table> 
+        <!-- <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>             -->
+        </div>
+        <div class="input-group mb-3 flex" style="padding:2em">
+                <a class="btn1" href="/#">INICIO</a>
+                <dir-pagination-controls max-size="4" direction-links="true" boundary-links="true" class="bootpag"></dir-pagination-controls>  
+                <a class="btn1" ng-click="deleteall()">BORRAR</a>
+    	</div>
+    </div>
+</div>

@@ -1,19 +1,10 @@
 eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootScope){
     var reserves;
     $scope.confirmres=false;
-    console.log('cart');
+    //console.log('cart');
     if (localStorage.cart){
         cart = JSON.parse(localStorage.cart);
         localStorage.setItem('cart', JSON.stringify(cart));
-        // reserves=JSON.parse(localStorage.cart);
-        // $scope.reserves=reserves;
-        // $rootScope.cartlength=reserves.length;//numero del carrito
-        // if(reserves.length!=0){
-        //     $scope.confirmres=true;//muestra el boton de comprar
-        // }else{
-        //     $scope.cartempty="No tienes reservas en el carrito";;
-        //     $rootScope.cartlength=0;//numero del carrito
-        // }  
         print();
     }else{
         if(cart.success==true){
@@ -47,9 +38,16 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
             $scope.confirmres=true;//muestra el boton de comprar
             for (i=0; i < reserves.length; i++) {            
               tal = tal + reserves[i].total;  
-              console.log(tal);
+              //console.log(tal);
               $scope.pricetotalfinal=tal;
              };
+             if (reserves.length>4){
+                 toastr.success('Tienes un 10% de descuento por tener 5 o más reservas','ENHORABUENA!')
+                 $scope.desc=true;
+                 $scope.pricetotalfinaldes=(tal*0.90)
+             } else{
+                $scope.desc=false;
+             }
         }  
     }
 

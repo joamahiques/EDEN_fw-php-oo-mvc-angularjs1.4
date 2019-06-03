@@ -7,8 +7,8 @@
 
 ![imagen cabecera](/frontend/assets/img/readme.png)
 
-###### **Funcionalidad de la aplicación:**
-* **SERVIDOR:**
+### **Funcionalidad de la aplicación:**
+ **SERVIDOR FW PHPOO**
 * ORM
 * PATHS
 * ROUTING
@@ -21,17 +21,20 @@
 * LOGS
 * Arquitectura MVC
 * Constantes php para Keys
-* **CLIENTE:**
+
+**CLIENTE: ANGULARJS 1.4**
 * APICONNECTOR
-* Factory en comMon.services.js, cart, contact, login(localStorage.services y login.services), shop, apis, favorites,modal y search
+* Factory en common.services.js, cart, contact, login(localStorage.services y login.services), shop, apis, favorites,modal y search
 * Directiva propia clubrural, para  home y shop.
 * Directiva DropZone
 * Slider para el header propio en common.services.js.
 * validación contra base de datos, (validación del formulario de login),
 * validación formularios angularjs
 * Constantes js para Keys
+---------------
+ Módulos:
+ -------------
 
-* Módulos:
     * Home
     * CRUD (solo migrado el list y el delete a FW PHP)
     * Login (aplicacion y Auth0)
@@ -39,12 +42,7 @@
     * Shop
     * Contact
     * Cart
-* Componentes:
-    * Modal
-    * Favoritos
-    * Search
-    * Translate
-    * Apis
+
 
 * Home: listado de los productos con details en modal y favoritos. Infinite-scroll con loading. Directiva: API con productos de CLUBRURAL (en PHP) con productos en un radio máximo de 80km de la ubicacón del usuario.
 * Login y registro:
@@ -68,6 +66,15 @@
     * Confirmar compra con modal, con precios de base de datos.
     * Services en localstorage. Se crea una tabla para cada usuario con su carro. Al confirmar compra se borra dicha tabla y se añaden los productos a la tabla compras. EL precio siempre es de Base de datos.
 * Contact:Formulario de contacto con validación y MailGun y mapa Google de ubicación con infowindow.
+------------
+Componentes
+------------
+    * Modal
+    * Favoritos
+    * Search
+    * Translate
+    * Apis
+
 * Modal (component):
     * Details: detalles del producto, botón cantidad y añadir al carro.
     * Login: con pestañas login y register, boton login con redes sociales.
@@ -80,11 +87,9 @@
     * ClubRuaul: productos de clubrural, con enlace a su pagina de details. Productos por geolocalización del usuario y por filtrado de búsqueda.
     * Google Maps.
 
+------------------
 
-
-
-
-###### **Otras tecnologías:**
+### **Otras tecnologías:**
 * [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)
     * [Typeahead] (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
 * [angular-utils] (https://github.com/michaelbromley/angularUtils)
@@ -101,22 +106,52 @@
 * [Auth0](https://auth0.com/)
 * [Mailgun](https://www.mailgun.com/)(alta, cambioContraseña, contacto, nuevaContraseña, admin, compra).
 * [ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/)
-
-###### **Functionality of the application:**
-* ORM
+-----------------------
+----------------------------------
+### **Functionality of the application:**
+**SERVER FW PHPOO**
+* ORM 
 * PATHS
 * ROUTING
-* PRETTIES URLs CLIENT / SERVER
+* PRETTIES URLs
 * AUTOLOAD
 * JWT
+    * token and tokenMail (token is deleted with the logout)
+    * Generate_token general function, update_token function (login, profile, cart)
+    * Update of token in conflicting actions.
 * LOGS
-* APICONNECTOR
 * MVC Architecture
+* Php constants for Keys
+
+**CLIENT: ANGULARJS 1.4**
+* APICONNECTOR
+* Clubrural own directive, for home and shop.
+* DropZone directive
+* Factory common.services.js, cart, contact, login(localStorage.services & login.services), shop, apis, favorites, modal & search.
+* Slider for the own header.
+* Validation against database, (validation of the login form),
+* angularjs validation forms
+* Constants js for Keys
+
+-----------
+ Modules:
+ --------------------
+
+    * Home
+    * CRUD (only migrated the list and the delete to FW PHP)
+    * Login (application and Auth0)
+    * Profile
+    * Shop
+    * Contact
+    * Cart
+
 * Home: list of products with details in modal and favorites. Infinite-scroll with loading. Directive: API with CLUBRURAL products (in PHP) with products within a maximum radius of 80km from the user's location.
 * Login and registration:
     * Manusl from application (angularjs).
     * Social networks with Auth0 of Github and Gmail (PHP and logout in angularjs).
     * Recover password, with email and redirect to page to create a new password.
+    * Different views in relation to the user (menu, change password in the profile).
+    * Logout (session destroy, insert_cart, delete_token)
 * Profile:
     * Profile: Autorelleno of data, dependent dropdowns with Api of Geoapi with backup of xml files (Geoapi in js, backup in PHP), change password (hidden for clients-rs), directive dropzone.
     * Favorites: list with pagination of the user's favorite products, with search filter and option to delete the favorite.
@@ -132,6 +167,17 @@
     * Confirm purchase with modal, with database prices.
     * Services in localstorage. A table is created for each user with his car. When confirming purchase, the said table is deleted and the products are added to the purchasing table. The price is always from Database.
 * Contact: Contact form with validation and MailGun and Google location map with infowindow.
+
+---------------
+Components:
+----------------------
+
+    * Modal
+    * Favorites
+    * Search
+    * Translate
+    * Apis
+
 * Modal (component):
     * Details: product details, quantity button and add to the cart.
     * Login: with login and resiter tabs, login button with social networks.
@@ -143,36 +189,8 @@
     * Geoapi: Provinces and municipalities, in js, with support for xml files from php.
     * ClubRuaul: clubrural products, with a link to its details page. Products by user geolocation and by search filtering.
     * Google Maps.
-* Lubrural own directive, for home and shop.
-* DropZone directive
-* Slider for the own header.
-* token and tokenMail (token is deleted with the logout)
-* Generate_token general function, update_token function (login, profile, cart)
-* Update of token in conflicting actions.
-* Change of table in bbdd to confirmampurchase (from the own table of saving the car to the purchase).
-* Different views in relation to the user (menu, change password in the profile).
-* Logout (session destroy, insert_cart, delete_token)
-* Validation against database, (validation of the login form),
-* angularjs validation forms
-* Constants js for Keys
-* Php constants for Keys
-
-* Modules:
-    * Home
-    * CRUD (only migrated the list and the delete to FW PHP)
-    * Login (application and Auth0)
-    * Profile
-    * Shop
-    * Contact
-    * Cart
-* Components:
-    * Modal
-    * Favorites
-    * Search
-    * Translate
-    * Apis
-
-###### **Other technologies:**
+--------------------
+### **Other technologies:**
 * [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)
     * [Typeahead] (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
 * [angular-utils] (https://github.com/michaelbromley/angularUtils)

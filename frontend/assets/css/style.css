@@ -165,9 +165,7 @@ div.blue{color:#2f889a}
     text-align: center;
     /* cursor: pointer; */
 }
-#deletehome a.btn{
-    width: 10%;
-}
+
 a.btn1 {
     color: #a09f85;
     font-size: 18px;
@@ -312,13 +310,13 @@ td.flex{
 }
     /* delete */
 
-#deletehome h3{
+/* #deletehome h3{
     display: inline-block;
     width: auto;
 }
 #deletehome span{
     line-height: 30px;
-}
+} */
 
 .text1 {
     font: bold 22px/30px 'Marvel', sans-serif;

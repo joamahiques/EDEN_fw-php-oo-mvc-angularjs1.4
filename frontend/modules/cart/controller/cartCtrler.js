@@ -8,6 +8,7 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
         print();
     }else{
         if(cart.success==true){
+            console.log(cart);
             angular.forEach(cart.mess, function (value, key) {
                 cartservices.addToCart(value.nombre, value.precio, value.cantidad)
             })

@@ -7,13 +7,19 @@ eden.controller('crudCtrler', function($scope, homes, modalServices){
       };
     }
     $scope.deletehome = function(home){
-      location.href="#/deletehome/:"+home;
+      modalServices.openModaldelete(home);
     }
       
 })
-eden.controller('deletecrudCtrler', function($scope,home){
-  
-    console.log(home);
+eden.controller('deletecrudCtrler', function($scope,home,modalServices,services,$route){
     $scope.namehouse=home;
-  
+    $scope.cancel = function(){
+      modalServices.closeModal();
+    }
+    $scope.deletehomecon = function(){
+      services.delete('crud','delete_home',home).then(function (response) {
+        modalServices.closeModal();
+        $route.reload();
+      })
+    }
 })

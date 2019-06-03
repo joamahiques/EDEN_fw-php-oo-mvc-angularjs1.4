@@ -58,11 +58,6 @@ eden.config(['$routeProvider',
                     return services.get('crud', 'lista');
                 },
             }})
-            .when('/deletehome/:home', {templateUrl:'frontend/modules/CRUD/view/deletehome.view.html',controller:'deletecrudCtrler',resolve:{
-                home:function($route){
-                    return $route.current.params.home;
-                }
-            }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }
 ]);

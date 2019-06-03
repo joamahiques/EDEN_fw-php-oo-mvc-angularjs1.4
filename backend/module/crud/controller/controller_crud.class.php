@@ -2,21 +2,9 @@
      class controller_crud {
        
 		function __construct() {
-                //include(FUNCTIONS_MODULE . "utils.inc.php");
-               
 				$_SESSION['module'] = "crud";
         }
 
-        function list_crud(){
-            require_once(VIEW_PATH_INC . "top-page.php");
-            require_once(VIEW_PATH_INC . "header.php");
-            require_once(VIEW_PATH_INC . "menu.php");
-            include(MODULE_VIEW_PATH . "list_homes.php");
-            require_once(VIEW_PATH_INC . "footer.php");
-             echo "<script>";
-                echo "protecturl();";
-                echo "</script>";
-        }
 
         function lista(){
             try{
@@ -32,18 +20,9 @@
             }
         }
 
-        function delete(){
-            require_once(VIEW_PATH_INC . "top-page.php");
-            require_once(VIEW_PATH_INC . "header.php");
-            require_once(VIEW_PATH_INC . "menu.php");
-            include(MODULE_VIEW_PATH . "deleteHome.php");
-            require_once(VIEW_PATH_INC . "footer.php");
-            
-        }
-
         function delete_home(){
                     try{
-                       $home=$_POST['home'];
+                       $home=$_GET['aux'];
                         $arrValue = loadModel(MODEL_MODULE,'crud_model','delete_home',$home);
                     }catch (Exception $e){
                         echo ("error de conexion");

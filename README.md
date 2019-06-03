@@ -8,20 +8,51 @@
 ![imagen cabecera](/frontend/assets/img/readme.png)
 
 ###### **Funcionalidad de la aplicación:**
+* **SERVIDOR:**
 * ORM
 * PATHS
 * ROUTING
-* PRETTIES URLs CLIENTE/SERVIDOR
+* PRETTIES URLs
 * AUTOLOAD
 * JWT
+    * token y tokenMail (token se borra con el logout)
+    * Funcion general Generate_token, función update_token(login, profile, cart)
+    * Update de token en acciones conflictivas.
 * LOGS
-* APICONNECTOR
 * Arquitectura MVC
+* Constantes php para Keys
+* **CLIENTE:**
+* APICONNECTOR
+* Factory en comMon.services.js, cart, contact, login(localStorage.services y login.services), shop, apis, favorites,modal y search
+* Directiva propia clubrural, para  home y shop.
+* Directiva DropZone
+* Slider para el header propio en common.services.js.
+* validación contra base de datos, (validación del formulario de login),
+* validación formularios angularjs
+* Constantes js para Keys
+
+* Módulos:
+    * Home
+    * CRUD (solo migrado el list y el delete a FW PHP)
+    * Login (aplicacion y Auth0)
+    * Profile 
+    * Shop
+    * Contact
+    * Cart
+* Componentes:
+    * Modal
+    * Favoritos
+    * Search
+    * Translate
+    * Apis
+
 * Home: listado de los productos con details en modal y favoritos. Infinite-scroll con loading. Directiva: API con productos de CLUBRURAL (en PHP) con productos en un radio máximo de 80km de la ubicacón del usuario.
 * Login y registro:
-    * Manusl desde aplicación (angularjs).
+    * Manual desde aplicación (angularjs).
     * Redes sociales con Auth0 de Github y Gmail(PHP y logout en angularjs).
     * Recuperar contraseña, con email y redirección a página para crear una contraseña nueva.
+    * Diferentes vistas en relación al usuario ( menú, cambiar contraseña en el perfil).
+    * Logout(session destroy, insert_cart, delete_token)
 * Perfil:
     * Perfil: Autorelleno de datos, dependent dropdowns con Api de Geoapi con respaldo de archivos xml(Geoapi en js, respaldo en PHP), cambiar contraseña ( oculto para clientes-rs ), directiva dropzone.
     * Favoritos: lista con paginación de productos favoritos del usuario, con filtro de búsqueda y opción de eliminar el favorito.
@@ -39,43 +70,19 @@
 * Contact:Formulario de contacto con validación y MailGun y mapa Google de ubicación con infowindow.
 * Modal (component):
     * Details: detalles del producto, botón cantidad y añadir al carro.
-    * Login: con pestañas login y resiter, boton login con redes sociales.
+    * Login: con pestañas login y register, boton login con redes sociales.
     * Confirmar reservas (comprar) con detalles de la compra y boton para confirmar.
 * Translate (component) con Angular-Translate(i18n). Cambia el menú, search y footer.
 * Search (component) para toda la aplicación para mostrar los resultados en Shop ( y en mapa ). Con dependent dropdowns y dependent autocomplete.
-* Favoritos: read favorites con el login para pintar los corazones de favoritos, add y delete favorites clickando en los corazones.
-* APIS:
+* Favoritos (component): read favorites con el login para pintar los corazones de favoritos, add y delete favorites clickando en los corazones.
+* APIS (component):
     * Geoapi:Provincias y municipios, en js, con respaldo de archivos xml desde php.
     * ClubRuaul: productos de clubrural, con enlace a su pagina de details. Productos por geolocalización del usuario y por filtrado de búsqueda.
     * Google Maps.
-* Directiva propia lubrural, para  home y shop.
-* Directiva DropZone
-* Slider para el header propio.
-* token y tokenMail (token se borra con el logout)
-* Funcion general Generate_token, función update_token(login, profile, cart)
-* Update de token en acciones conflictivas.
-* Cambio de tabla en bbdd al confirmpurchase ( de la tabla propia de guardarcarro a la de compras).
-* Diferentes vistas en relación al usuario ( menú, cambiar contraseña en el perfil).
-* Logout(session destroy, insert_cart, delete_token)
-* validación contra base de datos, (validación del formulario de login),
-* validación formularios angularjs
-* Constantes js para Keys
-* Constantes php para Keys
 
-* Módulos:
-    * Home
-    * CRUD (solo migrado el list y el delete a FW PHP)
-    * Login (aplicacion y Auth0)
-    * Profile 
-    * Shop
-    * Contact
-    * Cart
-* Componentes:
-    * Modal
-    * Favoritos
-    * Search
-    * Translate
-    * Apis
+
+
+
 
 ###### **Otras tecnologías:**
 * [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)

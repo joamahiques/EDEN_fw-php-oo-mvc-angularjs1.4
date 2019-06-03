@@ -17,6 +17,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
     return service;
  
     function addToCart(name, price, qty) {
+        console.log(a);
             var total = (price*qty);
             for (var i in a) {///si esta suma el resultado
                     if(a[i].nombre == name){
@@ -118,6 +119,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
                 // console.log(response);
                 if(response.res){
                     localstorageServices.setuser(response.tok);
+                    a=[];
                     $rootScope.cartlength=0;
                     localStorage.removeItem('cart');
                 }else{

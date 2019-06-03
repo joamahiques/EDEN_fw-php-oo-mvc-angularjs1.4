@@ -27,7 +27,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
                     }
                 }
             var item = { nombre: name, precio: price, cantidad: qty, total: total };
-            console.log(item);
+            // console.log(item);
             a.push(item);
             savecart();
      }
@@ -40,7 +40,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
      function deletereserva(reserva) {
         angular.forEach(a, function (value, key) {
             if(value.nombre==reserva){
-                console.log('borrando' +reserva);
+                // console.log('borrando' +reserva);
                 a.splice(key,1);
             }
         })
@@ -81,7 +81,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
         }else{
             $token = localstorageServices.getuser();
             services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
-                console.log(response);
+                // console.log(response);
                 if(response.res){
                     localstorageServices.setuser(response.tok);
                     modalServices.openModalPurchase();
@@ -96,7 +96,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
         if(!localStorage.token){
             toastr.info("Para confirmar la compra regístrate","Por favor")
         }else{
-            console.log('pagar');
+            // console.log('pagar');
             $token = localstorageServices.getuser();
             services.post('cart', 'confirm_purchase', {'token': $token}).then(function (response) {
                 if(response.res){
@@ -115,13 +115,13 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
      function savecartlogout(){
         $token = localstorageServices.getuser();
         services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
-                console.log(response);
+                // console.log(response);
                 if(response.res){
                     localstorageServices.setuser(response.tok);
                     $rootScope.cartlength=0;
                     localStorage.removeItem('cart');
                 }else{
-                    console.log(response);
+                    // console.log(response);
                 }
         });  
      }

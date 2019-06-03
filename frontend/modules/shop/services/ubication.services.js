@@ -11,7 +11,7 @@ function($rootScope,services, $timeout,favoritesServices){
         provi=searchservices.data.provincia;
         local= searchservices.data.localidad; 
         val= searchservices.data.home;
-        console.log(provi);
+        //console.log(provi);
             if(!provi){
                 zoom=6;
             }else if((!local)&&(provi)){
@@ -22,7 +22,7 @@ function($rootScope,services, $timeout,favoritesServices){
             if((val!='null')&&(val)){
               zoom=15;
             }
-            console.log(zoom);
+            //console.log(zoom);
             map = new google.maps.Map(document.getElementById('mapa_ubi'), {
               zoom: zoom,
               center: {lat:ubic['lat'], lng:ubic['long']},
@@ -41,9 +41,9 @@ function($rootScope,services, $timeout,favoritesServices){
 //       // Search for hotels in the selected city, within the viewport of the map.
       function search(provi, local, val) {
             var searchmap = JSON.stringify({'provi':provi,'local':local,'val':val});
-            console.log(searchmap);
+            //console.log(searchmap);
             services.get('shop','productsmap',searchmap).then(function (response) {
-                console.log(response);
+                //console.log(response);
                  //$scope.local = response;
                 clearResults();
                 clearMarkers();

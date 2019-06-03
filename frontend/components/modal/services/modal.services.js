@@ -4,6 +4,7 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
     serv.openModalLogin = openModalLogin;
     serv.closeModal = closeModal;
     serv.openModalPurchase=openModalPurchase;
+    // serv.openModaldelete=openModaldelete;
     return serv;
     function openModal(home,modu,func){
             var modalInstance=ngDialog.open({
@@ -45,7 +46,17 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
                 }
             }
         })
-}
+    }
+//     function openModaldelete(home){
+
+//         var modalInstanceD=ngDialog.open({
+//             template: 'frontend/components/modal/view/modalDelete.view.html',
+//             className: 'ngdialog-theme-default',
+//             //controller: 'crudCtrler',
+//             width: '40%',
+//             type: 'full-screen',
+//         })
+// }
     function closeModal(){
         ngDialog.close();
     }

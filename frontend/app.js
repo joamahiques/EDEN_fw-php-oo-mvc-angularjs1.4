@@ -56,9 +56,12 @@ eden.config(['$routeProvider',
             .when('/crud', {templateUrl:'frontend/modules/CRUD/view/crudlist.view.html', controller: 'crudCtrler',resolve:{
                 homes:function(services){
                     return services.get('crud', 'lista');
-                    // homes = localstorageServices.getuser()
-                    // return services.get1('cart', 'read_cart', $token)
                 },
+            }})
+            .when('/deletehome/:home', {templateUrl:'frontend/modules/CRUD/view/deletehome.view.html',controller:'deletecrudCtrler',resolve:{
+                home:function($route){
+                    return $route.current.params.home;
+                }
             }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }

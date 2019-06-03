@@ -5,7 +5,7 @@
 ##### Continuation of the EDEN MVC project: Migrate Client to AngularJS, WITHOUT JQuery
 ##### Search engine for rural houses, with search engine, cart, favorites, login ...
 
-![alt text](http://localhost/www/EDEN_ANGULARJS/frontend/assets/img/readme.png)
+![imagen cabecera](/frontend/assets/img/readme.png)
 
 ###### **Funcionalidad de la aplicación:**
 * ORM

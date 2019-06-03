@@ -61,14 +61,14 @@
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signup-rpassword"></label>
-                    <input required ng-model="dataregister.rpassword" ng-pattern="{{dataregister.password}}" compare-to="dataregister.password" class="full-width has-padding has-border" name="rpassword" id="signup-rpassword" type="text"  placeholder="Password">
+                    <input required ng-model="dataregister.rpassword" ng-pattern="{{dataregister.password}}"  class="full-width has-padding has-border" name="rpassword" id="signup-rpassword" type="text"  placeholder="Password">
                     <a class="hide-password">Hide</a>
                     <span class="cd-error-message" ng-show="formregister.rpassword.$error.required && (formregister.rpassword.$dirty || formregister.rpassword.$touched)">La contraseña es requerida</span>
                     <span class="cd-error-message" ng-show="formregister.rpassword.$error.pattern && (formregister.rpassword.$dirty || formregister.rpassword.$touched)">Las contraseñas no coinciden</span>
                 </p>
                 
                 <p class="fieldset">
-                    <input required="required" type="checkbox" id="accept-terms" name="terms" value="terms">
+                    <input required type="checkbox" id="accept-terms" name="terms" value="terms">
                     <span class="cd-error-message" ng-show="formregister.terms.$error.required && (formregister.terms.$dirty || formregister.terms.$touched)">Acepta los términos y condiciones</span>
                     <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
                 </p>
@@ -101,8 +101,6 @@
                 </p>
             </form>
 
-            <!-- <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p> -->
         </div> <!-- cd-reset-password -->
-        <!-- <a href="#0" class="cd-close-form">Close</a> -->
     </div> <!-- cd-user-modal-container -->
 </div> <!-- cd-user-modal -->

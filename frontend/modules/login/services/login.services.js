@@ -36,6 +36,7 @@ function($rootScope,localstorageServices,services,toastr,$route){
         } else {
             $rootScope.login = true;
             $rootScope.profile = false;
+            $rootScope.crud = false;
         }
     }
 
@@ -62,7 +63,8 @@ function($rootScope,localstorageServices,services,toastr,$route){
                     delete $rootScope.user;
                     delete $rootScope.type;
                     toastr.info('Sesión cerrada correctamente', 'BYE!');
-                    $route.reload();
+                    //$route.reload();
+                    login();
                 }
                  
             }else{

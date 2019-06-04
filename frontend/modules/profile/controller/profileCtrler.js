@@ -6,7 +6,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
     $scope.alpha = true;
     $scope.tablePur='';
     $user=user[0][0];
-    if($user==undefined){//si no existe token(error al comprobar token) fuera de profile
+    if(!$user){//si no existe token(error al comprobar token) fuera de profile
         location.href='#/'
     }
     if($rootScope.type=='client_rs'){//cambiar contraseña no visible para client_rs
@@ -26,7 +26,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         old:"",
         new:""
     }
-
+/////cargamos provincia y municipio de db
     // if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
     //     $scope.dataprofile.proviselected = $user.province;
     // }
@@ -104,15 +104,42 @@ $scope.downloadpdf = function() {
     ///////provinces
     geoapiServices.loadprovince()
     .then( function(response){
+        //to Upercase si viene de xml
+        angular.forEach(response, function (value, key) {
+            response[key].PRO=response[key].PRO.toUpperCase();
+        })
         $scope.provinces=response;
+        ////si el usuario tiene en bd
+        angular.forEach($scope.provinces, function (value, key) {
+            if($scope.provinces[key].PRO==$user.province){
+               $scope.dataprofile.provi = $scope.provinces[key];
+               $scope.loadcity();
+            };
+            
+        })
+        
     });
     //////////cities
     $scope.loadcity = function(){
         var provi=$scope.dataprofile.provi;
+        //console.log(provi);
         geoapiServices.loadcity(provi)
         .then( function(response){
+            //to Upercase si viene de xml
+            angular.forEach(response, function (value, key) {
+                response[key].DMUN50=response[key].DMUN50.toUpperCase();
+            })
             $scope.dataprofile.cityselected = 'Escoja una población';
-            $scope.cities=response
+            //console.log(response);
+            $scope.cities=response;
+            console.log($user.city);
+            angular.forEach($scope.cities, function (value, key) {
+                ////si el usuario tiene en bd
+                if($scope.cities[key].DMUN50==$user.city){
+                    console.log($scope.cities[key].DMUN50);
+                   $scope.dataprofile.city = $scope.cities[key];
+                };
+            })
         })
 
     }
@@ -153,9 +180,21 @@ $scope.downloadpdf = function() {
     }};
 ///////update
     $scope.updateprofile = function(){
-        //console.log($scope.dataprofile.provi.PRO.toUpperCase());
+        // var provis;
+        // var munis;
+        // if(!$scope.dataprofile.provi.PRO){
+        //     provis=$user.province;
+        // }else{ 
+        //     provis=$scope.dataprofile.provi.PRO.toUpperCase();
+        // }
+        // if(!$scope.dataprofile.city.DMUN50){
+        //     munis=$user.city;
+        // }else{
+        //     munis=$scope.dataprofile.city.DMUN50.toUpperCase();
+        // }
+        // console.log($scope.dataprofile);
         var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
-        "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO.toUpperCase(),"city": $scope.dataprofile.city.DMUN50.toUpperCase(),"tok": localstorageServices.getuser()};
+        "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO,"city": $scope.dataprofile.city.DMUN50,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
         console.log(profile_form);
         services.post('profile', 'update_profile', profile_form).then(function (response) {
@@ -165,7 +204,7 @@ $scope.downloadpdf = function() {
                 loginservices.login();;
                 toastr.success('Perfil actualizado correctamente', 'Perfecto');
                 location.href='#/profile'
-                // location.reload();
+                //location.reload();
             }else if (response[0]==false){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;

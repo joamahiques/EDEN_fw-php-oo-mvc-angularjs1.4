@@ -242,3 +242,6 @@ Notice on line 92 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/pr
 04/06/19 04:09:22 PM | ERROR: [8] Undefined variable: pass
 Notice on line 73 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/model/DAO/login_dao.class.singleton.php
  | login | response 200
+04/06/19 05:59:15 PM | ERROR: [8] Undefined index: provi
+Notice on line 32 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200

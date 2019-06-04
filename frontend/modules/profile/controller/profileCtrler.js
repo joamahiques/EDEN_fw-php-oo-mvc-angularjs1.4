@@ -155,9 +155,8 @@ $scope.downloadpdf = function() {
         'eventHandlers': {
             'sending': function (file, formData, xhr) {},
             'success': function (file, response) {
-                // console.log(file);
-                console.log(response);
-                //response = JSON.parse(response);
+                //console.log(response);
+                response = JSON.parse(response);
                 if (response.result==true) {
                     toastr.success('Foto subida correctamente, Actualiza el perfil para guardar cambios', 'Perfecto');
                 

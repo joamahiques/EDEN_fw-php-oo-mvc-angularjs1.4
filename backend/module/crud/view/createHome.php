@@ -5,10 +5,10 @@
 <div>
 	<!-- <div class="row"> -->
 				<h3 class="botno">ALTA NUEVA CASA
-				<?php
-							if ($error != '')
-								print ("<SPAN CLASS='error-message' color:red;>" . "* ".$error . "</SPAN>");
-				?> 
+				<!-- <?php
+							// if ($error != '')
+							// 	print ("<SPAN CLASS='error-message' color:red;>" . "* ".$error . "</SPAN>");
+				?>  -->
 				</h3>
     <!-- </div> -->
 	

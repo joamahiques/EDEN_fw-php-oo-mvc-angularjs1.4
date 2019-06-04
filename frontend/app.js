@@ -1,13 +1,13 @@
-var eden = angular.module('eden',['ngRoute','toastr','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate','infinite-scroll',]);
+var eden = angular.module('eden',['ngRoute','toastr','ngAnimate','angularUtils.directives.dirPagination','ngDialog','ui.bootstrap','pascalprecht.translate','infinite-scroll']);
 eden.config(['$routeProvider',
     function($routeProvider){
-        //console.log('$rProvider');
         $routeProvider
             .when('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'})
             .when('/home/active_user/:token', {resolve:{
                 pass:function(services,$route){
                     return services.put('home', 'active_user',{'token':JSON.stringify({'token':$route.current.params.token})})
                     .then(function(response){
+                        toastr.success('Cuenta Activa, inicia sesión', 'BIENVENID@')
                         location.href = '#/';
                     })
                 }
@@ -58,6 +58,7 @@ eden.config(['$routeProvider',
                     return services.get('crud', 'lista');
                 },
             }})
+            .when('/crudcreate', {templateUrl:'frontend/modules/CRUD/view/crudcreate.view.html', controller: 'createcrudCtrler'})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }
 ]);

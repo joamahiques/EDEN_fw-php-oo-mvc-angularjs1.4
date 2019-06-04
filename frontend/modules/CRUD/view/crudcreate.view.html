@@ -1,0 +1,95 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+    <div>
+                <h3 class="botno">ALTA NUEVA CASA</h3>
+        
+                <form method="post" name="formcasa" id="formcasa" class="formcasa" autocomplete="on">
+                    <div id="datoscasa">
+                        <p>
+                            <input name="nombre" id="nombre"  type="text" placeholder="Nombre" required ng-model="newhome.name" >
+                            <span class="cd-error-message" ng-show="formcasa.nombre.$error.required && (formcasa.nombre.$dirty || formcasa.nombre.$touched)">El nombre es requerido</span>
+                        </p>
+                        <p>
+                            <input name="localidad" id="localidad" type="text" placeholder="Localidad"  ng-model="newhome.city" required>
+                            <span class="cd-error-message" ng-show="formcasa.nombre.$error.required && (formcasa.nombre.$dirty || formcasa.nombre.$touched)">la ciudad es requerida</span>
+                        </p>
+                        <p>
+                            <select  name="provincia" id="provinciaini" placeholder="Provincia" ng-model="newhome.province" required>
+                            </select> 
+                        </p>
+                        <p>
+                            <input id="datepicker" type="text" name="fechacons" placeholder="Fecha de Construcción" ng-model="newhome.datecons">
+                            <span class="cd-error-message" ng-show="formcasa.fechacons.$error.required && (formcasa.fechacons.$dirty || formcasa.fechacons.$touched)">la fecha es requerida</span>
+                        </p>
+                    </div>
+                    <div id="datospropietario">
+                        <p>
+                            <input name="nombrePropietario" id="nombrePropietario" type="text" placeholder="Nombre del propietario" ng-model="newhome.proname" required>
+                            <span class="cd-error-message" ng-show="formcasa.nombrePropietario.$error.required && (formcasa.nombrePropietario.$dirty || formcasa.nombrePropietario.$touched)">Campo requerido</span>
+                        </p>
+                        <p>
+                            <input name="dni" id="dni" type="text" placeholder="DNI" ng-model="newhome.dni" required ng-pattern="/^[0-9]{8}[a-zA-z]{1}/">
+                            <span class="cd-error-message" ng-show="formcasa.dni.$error.pattern && (formcasa.dni.$dirty || formcasa.dni.$touched)">Formato no válido</span>
+                            <span class="cd-error-message" ng-show="formcasa.dni.$error.required && (formcasa.dni.$dirty || formcasa.dni.$touched)">DNI requerido</span>
+
+                        </p>
+                        <p>
+                            <input name="email" id="email" type="text" placeholder="Email del propietario" ng-model="newhome.email" />
+                            <span class="cd-error-message" ng-show="formcasa.email.$error.required && (formcasa.email.$dirty || formcasa.email.$touched)">Email requerido</span>
+                        </p>
+                        <p>
+                            <input name="telefono" id="telefono" type="text" placeholder="Telefono del Propietario" ng-model="newhome.tf" ng-pattern="/[0-9]{9}/"/>
+                            <span class="cd-error-message" ng-show="formcasa.telefono.$error.pattern && (formcasa.telefono.$dirty || formcasa.telefono.$touched)">Formato no válido</span>
+                            <span class="cd-error-message" ng-show="formcasa.telefono.$error.required && (formcasa.telefono.$dirty || formcasa.telefono.$touched)">Teléfono requerido</span>
+                        </p>
+                    </div>
+                    
+                    <div id="carac">
+                        <div>
+                            <p>
+                                <input name="capacidad" id="capacidad"" type="text"  placeholder="Capacidad" ng-model="newhome.capacity" />
+                                <span id="e_capacidad"" class="styerror"></span>
+                            </p>
+                            <p>
+                                <input name="habitaciones" id="habitaciones"" type="text" placeholder="Num de habitaciones" ng-model="newhome.rooms" />
+                                <span id="e_habitaciones"" class="styerror"></span>
+                            </p>
+                            <p>
+                                <input name="precionoche" id="precionoche" type="text" placeholder="Precio por noche" ng-model="newhome.price"/>
+                                <span id="e_precio"" class="styerror"></span>
+                            </p>
+                        </div>
+                        <div >
+                            <p>
+                                <input id="datepicker2" type="text" name="fecha" placeholder="Fecha de Alta" ng-model="newhome.dateregister"/>
+                                <span id="e_fechaAlta" class="styerror"></span>
+                            </p>
+                            <p><label class="reserva">Reserva Completa:  
+                            <span> Si <input name="completa" type="radio" value="si"></span>
+                            <span> No <input name="completa" type="radio" value="no"></span>
+                            <span id="e_completa"  class="styerror"></span>
+                            </label>	
+                            </p>
+                        </div>
+                            <p class="chec"><label>Servicios:<span id="e_servicios"  class="styerror"></span></label>	
+                                <span>Comidas<input type="checkbox" id="servicios" name="servicios[]" value="comidas"></span>
+                                <span>Piscina <input type="checkbox" id="servicios" name="servicios[]" value="piscina"></span>
+                                <span>Gimnasio  <input type="checkbox" id="servicios"  name="servicios[]" value="gimnasio"></span>
+                                <span>Masajes<input type="checkbox" id="servicios" name="servicios[]" value="masajes"></span>
+                                <span>Hidromasaje<input type="checkbox" id="servicios" name="servicios[]" value="hidromasaje"></span>
+                                <span>Acepta Mascotas<input type="checkbox" id="servicios" name="servicios[]" value="mascotas si"></span>
+                            </p>
+                            <p class="chec"><label>Actividades:<span id="e_actividades"" class="styerror"></span></label>	
+                                <span>Yoga <input type="checkbox" id="actividades" name="actividades[]" value="yoga"></span>
+                                <span>Meditacion<input type="checkbox" id="actividades" name="actividades[]" value="meditacion"></span>
+                                <span>Tai chi<input type="checkbox" id="actividades" name="actividades[]" value="tai chi"></span>
+                                <span>Senderismo<input type="checkbox" id="actividades" name="actividades[]" value="senderismo"></span>
+                            </p>
+                    </div>
+                    <p class="fieldset">
+                        <button type="submit" class="full-width" ng-disabled="formcasa.nombre.$invalid" ng-click="registerhome()" ng-class="{'disabled-class': formcasa.nombre.$invalid}">Registrar</button>
+                    </p>
+                </form>
+        </div>
+    </div>
+    </div>

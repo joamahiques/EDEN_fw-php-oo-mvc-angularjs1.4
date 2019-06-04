@@ -1,4 +1,7 @@
-eden.controller('crudCtrler', function($scope, homes, modalServices){
+eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
+  // if($rootScope.type!='admin'){
+  //                       location.href = '#/';
+  //                   }
   if(homes){
     $scope.homescrud=homes; //console.log(homes);
 
@@ -11,6 +14,21 @@ eden.controller('crudCtrler', function($scope, homes, modalServices){
     }
       
 })
+//////delete
+eden.controller('createcrudCtrler', function($scope,modalServices,services,$route,$rootScope){
+//   if($rootScope.type!='admin'){
+//     location.href = '#/';
+// }
+$scope.newhome={
+  name:'',
+}
+    $scope.registerhome = function(){
+      
+      console.log($scope.newhome.name);
+    }
+})
+
+//////delete
 eden.controller('deletecrudCtrler', function($scope,home,modalServices,services,$route){
     $scope.namehouse=home;
     $scope.cancel = function(){

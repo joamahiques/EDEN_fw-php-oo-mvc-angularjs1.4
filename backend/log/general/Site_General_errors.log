@@ -230,3 +230,15 @@ Notice on line 67 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/ca
 03/06/19 12:40:42 PM | ERROR: [8] Undefined offset: 0
 Notice on line 67 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
  | cart | response 200
+04/06/19 03:28:46 PM | ERROR: [8] Undefined offset: 0
+Notice on line 67 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cart/model/DAO/cart_dao.class.singleton.php
+ | cart | response 200
+04/06/19 03:55:31 PM | ERROR: [8] Undefined index: token
+Notice on line 92 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+04/06/19 04:00:49 PM | ERROR: [8] Undefined index: token
+Notice on line 92 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/profile/controller/controller_profile.class.php
+ | profile | response 200
+04/06/19 04:09:22 PM | ERROR: [8] Undefined variable: pass
+Notice on line 73 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/login/model/DAO/login_dao.class.singleton.php
+ | login | response 200

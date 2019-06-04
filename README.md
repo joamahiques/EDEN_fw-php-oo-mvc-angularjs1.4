@@ -7,7 +7,7 @@
 
 ![imagen cabecera](/frontend/assets/img/readme.png)
 
-### **Funcionalidad de la aplicación:**
+### **Características de la aplicación:**
  **SERVIDOR FW PHPOO**
 * ORM
 * PATHS
@@ -24,6 +24,7 @@
 
 **CLIENTE: ANGULARJS 1.4**
 * APICONNECTOR
+* app.js
 * Factory en common.services.js, cart, contact, login(localStorage.services y login.services), shop, apis, favorites,modal y search
 * Directiva propia clubrural, para  home y shop.
 * Directiva DropZone
@@ -108,7 +109,7 @@ Componentes
 * [ngInfinite-Scroll](https://sroze.github.io/ngInfiniteScroll/)
 -----------------------
 ----------------------------------
-### **Functionality of the application:**
+### **Features of the application:**
 **SERVER FW PHPOO**
 * ORM 
 * PATHS
@@ -125,6 +126,7 @@ Componentes
 
 **CLIENT: ANGULARJS 1.4**
 * APICONNECTOR
+* app.js
 * Clubrural own directive, for home and shop.
 * DropZone directive
 * Factory common.services.js, cart, contact, login(localStorage.services & login.services), shop, apis, favorites, modal & search.

@@ -43,8 +43,11 @@ function($rootScope,localstorageServices,services,toastr,$route){
     function logout(){ ////viene del controlador del menu
         var token = localstorageServices.getuser();
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
-            if(response=='ok'){
+            //console.log(response);
+            //console.log($rootScope.type);
+            if(response === '"ok"'){
                 if($rootScope.type=="client_rs"){
+                    //console.log('client_rs')
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
                     delete $rootScope.user;
@@ -58,16 +61,18 @@ function($rootScope,localstorageServices,services,toastr,$route){
                         client_id: authclientID
                     });
                 }else{
+                    //console.log('NO client_rs')
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
                     delete $rootScope.user;
                     delete $rootScope.type;
                     toastr.info('Sesión cerrada correctamente', 'BYE!');
-                    //$route.reload();
+                    $route.reload();
                     login();
                 }
                  
             }else{
+                console.log('fuera');
                 toastr.info('Sesión cerrada correctamente', 'BYE!');
             }
             

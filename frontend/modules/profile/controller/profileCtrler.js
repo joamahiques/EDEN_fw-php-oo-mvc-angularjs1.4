@@ -27,12 +27,12 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         new:""
     }
 
-    if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
-        $scope.dataprofile.proviselected = $user.province;
-    }
-    if (typeof $user.city != 'undefined' && $user.city) {///si no es null ni undefined ni esta vacio.... 
-        $scope.dataprofile.cityselected = $user.city;
-    }
+    // if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
+    //     $scope.dataprofile.proviselected = $user.province;
+    // }
+    // if (typeof $user.city != 'undefined' && $user.city) {///si no es null ni undefined ni esta vacio.... 
+    //     $scope.dataprofile.cityselected = $user.city;
+    // }
 /////////////////////////////tabs   
     $scope.tabprofile = function() {/// profile tab
         $scope.profile=true;
@@ -129,8 +129,8 @@ $scope.downloadpdf = function() {
             'sending': function (file, formData, xhr) {},
             'success': function (file, response) {
                 // console.log(file);
-                //console.log(response);
-                response = JSON.parse(response);
+                console.log(response);
+                //response = JSON.parse(response);
                 if (response.result==true) {
                     toastr.success('Foto subida correctamente, Actualiza el perfil para guardar cambios', 'Perfecto');
                 
@@ -165,6 +165,7 @@ $scope.downloadpdf = function() {
                 loginservices.login();;
                 toastr.success('Perfil actualizado correctamente', 'Perfecto');
                 location.href='#/profile'
+                // location.reload();
             }else if (response[0]==false){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;

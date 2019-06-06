@@ -22,7 +22,7 @@ html * {
   input::-ms-clear, textarea::-ms-clear {
     display: none;
   }
- button.full-width.disabled-class{
+ button.full-width.disabled-class, #formcasabutton.disabled-class{
   cursor: inherit;
   background: #c2cbcc;
  }
@@ -184,7 +184,7 @@ div.ngdialog-overlay{
     /* space left for the HIDE button */
     padding-right: 65px;
   }
-  .cd-form input[type=submit], .cd-form button, .formcasa button{
+  .cd-form input[type=submit], .cd-form button, #formcasabutton{
     padding: 16px 0;
     cursor: pointer;
     background: #2f889a;

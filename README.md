@@ -93,6 +93,8 @@ Componentes
 ### **Otras tecnologías:**
 * [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)
     * [Typeahead] (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
+* [AngularJS Material] (https://material.angularjs.org/latest/)
+    * [Datepicker] (https://material.angularjs.org/latest/demo/datepicker)
 * [angular-utils] (https://github.com/michaelbromley/angularUtils)
     * [Pagination] (https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
 * Hash password y verify password
@@ -195,6 +197,8 @@ Components:
 ### **Other technologies:**
 * [ui-Boostrap] (https://angular-ui.github.io/bootstrap/)
     * [Typeahead] (https://github.com/angular-ui/bootstrap/tree/master/src/typeahead)
+* [AngularJS Material] (https://material.angularjs.org/latest/)
+    * [Datepicker] (https://material.angularjs.org/latest/demo/datepicker)
 * [angular-utils] (https://github.com/michaelbromley/angularUtils)
     * [Pagination] (https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination)
 * Hash password y verify password

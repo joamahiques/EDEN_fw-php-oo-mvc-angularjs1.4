@@ -15,16 +15,57 @@ eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
       
 })
 //////delete
-eden.controller('createcrudCtrler', function($scope,modalServices,services,$route,$rootScope){
+eden.controller('createcrudCtrler', function($scope,geoapiServices,services,$route,$rootScope){
 //   if($rootScope.type!='admin'){
 //     location.href = '#/';
 // }
 $scope.newhome={
   name:'',
+  provi:'',
+  city:'',
+  proviselected:'Escoja una provincia',
+  cityselected:'Escoja una población',
+  price:'',
+  proname:'',
+  dni:'',
+  email:'',
+  tf:'',
+  capacity:'',
+  rooms:'',
+  comp:'',
+  services:{},
+  activities:{},
+  datecons:''
+
 }
+geoapiServices.loadprovince()
+    .then( function(response){
+        //to Upercase si viene de xml
+        angular.forEach(response, function (value, key) {
+            response[key].PRO=response[key].PRO.toUpperCase();
+        })
+        $scope.provinces=response;
+    });
+     //////////cities
+     $scope.loadcity = function(){
+      var provi=$scope.newhome.provi;
+      //console.log(provi);
+      geoapiServices.loadcity(provi)
+      .then( function(response){
+          //to Upercase si viene de xml
+          angular.forEach(response, function (value, key) {
+              response[key].DMUN50=response[key].DMUN50.toUpperCase();
+          })
+          $scope.newhome.cityselected = 'Escoja una población';
+          //console.log(response);
+          $scope.cities=response;
+      })
+
+  }
+
     $scope.registerhome = function(){
       
-      console.log($scope.newhome.name);
+      console.log($scope.newhome);
     }
 })
 

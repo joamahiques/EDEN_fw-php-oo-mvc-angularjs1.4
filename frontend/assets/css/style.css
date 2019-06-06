@@ -30,7 +30,9 @@ body {
     
 }
 header{
-height: 65vh;}
+height: 65vh;
+min-height: 375px;
+}
 /* transitions ng-repeat div home */
 div.ng-enter {
     -webkit-transition: 2s;
@@ -426,7 +428,15 @@ header h1 a img {
 #rel{
     position: relative;
 }
-
+#search{
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 65vh;
+    min-height: 375px;
+}
 .search{
     position: absolute;
     min-width: 550px;
@@ -692,6 +702,7 @@ ul.tabs li.alpha a{
 	width:100%;
     /* height:400px; */
     height: 65vh;
+    min-height: 375px;
 	margin: 0 auto;
 	overflow:hidden;
 	position:relative;

@@ -132,11 +132,11 @@ $scope.downloadpdf = function() {
             $scope.dataprofile.cityselected = 'Escoja una población';
             //console.log(response);
             $scope.cities=response;
-            console.log($user.city);
+            //console.log($user.city);
             angular.forEach($scope.cities, function (value, key) {
                 ////si el usuario tiene en bd
                 if($scope.cities[key].DMUN50==$user.city){
-                    console.log($scope.cities[key].DMUN50);
+                   // console.log($scope.cities[key].DMUN50);
                    $scope.dataprofile.city = $scope.cities[key];
                 };
             })
@@ -195,9 +195,9 @@ $scope.downloadpdf = function() {
         var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
         "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO,"city": $scope.dataprofile.city.DMUN50,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
-        console.log(profile_form);
+        //console.log(profile_form);
         services.post('profile', 'update_profile', profile_form).then(function (response) {
-            console.log(response);
+            //console.log(response);
             if(response[0]==true){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
@@ -222,7 +222,7 @@ $scope.downloadpdf = function() {
         var data = {"oldpass": $scope.profilepass.old, "newpass": $scope.profilepass.new,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
         services.post('profile', 'update_pass_pro', profile_form).then(function (response) {
-            console.log(response);
+            //console.log(response);
             if(response[0]==true){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
@@ -244,18 +244,18 @@ $scope.downloadpdf = function() {
 
 })
 
-eden.filter('searchFor', function(){
-	return function(arr, searchString){
-		if(!searchString){
-			return arr;
-		}
-		var result = [];
-		 searchString = searchString.toLowerCase();
-		angular.forEach(arr, function(item){
-			if(item.nombre.toLowerCase().indexOf(searchString) !== -1){
-				result.push(item);
-			}
-		});
-		return result;
-	};
-});
+// eden.filter('searchFor', function(){
+// 	return function(arr, searchString){
+// 		if(!searchString){
+// 			return arr;
+// 		}
+// 		var result = [];
+// 		 searchString = searchString.toLowerCase();
+// 		angular.forEach(arr, function(item){
+// 			if(item.nombre.toLowerCase().indexOf(searchString) !== -1){
+// 				result.push(item);
+// 			}
+// 		});
+// 		return result;
+// 	};
+// });

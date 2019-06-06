@@ -630,7 +630,7 @@ ul.tabs li.alpha a{
  .tab-container .bootpag.ng-isolate-scope{
     left: 0;
     position: absolute;
-    bottom: 150px;
+    bottom: 50px;
     right: 0;
   }
   .bootpag.ng-isolate-scope{

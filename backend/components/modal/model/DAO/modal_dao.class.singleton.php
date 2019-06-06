@@ -1,7 +1,4 @@
 <?php
-//echo json_encode("home_dao.class.singleton.php");
-//exit;
-
 class modal_dao {
     static $_instance;
 

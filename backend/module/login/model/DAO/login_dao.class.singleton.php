@@ -63,8 +63,6 @@ class login_dao {
         $email=$data['email'];
         $avatar=$data['avatar'];
         $type="client_rs";
-        // $pass=substr(md5(uniqid()), 0, 10);
-        // $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
         $token= generate_JWK($nombre);
         $tokenM = generate_JWK($nombre);
         $sql ="INSERT INTO `users2`(`IDuser`, `user`, `email`, `type`, `avatar`, `activate`, `tokenMail`, `token`)

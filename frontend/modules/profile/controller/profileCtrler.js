@@ -1,5 +1,5 @@
 eden.controller('profileCtrler', function($scope,user,services, toastr,loginservices,localstorageServices,geoapiServices,$rootScope){
-    localstorageServices.setuser(user[1]);
+    localstorageServices.setuser(user[1]);///guardamos token que acabamos de actualizar
     loginservices.login();
     $scope.updatepass=false;
     $scope.aupdatepass=true;
@@ -26,13 +26,7 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         old:"",
         new:""
     }
-/////cargamos provincia y municipio de db
-    // if (typeof $user.province != 'undefined' && $user.province) {///si no es null ni undefined ni esta vacio.... 
-    //     $scope.dataprofile.proviselected = $user.province;
-    // }
-    // if (typeof $user.city != 'undefined' && $user.city) {///si no es null ni undefined ni esta vacio.... 
-    //     $scope.dataprofile.cityselected = $user.city;
-    // }
+
 /////////////////////////////tabs   
     $scope.tabprofile = function() {/// profile tab
         $scope.profile=true;
@@ -57,7 +51,6 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
         
     }
     $scope.tabpurchase = function() {// purchases tab
-        // $scope.active=true;
         $scope.profile=false;
         $scope.favorites=false;
         $scope.purchases=true;
@@ -76,11 +69,11 @@ eden.controller('profileCtrler', function($scope,user,services, toastr,loginserv
  ///////////////////////////delete favorites
 
 $scope.deletefavo = function(name){
-    console.log(name);
+    //console.log(name);
     services.post('profile','delete_favorites',{'tok':localstorageServices.getuser(),'nombre':name}).then(function (response) {
         console.log(response);
         toastr.success(response, 'INFO');
-        $scope.tabfavorites();
+        $scope.tabfavorites(); ///actualizamos los favoritos de la tabla
     })
 }
 
@@ -88,32 +81,36 @@ $scope.deletefavo = function(name){
 $scope.downloadpdf = function() {
     var doc = new jsPDF();
     var rows = [];
+    ////leemos los datos
     angular.forEach($scope.purchases, function (value, key) {
         var temp = [value.fecha,value.nombre,value.cantidad,value.precio,value.total];
-        rows.push(temp);
+        rows.push(temp);///los añadimos al array rows (hacemos esto por que si no, al haber paginación sólo sacaba lo de la pagina visible)
     }); 
+    ///creamos la tabla del pdf con el array
     doc.autoTable({
         margin: {top: 30},
         head: [['Fecha', 'Nombre','Cantidad','Precio','Total']],
         body: rows,
     })
+    //formatemaos PDF
      doc.text(20,20,"Mis Compras en EDEN");
+     ///opción de guardado del PDF
      doc.save('mypurchases.pdf');
 }
 /////////////////////////profile    
-    ///////provinces
+    ///////provinces para select
     geoapiServices.loadprovince()
     .then( function(response){
         //to Upercase si viene de xml
         angular.forEach(response, function (value, key) {
             response[key].PRO=response[key].PRO.toUpperCase();
         })
-        $scope.provinces=response;
+        $scope.provinces=response;///llenamos select
         ////si el usuario tiene en bd
         angular.forEach($scope.provinces, function (value, key) {
             if($scope.provinces[key].PRO==$user.province){
-               $scope.dataprofile.provi = $scope.provinces[key];
-               $scope.loadcity();
+               $scope.dataprofile.provi = $scope.provinces[key];/// seleccionamos opcion igual al del usuario
+               $scope.loadcity();//cargamos ciudades
             };
             
         })
@@ -122,7 +119,7 @@ $scope.downloadpdf = function() {
     //////////cities
     $scope.loadcity = function(){
         var provi=$scope.dataprofile.provi;
-        //console.log(provi);
+        ///cargamos ciudades
         geoapiServices.loadcity(provi)
         .then( function(response){
             //to Upercase si viene de xml
@@ -130,14 +127,11 @@ $scope.downloadpdf = function() {
                 response[key].DMUN50=response[key].DMUN50.toUpperCase();
             })
             $scope.dataprofile.cityselected = 'Escoja una población';
-            //console.log(response);
-            $scope.cities=response;
-            //console.log($user.city);
+            $scope.cities=response;///cargamos select
+            ////si el usuario tiene en bd
             angular.forEach($scope.cities, function (value, key) {
-                ////si el usuario tiene en bd
                 if($scope.cities[key].DMUN50==$user.city){
-                   // console.log($scope.cities[key].DMUN50);
-                   $scope.dataprofile.city = $scope.cities[key];
+                   $scope.dataprofile.city = $scope.cities[key];///seleccionamos opción igual al del usuario
                 };
             })
         })
@@ -157,10 +151,11 @@ $scope.downloadpdf = function() {
             'success': function (file, response) {
                 //console.log(response);
                 response = JSON.parse(response);
+                ///foto correcta
                 if (response.result==true) {
                     toastr.success('Foto subida correctamente, Actualiza el perfil para guardar cambios', 'Perfecto');
-                
                 } else {
+                    ////foto demasiado grande, borramos la foto e informamos al user
                     toastr.error(response.error, 'ERROR');
                     var element2;
                     if ((element2 = file.previewElement) !== null) {
@@ -170,6 +165,7 @@ $scope.downloadpdf = function() {
                     }
                  }
             },
+            ////eliminar
             'removedfile': function (file, serverFileName) {
                 if (file.xhr.response) {
                     var data=JSON.parse(file.xhr.response)
@@ -179,39 +175,25 @@ $scope.downloadpdf = function() {
     }};
 ///////update
     $scope.updateprofile = function(){
-        // var provis;
-        // var munis;
-        // if(!$scope.dataprofile.provi.PRO){
-        //     provis=$user.province;
-        // }else{ 
-        //     provis=$scope.dataprofile.provi.PRO.toUpperCase();
-        // }
-        // if(!$scope.dataprofile.city.DMUN50){
-        //     munis=$user.city;
-        // }else{
-        //     munis=$scope.dataprofile.city.DMUN50.toUpperCase();
-        // }
-        // console.log($scope.dataprofile);
+
         var data = {"user": $scope.dataprofile.user, "mail": $scope.dataprofile.mail, 
         "tf": $scope.dataprofile.tf,"provi": $scope.dataprofile.provi.PRO,"city": $scope.dataprofile.city.DMUN50,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
-        //console.log(profile_form);
+        //update
         services.post('profile', 'update_profile', profile_form).then(function (response) {
-            //console.log(response);
             if(response[0]==true){
-                localstorageServices.setuser(response[1]);
-                loginservices.login();;
+                localstorageServices.setuser(response[1]);///almacenamos token
+                loginservices.login();////pintamos menu
                 toastr.success('Perfil actualizado correctamente', 'Perfecto');
-                location.href='#/profile'
-                //location.reload();
+                location.reload();
             }else if (response[0]==false){
-                localstorageServices.setuser(response[1]);
-                loginservices.login();;
+                localstorageServices.setuser(response[1]);//guardamos token
+                loginservices.login();//pintamos menu
                 toastr.error('No se ha podido actualizar el perfil, prueba mas tarde', 'ERROR');
                 location.href='#/profile'
             }else{
-                toastr.error('Bicho malo FUERA', 'ERROR');
-                loginservices.logout();
+                toastr.error('Bicho malo FUERA', 'ERROR');////token no coincide
+                loginservices.logout();///sacamos al usuario
                 location.href='#/'
             }    
         })
@@ -221,21 +203,21 @@ $scope.downloadpdf = function() {
     $scope.submitupdatepass = function(){
         var data = {"oldpass": $scope.profilepass.old, "newpass": $scope.profilepass.new,"tok": localstorageServices.getuser()};
         var profile_form = JSON.stringify(data);
+        ////udate
         services.post('profile', 'update_pass_pro', profile_form).then(function (response) {
             //console.log(response);
             if(response[0]==true){
-                localstorageServices.setuser(response[1]);
-                loginservices.login();;
+                localstorageServices.setuser(response[1]);//guardamos token
+                loginservices.login();///pintamos menu
                 toastr.success('Contraseña actualizada correctamente', 'Perfecto');
-                $scope.updatepass=false;
+                $scope.updatepass=false;//cerramos modal de updatepass
             }else if (response[0]==false){
                 localstorageServices.setuser(response[1]);
                 loginservices.login();;
                 toastr.error('No se ha podido actualizar la contraseña, prueba mas tarde', 'ERROR');
-                $scope.updatepass=false;
+                $scope.updatepass=false;///cerramos omdal de updatepass
             }else{
-                toastr.error('Bicho malo FUERA', 'ERROR');
-                loginservices.login();
+                toastr.error('Bicho malo FUERA', 'ERROR');///no coincide token
                 loginservices.logout();
                 location.href='#/'
             }
@@ -243,19 +225,3 @@ $scope.downloadpdf = function() {
     }
 
 })
-
-// eden.filter('searchFor', function(){
-// 	return function(arr, searchString){
-// 		if(!searchString){
-// 			return arr;
-// 		}
-// 		var result = [];
-// 		 searchString = searchString.toLowerCase();
-// 		angular.forEach(arr, function(item){
-// 			if(item.nombre.toLowerCase().indexOf(searchString) !== -1){
-// 				result.push(item);
-// 			}
-// 		});
-// 		return result;
-// 	};
-// });

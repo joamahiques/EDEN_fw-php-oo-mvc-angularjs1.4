@@ -17,8 +17,6 @@ class cart_dao {
     }
 
     function insert_cart_DAO($db, $data){///li passem el datos del carro i el usuari
-        // echo json_encode($data['cart']);
-        // exit;
         $user=$this->select_user_DAO($db, $data['tok']);
         $nomuser=$user[0][0]['IDuser'];
         $tok=$user[1];
@@ -38,10 +36,7 @@ class cart_dao {
 
 
         $datos=$data['cart'];
-        
-        //die();
         foreach ($datos as $row) {
-            //$tok=$user[0][1];
             $nombre = $row['nombre'];
             $precio = $row['precio'];
             $cantidad = $row['cantidad'];
@@ -66,11 +61,9 @@ class cart_dao {
 
         $user=$res[0]['IDuser'];
         
-        $sql = "SELECT * FROM `$user`";
-        //$sql = "SELECT * FROM `$user` WHERE IDclient=(SELECT IDuser FROM users2 WHERE token='$user')";
-         
-         $stmp = $db->ejecutar($sql);
-         return $db->listar($stmp);
+        $sql = "SELECT * FROM `$user`";         
+        $stmp = $db->ejecutar($sql);
+        return $db->listar($stmp);
 
     }
 
@@ -109,11 +102,8 @@ class cart_dao {
        
         $token= generate_JWK($nombre);
         $sql = "UPDATE users2 set token ='$token' WHERE token='$tok'";
-        //$sql = "UPDATE users2 set token ='$token' WHERE user='$nombre'";
-
         $stmt = $db->ejecutar($sql);
         return $token;
-        //return $db->listar($stmt);
     }
 
 

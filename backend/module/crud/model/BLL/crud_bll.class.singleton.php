@@ -25,16 +25,10 @@ class crud_bll{
     public function delete_all_homes_BLL(){
         return $this->dao->delete_all_homes_DAO($this->db);
     }
-    // public function insert_user_BLL($data){
-    //     return $this->dao->insert_user_DAO($this->db, $data);
-    // }
-    // public function select_user_BLL($data){
-    //     return $this->dao->select_user_DAO($this->db, $data);
-    // }
-    // public function social_BLL($data){
-    //     return $this->dao->social_DAO($this->db, $data);
-    // }
-    // public function delete_token_BLL($data){
-    //     return $this->dao->delete_token_DAO($this->db, $data);
-    // }
+    public function insert_home_BLL($data){
+        return $this->dao->insert_home_DAO($this->db, $data);
+    }
+    public function select_home_BLL($data){
+        return $this->dao->select_home_DAO($this->db, $data);
+    }
 }

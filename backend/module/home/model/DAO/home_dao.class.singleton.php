@@ -18,7 +18,6 @@ class home_dao {
         $start = $data['start'];
         $records_per_page = $data['records'];
         $sql = "SELECT * from casas ORDER BY provincia ASC LIMIT $start, $records_per_page";
-        //$sql = "SELECT * from casas order by provincia";
         $stmp = $db->ejecutar($sql);
         return $db->listar($stmp);
     }

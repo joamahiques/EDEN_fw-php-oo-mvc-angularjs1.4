@@ -1,7 +1,4 @@
 <?php
-//echo json_encode("profile_dao.class.singleton.php");
-//exit;
-
 class profile_dao {
     static $_instance;
 

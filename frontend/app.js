@@ -15,7 +15,6 @@ eden.config(['$routeProvider',
             .when('/contacto', {templateUrl:'frontend/modules/contact/view/contact.view.html', controller: 'contactCtrler'})
             .when('/tienda', {templateUrl:'frontend/modules/shop/view/shop.view.html', controller: 'shopCtrler', resolve:{
                 homes:function(services){
-                    // searchservices.data={};
                     return services.post('shop', 'products');
                 }
             }})
@@ -40,12 +39,6 @@ eden.config(['$routeProvider',
                     $token = localstorageServices.getuser()
                     return services.post('profile', 'load_data_user',{'token': $token})
                 },
-                // favo:function(services,localstorageServices,$timeout){
-                //     $timeout(function(){
-                //         $token = localstorageServices.getuser()
-                //         return services.get('components', 'favorites','read_favorites',$token);
-                //     },2000);    
-                // },
             }})
             .when('/cart', {templateUrl:'frontend/modules/cart/view/cart.view.html', controller: 'cartCtrler',resolve:{
                 cart:function(services,localstorageServices){
@@ -59,6 +52,11 @@ eden.config(['$routeProvider',
                 },
             }})
             .when('/crudcreate', {templateUrl:'frontend/modules/CRUD/view/crudcreate.view.html', controller: 'createcrudCtrler'})
+            .when('/crudupdate:home', {templateUrl: "frontend/modules/CRUD/view/crudupdate.view.html",controller: "updatecrudCtrler",resolve:{
+                homeup:function($route, services){
+                    return services.get('crud', 'read_home',$route.current.params.home);
+                }
+            }})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }
 ]);

@@ -1,0 +1,107 @@
+<div id="contenido" class="content">
+    <div class="container_12">
+    <div>
+    
+                <h3 class="botno">ACTUALIZAR CASA</h3>
+    
+    <form method="post" name="formcasa" class="update" id="formcasa" autocomplete="on">
+    <div id="datoscasa">
+        <p>
+            <label for="nombre" class="update">Nombre</label>
+            <input name="nombre" id="nombre" type="text" placeholder="Nombre" value="{{data.name}}" readonly />
+            <span id="e_nombre" class="styerror"></span>
+        </p>
+        <p>
+            <label for="localidad" class="update">Localidad</label>
+            <select class="full-width has-padding has-border" name="selcity" id="selcity" ng-model="data.city" ng-options="item.DMUN50 for item in cities"> 
+                <option value="" selected="selected">{{data.cityselected}}</option>
+            </select>
+        </p>
+        <p>
+            <label for="provincia" class="update">Provincia</label>
+            <select class="full-width has-padding has-border provinciaprofile" ng-model="data.provi" ng-model="data.provi" ng-options="provi.PRO for provi in provinces track by provi.PRO" ng-change="loadcity()">    
+                <option value="" selected="selected">{{data.proviselected}}</option>
+            </select>
+        </p>
+        <p>
+                <label for="precionoche" class="update">Precio por noche</label>
+                <input name="precionoche" id="precionoche" type="text" placeholder="Precio por noche" value="{{data.price}}€">
+                <span id="e_precio"" class="styerror"></span>
+            </p>
+        
+    </div>
+    <div id="datospropietario">
+        <p>
+            <label for="nombrePropietario" class="update">Nombre del Propietario</label>
+            <input name="nombrePropietario" id="nombrePropietario" type="text" placeholder="nombre del propietario" value="{{data.proname}}" readonly />
+            <span id="e_nombrePropietario" class="styerror"></span>
+        </p>
+        <p>
+            <label for="dni" class="update">DNI del Propietario</label>
+            <input name="dni" id="dni" type="text" placeholder="DNI" value="{{data.dni}}">
+            <span id="e_dni" class="styerror"></span>
+        </p>
+        <p>
+            <label for="email" class="update">Email del Propietario</label>
+            <input name="email" id="email" type="text" placeholder="email" value="{{data.email}}">
+            <span id="e_email" class="styerror"></span>
+        </p>
+        <p>
+            <label for="telefono" class="update">Teléfono del propietario</label>
+            <input name="telefono" id="telefono" type="text" placeholder="telefono" value="{{data.tf}}">
+            <span id="e_telefono" class="styerror"></span>
+        </p>
+    </div>
+    <div id="carac">
+        <div class="medio">
+            <p>
+                <label for="capacidad" class="update">Capacidad Total</label>
+                <input name="capacidad" id="capacidad"" type="text"  placeholder="capacidad" value="{{data.capacity}}">
+                <span id="e_capacidad"" class="styerror"></span>
+            </p>
+            <p>
+                <label for="habitaciones" class="update">Num de Habitaciones</label>
+                <input name="habitaciones" id="habitaciones"" type="text" placeholder="habitaciones" value="{{data.rooms}}">
+                <span id="e_habitaciones"" class="styerror"></span>
+            </p>
+            <p class="inputupdate"><label class="update">Reserva Completa:</label>	
+                <span> Si <input name="completa" type="radio" value="si"></span>
+                <span> No <input name="completa" type="radio" value="no"></span>
+                <span id="e_completa"  class="styerror"></span>
+            </p>
+           
+        </div>
+        <div class="medio">
+            <p>
+                <label for="fechaAlta" class="update">Fecha de Construcción</label> 
+                <md-datepicker ng-model="data.datecons" md-placeholder="{{data.datecons}}"></md-datepicker>
+            </p>
+            <p>
+                    <label for="fechaAlta" class="update">Fecha de Registro</label> 
+                    <md-datepicker ng-model="data.dateregister" md-placeholder="{{data.dateregister}}"></md-datepicker>
+           </p>
+           
+        </div>
+            <p class="chec"><label class="update">Servicios: <span id="e_servicios" " class="styerror"></span></label>	
+                <span>Comidas<input type="checkbox" name="servicios[]" value="comidas"></span>
+                <span>Piscina <input  type="checkbox" name="servicios[]" value="piscina"></span>
+                <span>Gimnasio  <input  type="checkbox" name="servicios[]" value="gimnasio"></span>
+                <span>Masajes<input  type="checkbox" name="servicios[]" value="masajes"></span>
+                <span>Hidromasaje<input  type="checkbox" name="servicios[]" value="hidromasaje"></span>
+                <span>Acepta Mascotas<input  type="checkbox" name="servicios[]" value="mascotas si"></span>
+            </p>
+            
+            <p class="chec"><label class="update">Actividades: <span id="e_actividades"" class="styerror"></span></label>	
+                <span>Yoga <input  type="checkbox" name="actividades[]" value="yoga"></span>
+                <span>Meditacion<input  type="checkbox" name="actividades[]" value="meditacion"></span>
+                <span>Tai chi<input  type="checkbox" name="actividades[]" value="tai chi"></span>
+                <span>Senderismo<input  type="checkbox" name="actividades[]" value="senderismo"></span>
+            </p>
+        </div>
+        <div class="btns">
+                <a class="btn"  name="alta"  onclick="validate_data()" type="button" value="Alta" id="alta" />Actualizar</a>
+        </div>
+    </form>
+    </div>
+    </div>
+    </div>

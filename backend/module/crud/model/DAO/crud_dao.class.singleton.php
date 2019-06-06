@@ -20,15 +20,68 @@ class crud_dao {
         return $db->listar($stmt); 
     }
 
+    function select_home_DAO($db,$home){
+
+        $home=substr($home,1);
+        $sql = "SELECT * FROM casas WHERE nombre='$home'";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt); 
+    }
+
     function delete_home_DAO($db,$home){
         $sql = "DELETE FROM casas WHERE nombre='$home'";
         return  $db->ejecutar($sql);
         
     }
+    
+    function insert_home_DAO($db,$datos){
+            $nombre=$datos[name];
+			$localidad=$datos[city][DMUN50];
+        	$provincia=$datos[provi][PRO];
+			$nombrePropietario=$datos[proname];
+			$dni=$datos[dni];
+        	$email=$datos[email];
+        	$telefono=$datos[tf];
+        	$capacidad=$datos[capacity];
+			$habitaciones=$datos[rooms];
+            $entera=$datos[comp];
+            foreach($datos[services] as $key=>$value) {
+                $servicios=$servicios."$key,";
+            }
+            foreach($datos[activities] as $key=>$value) {
+                $actividades=$actividades."$key,";
+            }
+            $fecha = substr($datos[dateregister], 0, 10);
+            $fechacons=substr($datos[datecons], 0, 10);
+			$edadcasa=$this->calculaAnos($fechacons);
+			$precionoche=$datos[price];
+			
+			$sql ="INSERT INTO `casas`(`ID`, `nombre`, `localidad`, `provincia`, `nombrePropietario`, `dni`, `email`, `telefono`, `capacidad`, `habitaciones`, `entera`, `servicios`, `actividades`, `fecha`, `fechacons`, `edadcasa`, `precionoche`)
+            VALUES (null,'$nombre','$localidad','$provincia','$nombrePropietario','$dni','$email','$telefono','$capacidad','$habitaciones','$entera','$servicios','$actividades','$fecha','$fechacons','$edadcasa', '$precionoche')";
+            return  $db->ejecutar($sql);
+    }
 
     function delete_all_homes_DAO($db){
-        
         $sql = "DELETE FROM casas";
         return  $db->ejecutar($sql);
     }
+    function calculaAnos($fechacons){
+		
+		$fecha = new DateTime($fechacons);
+		//echo ($fechacons); 
+		$fecha_y_m_d = $fecha->format('y-m-d');
+		//echo ("......") ;
+        $tiempo = time() - strtotime($fecha_y_m_d);
+        //echo $tiempo;
+		$edad = floor($tiempo/31556926);
+		//echo ("......") ;
+       // echo $edad;
+		
+		if($edad<0){
+			$edad=0;
+		}
+		return $edad;
+		
+
+	}
 }

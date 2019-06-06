@@ -20,6 +20,20 @@
             }
         }
 
+        function read_home(){
+            try{
+                $arrValue = loadModel(MODEL_MODULE,'crud_model','select_home',$_GET['aux']);
+            }catch (Exception $e){
+                echo 'error';
+            }
+            
+            if(!$arrValue){
+                echo 'error de conexión';
+            }else{
+                echo json_encode($arrValue);
+            }
+        }
+
         function delete_home(){
                     try{
                        $home=$_GET['aux'];
@@ -33,6 +47,23 @@
                     }else{
                         echo json_encode($arrValue);
                     }
+        }
+
+        function create_home(){
+            try{
+
+                $home=$_POST;
+                $arrValue = loadModel(MODEL_MODULE,'crud_model','insert_home',$home);
+                
+            }catch (Exception $e){   
+                echo ("error de conexion");
+            }
+            if($arrValue){
+                echo json_encode($arrValue);
+            }else{
+                echo json_encode($arrValue);
+            }
+
         }
             
         

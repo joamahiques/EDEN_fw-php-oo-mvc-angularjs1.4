@@ -13,8 +13,7 @@ class shop_dao {
         }
         return self::$_instance;
     }
-    
-    
+
     public function count_DAO($db, $data) {
         $provi=$data['provi'];
         $local=$data['local'];
@@ -40,8 +39,6 @@ class shop_dao {
         $provi=$data['provi'];
         $local=$data['local'];
         $val=$data['val'];
-        // $start = $data['start'];
-        // $records_per_page = $data['records'];
         if ($val=='null'){
             $val='';
         }
@@ -51,7 +48,6 @@ class shop_dao {
         if ($local=='null'){
             $local='';
         }
-        // $sql = "SELECT * FROM casas WHERE provincia LIKE '%" . $provi . "%' AND localidad like '%" . $local . "%' AND nombre LIKE '%" . $val . "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC LIMIT $start, $records_per_page";
         $sql = "SELECT * FROM casas WHERE provincia LIKE '%" . $provi . "%' AND localidad like '%" . $local . "%' AND nombre LIKE '%" . $val . "%' ORDER BY provincia ASC, localidad ASC, capacidad ASC";
 
         
@@ -59,6 +55,7 @@ class shop_dao {
         $stmp = $db->ejecutar($sql);
         return $db->listar($stmp);
     }
+    
     public function productsmap_DAO($db, $data){ //$provi,$local,$val
         
         $provi=$data['provi'];

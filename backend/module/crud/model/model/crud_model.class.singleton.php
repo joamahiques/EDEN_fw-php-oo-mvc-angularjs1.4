@@ -23,16 +23,10 @@ class crud_model {
     public function delete_all_homes($data) {
         return $this->bll->delete_all_homes_BLL($data);
     }
-    // public function insert_user($data) {
-    //     return $this->bll->insert_user_BLL($data);
-    // }
-    // public function select_user($data) {
-    //     return $this->bll->select_user_BLL($data);
-    // }
-    // public function social($data) {
-    //     return $this->bll->social_BLL($data);
-    // }
-    // public function delete_token($data) {
-    //     return $this->bll->delete_token_BLL($data);
-    // }
+    public function insert_home($data) {
+        return $this->bll->insert_home_BLL($data);
+    }
+    public function select_home($data) {
+        return $this->bll->select_home_BLL($data);
+    }
 }

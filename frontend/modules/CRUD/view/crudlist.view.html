@@ -24,7 +24,7 @@
                         <td>{{res.localidad}}</td>
                         <td>{{res.provincia}}</td>
                         <td class='flex'><a ng-click="dialog(res.nombre)" title="details"><i class="fas fa-info-circle"></i></a>
-                        <a ng-click="update(res.nombre)" title="actualizar"><i class="far fa-edit"></i></a>
+                        <a href="#crudupdate:{{res.nombre}}" title="actualizar"><i class="far fa-edit"></i></a>
                         <a ng-click="deletehome(res.nombre)" title="delete"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
                 </tbody>

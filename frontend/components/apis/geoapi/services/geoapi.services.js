@@ -3,9 +3,8 @@ function($http,$q,services){
     var service = {};
     service.loadprovince = loadprovince;
     service.loadcity = loadcity;
-    //service.addfavorite = addfavorite;
     return service;
-
+    /////provincias
     function loadprovince(){
         var defered=$q.defer();
         var promise=defered.promise;
@@ -21,7 +20,7 @@ function($http,$q,services){
                 }else{
                     defered.resolve(data.data);                    
                 }
-              }).error(function(data, status, headers, config) {
+              }).error(function(data, status, headers, config) {//con error tb de xml
                 services.get("components","geoapi","load_provinces", data).then(function(response) {
                     console.log('xml');
                         defered.resolve(response); 
@@ -29,7 +28,7 @@ function($http,$q,services){
               });
         return promise;
     }
-
+    ///ciudades
     function loadcity(provi){
         var defered=$q.defer();
         var promise=defered.promise;
@@ -39,7 +38,6 @@ function($http,$q,services){
                   method: 'GET',
                   url: "http://apiv1.geoapi.es/municipios?CPRO="+provi+"&type=JSON&key="+keygeo+"&sandbox=0"
               }).success(function(data, status, headers, config) {
-                  //console.log(data.data);
                  if(data.data.length == '0'){/////////si esta vacio cargamos de xml
                     console.log('xml');
                     services.get("components","geoapi","load_cities", provi).then(function(response) {

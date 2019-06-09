@@ -5,7 +5,9 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
     serv.closeModal = closeModal;
     serv.openModalPurchase=openModalPurchase;
     serv.openModaldelete=openModaldelete;
+    serv.openModaldeleteAll=openModaldeleteAll;
     return serv;
+    ///details
     function openModal(home,modu,func){
             var modalInstance=ngDialog.open({
                 template: 'frontend/components/modal/view/modal.view.html',
@@ -21,7 +23,7 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
                 }
             })
     }
-
+    ///login
     function openModalLogin(){
 
             var modalInstanceL=ngDialog.open({
@@ -32,6 +34,7 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
                 type: 'full-screen',
             })
     }
+    ///confirm compra
     function openModalPurchase(){
 
         var modalInstanceP=ngDialog.open({
@@ -47,6 +50,7 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
             }
         })
     }
+    ////delete home
     function openModaldelete(home){
 
         var modalInstanceD=ngDialog.open({
@@ -60,6 +64,20 @@ eden.factory('modalServices',['services','ngDialog','localstorageServices', func
             resolve:{home:function(){return home}}
         })
 }
+///delete all homes
+function openModaldeleteAll(){
+
+    var modalInstanceDA=ngDialog.open({
+        template: 'frontend/components/modal/view/modalDeleteAll.view.html',
+        className: 'ngdialog-theme-default',
+        controller: 'deleteallcrudCtrler',
+        width: '400px',
+        height:'300px',
+        padding:'0 10px',
+        type: 'full-screen',
+    })
+}
+////cerrar
     function closeModal(){
         ngDialog.close();
     }

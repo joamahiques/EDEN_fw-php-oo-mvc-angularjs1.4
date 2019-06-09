@@ -18,7 +18,6 @@ function(){
     }
     function clearuser(){
         localStorage.removeItem('token');
-        //localStorage.token = JSON.stringify(false);
     }
     
 });

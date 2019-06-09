@@ -7,7 +7,7 @@ eden.controller('contactCtrler', function($scope, $http, contact_map,services){
         inputSubject: "",
         inputMessage: ""
     };
-    $scope.SubmitContact = function () {
+    $scope.SubmitContact = function () {//// enviar mensaje
         var data = {"name": $scope.contact.inputName, "email": $scope.contact.inputEmail, 
         "opcontact": $scope.contact.inputSubject, "mess": $scope.contact.inputMessage,"token":'contact_form'};
         var contact_form = JSON.stringify(data);
@@ -28,5 +28,5 @@ eden.controller('contactCtrler', function($scope, $http, contact_map,services){
 
         
     };
-    contact_map.initmap();
+    contact_map.initmap();///mapa de ubicacion del contacto
 });

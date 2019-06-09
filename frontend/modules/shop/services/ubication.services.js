@@ -11,7 +11,7 @@ function($rootScope,services, $timeout,favoritesServices){
         provi=searchservices.data.provincia;
         local= searchservices.data.localidad; 
         val= searchservices.data.home;
-        //console.log(provi);
+        ///zoom
             if(!provi){
                 zoom=6;
             }else if((!local)&&(provi)){
@@ -22,7 +22,7 @@ function($rootScope,services, $timeout,favoritesServices){
             if((val!='null')&&(val)){
               zoom=15;
             }
-            //console.log(zoom);
+            ///mapa
             map = new google.maps.Map(document.getElementById('mapa_ubi'), {
               zoom: zoom,
               center: {lat:ubic['lat'], lng:ubic['long']},
@@ -31,20 +31,18 @@ function($rootScope,services, $timeout,favoritesServices){
               zoomControl: false,
               streetViewControl: false
             });
-
+            //infowindow
             infoWindow = new google.maps.InfoWindow({
               content: document.getElementById('info-content')
             });
             search(provi, local, val);
       }
 
-//       // Search for hotels in the selected city, within the viewport of the map.
+       // Search for hotels in the selected city, within the viewport of the map.
       function search(provi, local, val) {
             var searchmap = JSON.stringify({'provi':provi,'local':local,'val':val});
-            //console.log(searchmap);
             services.get('shop','productsmap',searchmap).then(function (response) {
-                //console.log(response);
-                 //$scope.local = response;
+
                 clearResults();
                 clearMarkers();
                 // Create a marker for each hotel found, and
@@ -55,7 +53,6 @@ function($rootScope,services, $timeout,favoritesServices){
                         var latlng = new google.maps.LatLng(response[i].latitud, response[i].longitud);
                         // Use marker animation to drop the icons incrementally on the map.
                         markers[i] = new google.maps.Marker({
-                            //position: data[i].geometry.location,
                             position:latlng,
                             animation: google.maps.Animation.DROP,
                             icon: markerIcon,  
@@ -86,9 +83,8 @@ function($rootScope,services, $timeout,favoritesServices){
           markers[i].setMap(map);
         };
       }
-
+      ///results table
       function addResult(result, i) {
-       // console.log(result);
        
         var results = document.getElementById('results');
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + i);
@@ -138,8 +134,6 @@ function($rootScope,services, $timeout,favoritesServices){
         $timeout(function () {
           //favoritesServices.readfavorites();
           $rootScope.place = place;
-          
-
       },20);
       
         }

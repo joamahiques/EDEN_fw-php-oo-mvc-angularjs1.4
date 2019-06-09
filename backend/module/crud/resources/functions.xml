@@ -24,5 +24,9 @@
         <name>read_home</name>
         <uri>read_home</uri>
     </function>
+    <function>
+        <name>update_home</name>
+        <uri>update_home</uri>
+    </function>
     
 </functions>

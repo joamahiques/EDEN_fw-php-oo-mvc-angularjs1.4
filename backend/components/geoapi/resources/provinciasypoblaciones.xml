@@ -2762,7 +2762,7 @@
 		</localidades>
 	</provincia>
 		<provincia id="33">
-		<nombre><![CDATA[Asturias]]></nombre>
+		<nombre><![CDATA[PRINCIPADO DE ASTURIAS]]></nombre>
 		<localidades>
 				<localidad c="0"><![CDATA[Abadia, La]]></localidad>
 			<localidad c="0"><![CDATA[Aballe]]></localidad>
@@ -3690,7 +3690,7 @@
 			<localidad c="0"><![CDATA[Cabovilla]]></localidad>
 			<localidad c="0"><![CDATA[Cabrafigal]]></localidad>
 			<localidad c="0"><![CDATA[Cabrafrio]]></localidad>
-			<localidad c="0"><![CDATA[Cabral]]></localidad>
+			<localidad c="0"><![CDATA[Cabrales]]></localidad>
 			<localidad c="0"><![CDATA[Cabrera]]></localidad>
 			<localidad c="0"><![CDATA[Cabritera]]></localidad>
 			<localidad c="0"><![CDATA[Cabriton]]></localidad>
@@ -26783,7 +26783,7 @@
 		</localidades>
 	</provincia>
 		<provincia id="31">
-		<nombre><![CDATA[Navarra]]></nombre>
+		<nombre><![CDATA[COMUNIDAD FORAL DE NAVARRA]]></nombre>
 		<localidades>
 				<localidad c="0"><![CDATA[Abaigar]]></localidad>
 			<localidad c="0"><![CDATA[Abarzuza]]></localidad>
@@ -37579,6 +37579,7 @@
 			<localidad c="0"><![CDATA[Infant, L']]></localidad>
 			<localidad c="0"><![CDATA[Irles, Les]]></localidad>
 			<localidad c="0"><![CDATA[Juncosa Del Montmell, La]]></localidad>
+			<localidad c="0"><![CDATA[Lladurs]]></localidad>
 			<localidad c="0"><![CDATA[Lilla]]></localidad>
 			<localidad c="0"><![CDATA[Llaberia]]></localidad>
 			<localidad c="0"><![CDATA[Llacuneta, La]]></localidad>

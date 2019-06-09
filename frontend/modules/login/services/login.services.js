@@ -4,7 +4,7 @@ function($rootScope,localstorageServices,services,toastr,$route){
     service.login=login;
     service.logout=logout;
     return service;
-
+///pintamos menu
     function login() {
         var token = localstorageServices.getuser();
         if($rootScope.cartlength && $rootScope.cartlength!=0){
@@ -19,15 +19,15 @@ function($rootScope,localstorageServices,services,toastr,$route){
                 $rootScope.avatar = response.avatar;
                 $rootScope.user = response.user;
                 $rootScope.type = response.type;
-                if ((response.type === "client")||(response.type === "client_rs")) {
+                if ((response.type === "client")||(response.type === "client_rs")) {//cliente
                     $rootScope.login = false;
                     $rootScope.profile = true;
                     $rootScope.crud = false;
-	            } else if (response.type === "admin") {
+	            } else if (response.type === "admin") {//admin
                     $rootScope.login = false;
                     $rootScope.profile = true;
                     $rootScope.crud = true;
-	            }else{
+	            }else{///noda
                     $rootScope.login = true;
                     $rootScope.crud = false;
                     $rootScope.profile = false;
@@ -39,19 +39,17 @@ function($rootScope,localstorageServices,services,toastr,$route){
             $rootScope.crud = false;
         }
     }
-
+//logout
     function logout(){ ////viene del controlador del menu
         var token = localstorageServices.getuser();
         services.post("login", "logout", JSON.stringify({'token': token})).then(function (response) {
-            //console.log(response);
-            //console.log($rootScope.type);
             if(response === '"ok"'){
-                if($rootScope.type=="client_rs"){
-                    //console.log('client_rs')
+                if($rootScope.type=="client_rs"){///de redes sociales
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
                     delete $rootScope.user;
                     delete $rootScope.type;
+                    //auth0
                     var webAuth = new auth0.WebAuth({
                         domain:       authdomain,
                         clientID:     authclientID
@@ -61,7 +59,7 @@ function($rootScope,localstorageServices,services,toastr,$route){
                         client_id: authclientID
                     });
                 }else{
-                    //console.log('NO client_rs')
+                    //'NO client_rs'
                     localstorageServices.clearuser();
                     delete $rootScope.avatar;
                     delete $rootScope.user;
@@ -71,7 +69,7 @@ function($rootScope,localstorageServices,services,toastr,$route){
                     login();
                 }
                  
-            }else{
+            }else{//token no coincide
                 console.log('fuera');
                 toastr.info('Sesión cerrada correctamente', 'BYE!');
             }

@@ -41,6 +41,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
         $scope.resetpass=true;
         
     }
+    ////login
     $scope.SubmitLogin = function() {
         var login_form = JSON.stringify($scope.datalogin);
         services.post('login', 'login', login_form).then(function (response) {
@@ -64,6 +65,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
             }
         });
     };
+    /////registro
     $scope.SubmitRegister = function() {
         //console.log($scope.dataregister) 
         var data = {"username": $scope.dataregister.username, "email": $scope.dataregister.email, 
@@ -85,7 +87,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
             }
         });
     };
-    
+    ////envio de correo para cambiar contraseña olvidada
     $scope.SubmitRecoverPass = function () {
         //console.log('recoverPass');
         var login_form = JSON.stringify($scope.datapass);
@@ -100,6 +102,7 @@ eden.controller('loginCtrler', function($scope,modalServices,services, toastr,$t
         })
     }
 });
+
 eden.controller('changepassCtrler', function($scope,token,services,toastr, $timeout){
     $token=token;
     $scope.datarpass={
@@ -110,6 +113,7 @@ eden.controller('changepassCtrler', function($scope,token,services,toastr, $time
         pass:"",
         token:""
     }
+    //cambiar contraseña
     $scope.SubmitchangePass = function () {
             $change_pass = {
                 pass:$scope.datarpass.pass,
@@ -131,23 +135,25 @@ eden.controller('changepassCtrler', function($scope,token,services,toastr, $time
 
 eden.controller('menuCtrler', function($scope,$log,loginservices, modalServices,  $timeout,cartservices){
 
-    loginservices.login();
+    loginservices.login(); //pintar menu
     
-    $scope.dialogLogin = function() {
+    $scope.dialogLogin = function() { ///abrir modal del login
           modalServices.openModalLogin();
       
     };
-    $scope.toggled = function(open) {
-          $log.log('Dropdown is now: ', open);
-    };
-    $scope.logout = function() {
-          cartservices.savecartlogout();
+    // $scope.toggled = function(open) {
+    //       $log.log('Dropdown is now: ', open);
+    // };
+
+    ////logout
+    $scope.logout = function() { 
+          cartservices.savecartlogout();//guardamos carro
           $timeout(function(){
-            loginservices.logout();
-            loginservices.login();
+            loginservices.logout();//logout
+            loginservices.login();//pintamos mennu
         },1000);
           $timeout(function(){
-                location.href='#/';
+                location.href='#/';//vamos al home
           },1000);
         };
 });

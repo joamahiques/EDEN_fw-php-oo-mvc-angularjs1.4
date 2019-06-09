@@ -2,7 +2,7 @@ eden.controller('modalController', function($scope, details,cartservices,modalSe
     console.log(details);
     $scope.data=details;
     $scope.quant=1;
-    
+    ///añadir al carrito
     $scope.confirm = function(){
         cartservices.addToCart($scope.data[0].nombre, $scope.data[0].precionoche, $scope.quant);
         toastr.success('Reserva añadida al carrito', 'PERFECTO');

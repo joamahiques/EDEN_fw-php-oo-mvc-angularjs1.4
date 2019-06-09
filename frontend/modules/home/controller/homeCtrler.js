@@ -1,16 +1,12 @@
 eden.controller('homeCtrler', function($scope, modalServices, services,$timeout, favoritesServices){
-        //console.log('homecontroller');
-      //   $scope.homes = homes;
-    
         $scope.row = 0;
         $scope.rowperpage = 6;
         $scope.homes = [];
         $scope.busy = false;
         $scope.loading = false;
-        //scroll
+        //infinite-scroll
         $scope.loadMore = function(){
             if ($scope.busy) return;
-          
               $scope.busy = true;
               services.post('home', 'scroll_home',{row:$scope.row,rowperpage:$scope.rowperpage})
               .then(function successCallback(response) {
@@ -24,7 +20,7 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
                              angular.forEach(response,function(item) {
                                 $scope.homes.push(item);
                              });
-                             favoritesServices.readfavorites();
+                             favoritesServices.readfavorites();//leemos favoritos y pintamos corazones
                              $scope.busy = false;
                              $scope.loading = false;
                            });
@@ -38,10 +34,10 @@ eden.controller('homeCtrler', function($scope, modalServices, services,$timeout,
             $scope.loadMore();
           
           $scope.addfavorites = function(home){
-            favoritesServices.addfavorite(home);
+            favoritesServices.addfavorite(home);//añadimos favoritos
           };
 
          $scope.dialog = function(home) {
-            modalServices.openModal(home,'modal','read_modal');
+            modalServices.openModal(home,'modal','read_modal');//abrir modal de details
           };
 });

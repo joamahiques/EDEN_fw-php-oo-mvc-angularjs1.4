@@ -20,6 +20,15 @@ class crud_dao {
         return $db->listar($stmt); 
     }
 
+    function validate_DAO($db,$home){
+        $nombre=$home[name];
+        $city=$home[city];
+        $sql = "SELECT * FROM casas WHERE nombre='$nombre' and localidad='$city'";
+        $stmt = $db->ejecutar($sql);
+        return $db->listar($stmt); 
+
+    }
+
     function select_home_DAO($db,$home){
 
         $home=substr($home,1);
@@ -61,10 +70,38 @@ class crud_dao {
             return  $db->ejecutar($sql);
     }
 
+    function update_home_DAO($db, $datos){
+            $nombre=$datos[name];
+			$localidad=$datos[city][DMUN50];
+        	$provincia=$datos[provi][PRO];
+			$nombrePropietario=$datos[proname];
+			$dni=$datos[dni];
+        	$email=$datos[email];
+        	$telefono=$datos[tf];
+        	$capacidad=$datos[capacity];
+			$habitaciones=$datos[rooms];
+            $entera=$datos[comp];
+            foreach($datos[services] as $key=>$value) {
+                $servicios=$servicios."$key,";
+            }
+            foreach($datos[activities] as $key=>$value) {
+                $actividades=$actividades."$key,";
+            }
+            $fecha = substr($datos[dateregister], 0, 10);
+            $fechacons=substr($datos[datecons], 0, 10);
+			$edadcasa=$this->calculaAnos($fechacons);
+			$precionoche=$datos[price];
+        
+        $sql = " UPDATE casas SET localidad='$localidad',provincia='$provincia',nombrePropietario='$nombrePropietario',dni='$dni',email='$email',telefono='$telefono',capacidad='$capacidad',
+        habitaciones='$habitaciones', entera='$entera', servicios='$servicios',actividades='$actividades',fecha='$fecha',fechacons='$fechacons',edadcasa='$edadcasa' ,precionoche='$precionoche' WHERE nombre='$nombre'";
+        return  $db->ejecutar($sql);
+    }
+
     function delete_all_homes_DAO($db){
         $sql = "DELETE FROM casas";
         return  $db->ejecutar($sql);
     }
+
     function calculaAnos($fechacons){
 		
 		$fecha = new DateTime($fechacons);
@@ -81,7 +118,5 @@ class crud_dao {
 			$edad=0;
 		}
 		return $edad;
-		
-
 	}
 }

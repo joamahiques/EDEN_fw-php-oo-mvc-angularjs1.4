@@ -20,13 +20,19 @@ class crud_model {
     public function delete_home($data) {
         return $this->bll->delete_home_BLL($data);
     }
-    public function delete_all_homes($data) {
-        return $this->bll->delete_all_homes_BLL($data);
+    public function delete_all_homes() {
+        return $this->bll->delete_all_homes_BLL();
     }
     public function insert_home($data) {
         return $this->bll->insert_home_BLL($data);
     }
     public function select_home($data) {
         return $this->bll->select_home_BLL($data);
+    }
+    public function update_home($data) {
+        return $this->bll->update_home_BLL($data);
+    }
+    public function validate($data) {
+        return $this->bll->validate_BLL($data);
     }
 }

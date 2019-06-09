@@ -31,4 +31,10 @@ class crud_bll{
     public function select_home_BLL($data){
         return $this->dao->select_home_DAO($this->db, $data);
     }
+    public function update_home_BLL($data){
+        return $this->dao->update_home_DAO($this->db, $data);
+    }
+    public function validate_BLL($data){
+        return $this->dao->validate_DAO($this->db, $data);
+    }
 }

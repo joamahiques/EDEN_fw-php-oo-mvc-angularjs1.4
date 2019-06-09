@@ -1,7 +1,7 @@
 eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
-  // if($rootScope.type!='admin'){
-  //     location.href = '#/';
-  // }
+  if($rootScope.type!='admin'){
+      location.href = '#/';
+  }
   if(homes){
     $scope.homescrud=homes; //llenamos la lista del crud
     //modal del details
@@ -13,13 +13,18 @@ eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
     $scope.deletehome = function(home){
       modalServices.openModaldelete(home);
     }
+
+    //borrar todo
+    $scope.deleteall = function(){
+      modalServices.openModaldeleteAll();
+    }
       
 })
 ////////////////////////////////////CREATE
 eden.controller('createcrudCtrler', function($scope,geoapiServices,services,toastr,$rootScope){
-  //   if($rootScope.type!='admin'){
-  //     location.href = '#/';
-  // }
+    if($rootScope.type!='admin'){
+      location.href = '#/';
+  }
   $scope.newhome={
     name:'',
     provi:'',
@@ -65,22 +70,23 @@ eden.controller('createcrudCtrler', function($scope,geoapiServices,services,toas
       }
       ///////////////////Create
       $scope.registerhome = function(){
-        
-        console.log($scope.newhome);
         //update
         services.post('crud', 'create_home', $scope.newhome).then(function (response) {
-            if(response){
+          console.log(response);
+            if(response.succes=='true'){
                 toastr.success('Casa añadida correctamente','Perfecto');
                 location.href = '#crud';
-            }else{
+            }else if (response.succes=='false'){
               toastr.error('Fallo de conexión','Pruebe más tarde');
               location.href = '#crud';
+            }else if(response.succes=='error'){/////validacion en bd
+              toastr.error(response.mess,'ERROR');
             }
         })
       }
 })
 
-//////////////////////////////////delete
+//////////////////////////////////DELETE
 eden.controller('deletecrudCtrler', function($scope,home,modalServices,services,$route){
     $scope.namehouse=home;
     ////////cerrar el modal si decidimos no borrar
@@ -96,15 +102,19 @@ eden.controller('deletecrudCtrler', function($scope,home,modalServices,services,
     }
 })
 
-/////////////////////////////////////update
-eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,services,$route){
-    console.log(homeup);
+/////////////////////////////////////UPDATE
+
+eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,services,toastr,$rootScope){
+  if($rootScope.type!='admin'){
+    location.href = '#/';
+  }
     $fecha= new Date(homeup[0].fechacons);
     $fechareg= new Date(homeup[0].fecha)
-    console.log(homeup[0].fecha);
+    var act=homeup[0].actividades.split(',');
+    var ser=homeup[0].servicios.split(',');
     $scope.data={
       name:homeup[0].nombre,
-      tf:homeup[0].tf,
+      tf:homeup[0].telefono,
       email:homeup[0].email,
       dni:homeup[0].dni,
       capacity:homeup[0].capacidad,
@@ -113,7 +123,27 @@ eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,servi
       proname:homeup[0].nombrePropietario,
       datecons:$fecha,
       dateregister:$fechareg,
+      comp:homeup[0].entera,
+      activities:{},
+      services:{}
     }
+    angular.forEach(act, function(value, key){
+      console.log(value)
+      if (value==='meditacion') $scope.data.activities.meditacion=true;
+      if (value==='yoga') $scope.data.activities.yoga=true;
+      if (value==='taichi') $scope.data.activities.taichi=true;
+      if (value==='senderismo') $scope.data.activities.senderismo=true;
+    })
+    angular.forEach(ser, function(value, key){
+      console.log(value)
+      if (value==='comidas') $scope.data.services.comidas=true;
+      if (value==='piscina') $scope.data.services.piscina=true;
+      if (value==='gimnasio') $scope.data.services.gimnasio=true;
+      if (value==='masajes') $scope.data.services.masajes=true;
+      if (value==='hidromasaje') $scope.data.services.hidromasaje=true;
+      if (value==='mascotas') $scope.data.services.mascotas=true;
+    })
+    
     ///////provinces para select
     geoapiServices.loadprovince()
     .then( function(response){
@@ -146,12 +176,41 @@ eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,servi
             $scope.cities=response;///cargamos select
             ////si el usuario tiene en bd
             angular.forEach($scope.cities, function (value, key) {
-                if($scope.cities[key].DMUN50==homeup[0].localidad){
+                if($scope.cities[key].DMUN50==homeup[0].localidad.toUpperCase()){
                    $scope.data.city = $scope.cities[key];///seleccionamos opción igual al del usuario
                 };
             })
         })
-
+    }
+    ////actualizar
+    $scope.updatehome = function(){
+      //console.log($scope.data);
+      services.post('crud', 'update_home', $scope.data).then(function (response) {
+        console.log(response);
+          if(response){
+              toastr.success('Casa modificada correctamente','Perfecto');
+              location.href = '#crud';
+          }else{
+            toastr.error('Fallo de conexión','Pruebe más tarde');
+            location.href = '#crud';
+          }
+      })
     }
     
+})
+
+//////////////////////////////////DELETE ALL
+eden.controller('deleteallcrudCtrler', function($scope,modalServices){
+  ////////cerrar el modal si decidimos no borrar
+  $scope.cancel = function(){
+    modalServices.closeModal();
+  }
+  /////borrar
+  $scope.deleteallcon = function(){
+    console.log('borrao!!')
+    // services.delete('crud','delete_all_homes').then(function (response) {
+    //   modalServices.closeModal();
+    //   location.href = '#crud';
+    // })
+  }
 })

@@ -16,10 +16,10 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
     }
     return service;
  
-    function addToCart(name, price, qty) {
+    function addToCart(name, price, qty) { //añadimos al carrito
         console.log(a);
             var total = (price*qty);
-            for (var i in a) {///si esta suma el resultado
+            for (var i in a) {///si esta suma el resultado para no repetir
                     if(a[i].nombre == name){
                         a[i].cantidad = parseInt(a[i].cantidad)+parseInt(qty);
                         a[i].total = parseInt(a[i].precio)*parseInt(a[i].cantidad);
@@ -28,20 +28,18 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
                     }
                 }
             var item = { nombre: name, precio: price, cantidad: qty, total: total };
-            // console.log(item);
             a.push(item);
             savecart();
      }
 
-     function savecart() {
+     function savecart() {//guardamos carrito
             localStorage.cart = JSON.stringify(a);
             $rootScope.cartlength=a.length;
      }
 
-     function deletereserva(reserva) {
+     function deletereserva(reserva) {//borrar una reserva del carrito
         angular.forEach(a, function (value, key) {
             if(value.nombre==reserva){
-                // console.log('borrando' +reserva);
                 a.splice(key,1);
             }
         })
@@ -53,53 +51,53 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
         
      }
 
-     function onemorecant(item) {
+     function onemorecant(item) { //sumamos noches
         angular.forEach(a, function (value, key) {
             if(value.nombre==item){
-                value.cantidad=(value.cantidad+1);
-                value.total=(value.precio*value.cantidad);
+                value.cantidad=(value.cantidad+1); //sumamos
+                value.total=(value.precio*value.cantidad);//actualizamos precio
             }
         })
         savecart();
      }
 
-     function onelesscant(item) {
+     function onelesscant(item) {  //restamos noches
         angular.forEach(a, function (value, key) {
             if(value.nombre==item){
                 if(value.cantidad>1){
-                    value.cantidad=(value.cantidad-1);
-                    value.total=(value.precio*value.cantidad);
+                    value.cantidad=(value.cantidad-1); //restamos
+                    value.total=(value.precio*value.cantidad); //actualizamos precio
                     savecart();
-                }else if(value.cantidad==1){
+                }else if(value.cantidad==1){ //si llegamos a 0, borramos reserva
                     deletereserva(item);
                 }
             }
         })
      }
      function comprar(){
-        if(!localStorage.token){
+        if(!localStorage.token){ //si no estas logueado
             toastr.info("Para confirmar la compra regístrate","Por favor")
         }else{
-            $token = localstorageServices.getuser();
+            $token = localstorageServices.getuser(); //guardamos carro en bd
             services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
                 // console.log(response);
                 if(response.res){
                     localstorageServices.setuser(response.tok);
-                    modalServices.openModalPurchase();
+                    modalServices.openModalPurchase(); ////abrimos modal de confirmar compra, ya con los datos de bd
                 }else{
-                    loginservices.logout();
+                    loginservices.logout(); //si no coincide el token
                 }
             });            
         }
      }
 
-     function pay(){
+     function pay(){ ///pagar
         if(!localStorage.token){
             toastr.info("Para confirmar la compra regístrate","Por favor")
         }else{
             // console.log('pagar');
             $token = localstorageServices.getuser();
-            services.post('cart', 'confirm_purchase', {'token': $token}).then(function (response) {
+            services.post('cart', 'confirm_purchase', {'token': $token}).then(function (response) {///confirmar compra y cambiar los datos de tabla
                 if(response.res){
                     localstorageServices.setuser(response.tok);
                     toastr.success("Reservas realizadas correctamente","GRACIAS")
@@ -113,7 +111,7 @@ function($rootScope,services,toastr,localstorageServices,modalServices,loginserv
         }
      }
 
-     function savecartlogout(){
+     function savecartlogout(){ //guardar carro si logout y hay productos
         $token = localstorageServices.getuser();
         services.post('cart', 'insert_cart', {'token': $token,'cart':a}).then(function (response) {
                 // console.log(response);

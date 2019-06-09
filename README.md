@@ -37,7 +37,7 @@
  -------------
 
     * Home
-    * CRUD (solo migrado el list y el delete a FW PHP)
+    * CRUD
     * Login (aplicacion y Auth0)
     * Profile 
     * Shop
@@ -46,6 +46,12 @@
 
 
 * Home: listado de los productos con details en modal y favoritos. Infinite-scroll con loading. Directiva: API con productos de CLUBRURAL (en PHP) con productos en un radio máximo de 80km de la ubicacón del usuario.
+* CRUD:
+    * List: ordenadas por provincias, con paginación y filtro de búsqueda. Acciones de leer details(READ), actualizar y borrar en cada casa. Opción 'crear casa nueva', 'borrar todo' y 'volver' al home.
+    * Create: formulario con dependents dropdowns con api Geoapi, AngularJs Material datepiker, validación angularjs y validación contra bd. 
+    * Update: formulario con autorelleno de datos, dependent dropdowns con api Geoapi y AngularJS Material datepicker.Validación con angularjs.
+    * Delete: modal(components) para confirmar la acción.
+    * DeleteAll: modal para confirmar la acción.
 * Login y registro:
     * Manual desde aplicación (angularjs).
     * Redes sociales con Auth0 de Github y Gmail(PHP y logout en angularjs).
@@ -80,6 +86,7 @@ Componentes
     * Details: detalles del producto, botón cantidad y añadir al carro.
     * Login: con pestañas login y register, boton login con redes sociales.
     * Confirmar reservas (comprar) con detalles de la compra y boton para confirmar.
+    * Confirmar 'delete' y 'delete all' del CRUD.
 * Translate (component) con Angular-Translate(i18n). Cambia el menú, search y footer.
 * Search (component) para toda la aplicación para mostrar los resultados en Shop ( y en mapa ). Con dependent dropdowns y dependent autocomplete.
 * Favoritos (component): read favorites con el login para pintar los corazones de favoritos, add y delete favorites clickando en los corazones.
@@ -150,6 +157,12 @@ Componentes
     * Cart
 
 * Home: list of products with details in modal and favorites. Infinite-scroll with loading. Directive: API with CLUBRURAL products (in PHP) with products within a maximum radius of 80km from the user's location.
+* CRUD:
+    * List: ordered by provinces, with pagination and search filter. Actions to read details (READ), update and delete in each house. Option 'create new house', 'erase everything' and 'return' to the home.
+    * Create: form with dependendents dropdowns with api Geoapi, AngularJs material datepiker, validation angularjs and validation against bd.
+    * Update: form with auto-full data, dependent dropdowns with api Geoapi and AngularJS Material datepicker. Validation with angularjs.
+    * Delete: modal (components) to confirm the action.
+    * DeleteAll: modal to (components) to confirm the action.
 * Login and registration:
     * Manusl from application (angularjs).
     * Social networks with Auth0 of Github and Gmail (PHP and logout in angularjs).
@@ -186,7 +199,8 @@ Components:
     * Details: product details, quantity button and add to the cart.
     * Login: with login and resiter tabs, login button with social networks.
     * Confirm reservations (buy) with details of the purchase and button to confirm.
-    * Translate (component) with Angular-Translate (i18n). Change the menu, search and footer.
+    * Confirm 'delete' and 'delete all'.
+* Translate (component) with Angular-Translate (i18n). Change the menu, search and footer.
 * Search (component) for the whole application to show the results in Shop (and on map). With dependent dropdowns and dependent autocomplete.
 * Favorites: read favorites with the login to paint the hearts of favorites, add and delete favorites by clicking on the hearts.
 * APIS:

@@ -1,16 +1,16 @@
 eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootScope){
     var reserves;
     $scope.confirmres=false;
-    //console.log('cart');
-    if (localStorage.cart){
+
+    if (localStorage.cart){//si existe lo añadimos a cart
         cart = JSON.parse(localStorage.cart);
         localStorage.setItem('cart', JSON.stringify(cart));
         print();
     }else{
-        if(cart.success==true){
-            console.log(cart);
+        if(cart.success==true){ //si hay carro en bd
+            //console.log(cart);
             angular.forEach(cart.mess, function (value, key) {
-                cartservices.addToCart(value.nombre, value.precio, value.cantidad)
+                cartservices.addToCart(value.nombre, value.precio, value.cantidad)//añadimos y/o creamos
             })
             reserves=JSON.parse(localStorage.cart);
             $scope.reserves=reserves;
@@ -20,7 +20,7 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
         }
     }
 
-    function print() {
+    function print() {///pintar carrito
         if(localStorage.cart){
             var taxTotal = 0; 
             reserves=JSON.parse(localStorage.cart);
@@ -42,7 +42,7 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
               //console.log(tal);
               $scope.pricetotalfinal=tal;
              };
-             if (reserves.length>4){
+             if (reserves.length>4){////descuento
                  toastr.success('Tienes un 10% de descuento por tener 5 o más reservas','ENHORABUENA!')
                  $scope.desc=true;
                  $scope.pricetotalfinaldes=(tal*0.90)
@@ -53,21 +53,21 @@ eden.controller('cartCtrler', function($scope, cart,cartservices,toastr,$rootSco
     }
 
     $scope.deleteres = function(reserva){
-        cartservices.deletereserva(reserva);
+        cartservices.deletereserva(reserva); //eliminar una reserva del carrito
         print();
     }
     $scope.onemore = function(item){
-        cartservices.onemorecant(item);
+        cartservices.onemorecant(item);//añadir una noche a una reserva
         print();
     }
     $scope.oneless = function(item){
-        cartservices.onelesscant(item);
+        cartservices.onelesscant(item);///eliminar una noche a una reserva
         print();
     }
-    $scope.comprar = function(){
+    $scope.comprar = function(){///reservar
         cartservices.comprar();
     }
-    $scope.pay = function(){
+    $scope.pay = function(){///confirmar la compra
         cartservices.pay();
         print();
     }

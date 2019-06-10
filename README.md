@@ -48,7 +48,7 @@
 * Home: listado de los productos con details en modal y favoritos. Infinite-scroll con loading. Directiva: API con productos de CLUBRURAL (en PHP) con productos en un radio máximo de 80km de la ubicacón del usuario.
 * CRUD:
     * List: ordenadas por provincias, con paginación y filtro de búsqueda. Acciones de leer details(READ), actualizar y borrar en cada casa. Opción 'crear casa nueva', 'borrar todo' y 'volver' al home.
-    * Create: formulario con dependents dropdowns con api Geoapi, AngularJs Material datepiker, validación angularjs y validación contra bd. 
+    * Create: formulario con dependents dropdowns con api Geoapi, AngularJs Material datepiker, validación angularjs y validación contra bd de nombre de la casa. 
     * Update: formulario con autorelleno de datos, dependent dropdowns con api Geoapi y AngularJS Material datepicker.Validación con angularjs.
     * Delete: modal(components) para confirmar la acción.
     * DeleteAll: modal para confirmar la acción.

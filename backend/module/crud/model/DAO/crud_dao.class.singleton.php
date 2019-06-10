@@ -22,8 +22,8 @@ class crud_dao {
 
     function validate_DAO($db,$home){
         $nombre=$home['name'];
-        $city=$home['city'];
-        $sql = "SELECT * FROM casas WHERE nombre='$nombre' and localidad='$city'";
+        $prop=$home['proname'];
+        $sql = "SELECT * FROM casas WHERE nombre='$nombre'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt); 
 

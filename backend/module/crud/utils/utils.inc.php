@@ -4,8 +4,7 @@
        set_error_handler('ErrorHandler');
         try{
             $arrArgument = array(
-                'name'=>$_POST[name],
-                'city'=>$_POST[city][DMUN50]
+                'name'=>$_POST['name'],
             );
             $arrValue = loadModel(MODEL_MODULE,'crud_model','validate',$arrArgument);
             

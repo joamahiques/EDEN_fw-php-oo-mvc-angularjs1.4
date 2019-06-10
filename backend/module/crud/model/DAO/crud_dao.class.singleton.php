@@ -21,8 +21,8 @@ class crud_dao {
     }
 
     function validate_DAO($db,$home){
-        $nombre=$home[name];
-        $city=$home[city];
+        $nombre=$home['name'];
+        $city=$home['city'];
         $sql = "SELECT * FROM casas WHERE nombre='$nombre' and localidad='$city'";
         $stmt = $db->ejecutar($sql);
         return $db->listar($stmt); 
@@ -44,26 +44,26 @@ class crud_dao {
     }
     
     function insert_home_DAO($db,$datos){
-            $nombre=$datos[name];
-			$localidad=$datos[city][DMUN50];
-        	$provincia=$datos[provi][PRO];
-			$nombrePropietario=$datos[proname];
-			$dni=$datos[dni];
-        	$email=$datos[email];
-        	$telefono=$datos[tf];
-        	$capacidad=$datos[capacity];
-			$habitaciones=$datos[rooms];
-            $entera=$datos[comp];
-            foreach($datos[services] as $key=>$value) {
+            $nombre=$datos['name'];
+			$localidad=$datos['city']['DMUN50'];
+        	$provincia=$datos['provi']['PRO'];
+			$nombrePropietario=$datos['proname'];
+			$dni=$datos['dni'];
+        	$email=$datos['email'];
+        	$telefono=$datos['tf'];
+        	$capacidad=$datos['capacity'];
+			$habitaciones=$datos['rooms'];
+            $entera=$datos['comp'];
+            foreach($datos['services'] as $key=>$value) {
                 $servicios=$servicios."$key,";
             }
-            foreach($datos[activities] as $key=>$value) {
+            foreach($datos['activities'] as $key=>$value) {
                 $actividades=$actividades."$key,";
             }
-            $fecha = substr($datos[dateregister], 0, 10);
-            $fechacons=substr($datos[datecons], 0, 10);
+            $fecha = substr($datos['dateregister'], 0, 10);
+            $fechacons=substr($datos['datecons'], 0, 10);
 			$edadcasa=$this->calculaAnos($fechacons);
-			$precionoche=$datos[price];
+			$precionoche=$datos['price'];
 			
 			$sql ="INSERT INTO `casas`(`ID`, `nombre`, `localidad`, `provincia`, `nombrePropietario`, `dni`, `email`, `telefono`, `capacidad`, `habitaciones`, `entera`, `servicios`, `actividades`, `fecha`, `fechacons`, `edadcasa`, `precionoche`)
             VALUES (null,'$nombre','$localidad','$provincia','$nombrePropietario','$dni','$email','$telefono','$capacidad','$habitaciones','$entera','$servicios','$actividades','$fecha','$fechacons','$edadcasa', '$precionoche')";
@@ -71,26 +71,26 @@ class crud_dao {
     }
 
     function update_home_DAO($db, $datos){
-            $nombre=$datos[name];
-			$localidad=$datos[city][DMUN50];
-        	$provincia=$datos[provi][PRO];
-			$nombrePropietario=$datos[proname];
-			$dni=$datos[dni];
-        	$email=$datos[email];
-        	$telefono=$datos[tf];
-        	$capacidad=$datos[capacity];
-			$habitaciones=$datos[rooms];
-            $entera=$datos[comp];
-            foreach($datos[services] as $key=>$value) {
-                $servicios=$servicios."$key,";
+            $nombre=$datos['name'];
+			$localidad=$datos['city']['DMUN50'];
+        	$provincia=$datos['provi']['PRO'];
+			$nombrePropietario=$datos['proname'];
+			$dni=$datos['dni'];
+        	$email=$datos['email'];
+        	$telefono=$datos['tf'];
+        	$capacidad=$datos['capacity'];
+			$habitaciones=$datos['rooms'];
+            $entera=$datos['comp'];
+            foreach($datos['services'] as $key=>$value) {
+              $servicios=$servicios."$key,";
             }
-            foreach($datos[activities] as $key=>$value) {
-                $actividades=$actividades."$key,";
+            foreach($datos['activities'] as $key=>$value) {
+               $actividades=$actividades."$key,";
             }
-            $fecha = substr($datos[dateregister], 0, 10);
-            $fechacons=substr($datos[datecons], 0, 10);
+            $fecha = substr($datos['dateregister'], 0, 10);
+            $fechacons=substr($datos['datecons'], 0, 10);
 			$edadcasa=$this->calculaAnos($fechacons);
-			$precionoche=$datos[price];
+			$precionoche=$datos['price'];
         
         $sql = " UPDATE casas SET localidad='$localidad',provincia='$provincia',nombrePropietario='$nombrePropietario',dni='$dni',email='$email',telefono='$telefono',capacidad='$capacidad',
         habitaciones='$habitaciones', entera='$entera', servicios='$servicios',actividades='$actividades',fecha='$fecha',fechacons='$fechacons',edadcasa='$edadcasa' ,precionoche='$precionoche' WHERE nombre='$nombre'";

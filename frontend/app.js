@@ -57,6 +57,7 @@ eden.config(['$routeProvider',
                     return services.get('crud', 'read_home',$route.current.params.home);
                 }
             }})
+            .when('/error', {templateUrl:'frontend/modules/error/error404.view.html',controller:'errorCtrl'})
             .otherwise('/', {templateUrl:'frontend/modules/home/view/home.view.html', controller:'homeCtrler'});
     }
 ]);

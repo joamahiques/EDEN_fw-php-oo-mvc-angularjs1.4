@@ -9,7 +9,7 @@ function(){
         return num;
         }
 }])
-
+///slider cabecera
 eden.controller('CarouselDemoCtrl', function ($scope,$timeout) {
     var slidesInSlideshow = 5;
     var slidesTimeIntervalInMs = 5000; 
@@ -21,6 +21,8 @@ eden.controller('CarouselDemoCtrl', function ($scope,$timeout) {
          slideTimer = $timeout(interval, slidesTimeIntervalInMs);
        }, slidesTimeIntervalInMs);
 });
+
+///filtros de busqueda
 eden.filter('searchFor', function(){
 	return function(arr, searchString){
 		if(!searchString){

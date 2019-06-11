@@ -1,5 +1,5 @@
 eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
-  if($rootScope.type!='admin'){
+  if($rootScope.type!='admin'){///control de acceso
       location.href = '#/';
   }
   if(homes){
@@ -13,7 +13,6 @@ eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
     $scope.deletehome = function(home){
       modalServices.openModaldelete(home);
     }
-
     //borrar todo
     $scope.deleteall = function(){
       modalServices.openModaldeleteAll();
@@ -22,7 +21,7 @@ eden.controller('crudCtrler', function($scope, homes, modalServices,$rootScope){
 })
 ////////////////////////////////////CREATE
 eden.controller('createcrudCtrler', function($scope,geoapiServices,services,toastr,$rootScope){
-    if($rootScope.type!='admin'){
+    if($rootScope.type!='admin'){//control de acceso
       location.href = '#/';
   }
   $scope.newhome={
@@ -104,14 +103,16 @@ eden.controller('deletecrudCtrler', function($scope,home,modalServices,services,
 
 /////////////////////////////////////UPDATE
 
-eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,services,toastr,$rootScope){
-  if($rootScope.type!='admin'){
+eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,services,toastr,$rootScope,$parse){
+  if($rootScope.type!='admin'){///control de acceso
     location.href = '#/';
   }
     $fecha= new Date(homeup[0].fechacons);
     $fechareg= new Date(homeup[0].fecha)
     var act=homeup[0].actividades.split(',');
     var ser=homeup[0].servicios.split(',');
+    act.pop();
+    ser.pop();
     $scope.data={
       name:homeup[0].nombre,
       tf:homeup[0].telefono,
@@ -127,21 +128,15 @@ eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,servi
       activities:{},
       services:{}
     }
+    ///pintamos actividades y servicios de bd dinamicamente
     angular.forEach(act, function(value, key){
-      console.log(value)
-      if (value==='meditacion') $scope.data.activities.meditacion=true;
-      if (value==='yoga') $scope.data.activities.yoga=true;
-      if (value==='taichi') $scope.data.activities.taichi=true;
-      if (value==='senderismo') $scope.data.activities.senderismo=true;
+      var p = $parse("data.activities."+value);
+      p.assign($scope,true);
     })
     angular.forEach(ser, function(value, key){
       console.log(value)
-      if (value==='comidas') $scope.data.services.comidas=true;
-      if (value==='piscina') $scope.data.services.piscina=true;
-      if (value==='gimnasio') $scope.data.services.gimnasio=true;
-      if (value==='masajes') $scope.data.services.masajes=true;
-      if (value==='hidromasaje') $scope.data.services.hidromasaje=true;
-      if (value==='mascotas') $scope.data.services.mascotas=true;
+      var p = $parse("data.services."+value);
+      p.assign($scope,true);
     })
     
     ///////provinces para select
@@ -157,10 +152,8 @@ eden.controller('updatecrudCtrler', function($scope,homeup, geoapiServices,servi
             if($scope.provinces[key].PRO==homeup[0].provincia){
                $scope.data.provi = $scope.provinces[key];/// seleccionamos opcion igual al del usuario
                $scope.loadcity();//cargamos ciudades
-            };
-            
-        })
-        
+            };  
+        }) 
     });
     //////////cities
     $scope.loadcity = function(){

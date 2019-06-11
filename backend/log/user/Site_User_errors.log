@@ -10,3 +10,9 @@ Notice on line 85 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/cr
 ERROR: [8] Undefined variable: actividades
 Notice on line 88 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/crud/model/DAO/crud_dao.class.singleton.php
  | 10.06.2019 08:34:17  |  User:   | crud | response 200
+ERROR: [8] Undefined variable: servicios
+Notice on line 85 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/crud/model/DAO/crud_dao.class.singleton.php
+ | 11.06.2019 11:42:00  |  User:   | crud | response 200
+ERROR: [8] Undefined variable: actividades
+Notice on line 88 in file /opt/lampp/htdocs/www/EDEN_ANGULARJS/backend/module/crud/model/DAO/crud_dao.class.singleton.php
+ | 11.06.2019 11:42:00  |  User:   | crud | response 200

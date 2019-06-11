@@ -43,10 +43,11 @@
     * Shop
     * Contact
     * Cart
+    * Error
 
 
 * Home: listado de los productos con details en modal y favoritos. Infinite-scroll con loading. Directiva: API con productos de CLUBRURAL (en PHP) con productos en un radio máximo de 80km de la ubicacón del usuario.
-* CRUD:
+* CRUD: Con control de acceso si no eres usuario admin.
     * List: ordenadas por provincias, con paginación y filtro de búsqueda. Acciones de leer details(READ), actualizar y borrar en cada casa. Opción 'crear casa nueva', 'borrar todo' y 'volver' al home.
     * Create: formulario con dependents dropdowns con api Geoapi, AngularJs Material datepiker, validación angularjs y validación contra bd de nombre de la casa. 
     * Update: formulario con autorelleno de datos, dependent dropdowns con api Geoapi y AngularJS Material datepicker.Validación con angularjs.
@@ -73,6 +74,7 @@
     * Confirmar compra con modal, con precios de base de datos.
     * Services en localstorage. Se crea una tabla para cada usuario con su carro. Al confirmar compra se borra dicha tabla y se añaden los productos a la tabla compras. EL precio siempre es de Base de datos.
 * Contact:Formulario de contacto con validación y MailGun y mapa Google de ubicación con infowindow.
+* Error: Redirección desde servidor a página de error de 404.
 ------------
 Componentes
 ------------
@@ -155,9 +157,10 @@ Componentes
     * Shop
     * Contact
     * Cart
+    * Error
 
 * Home: list of products with details in modal and favorites. Infinite-scroll with loading. Directive: API with CLUBRURAL products (in PHP) with products within a maximum radius of 80km from the user's location.
-* CRUD:
+* CRUD: With access control if you are not user admin.
     * List: ordered by provinces, with pagination and search filter. Actions to read details (READ), update and delete in each house. Option 'create new house', 'erase everything' and 'return' to the home.
     * Create: form with dependendents dropdowns with api Geoapi, AngularJs material datepiker, validation angularjs and validation against bd.
     * Update: form with auto-full data, dependent dropdowns with api Geoapi and AngularJS Material datepicker. Validation with angularjs.
@@ -184,6 +187,7 @@ Componentes
     * Confirm purchase with modal, with database prices.
     * Services in localstorage. A table is created for each user with his car. When confirming purchase, the said table is deleted and the products are added to the purchasing table. The price is always from Database.
 * Contact: Contact form with validation and MailGun and Google location map with infowindow.
+* Error: Redirection from server to 404 error page.
 
 ---------------
 Components:

@@ -16,8 +16,6 @@
 		$userInfo = socialprofile();
 		$data = json_decode($userInfo,true);
 		$id = explode("|", $data[sub]);
-		// echo json_encode($id[0]);
-		// exit;
 		$red=$id[0];
 		$id = $id[1];
 		$arrValue1=check_user($id);

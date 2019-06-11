@@ -19,9 +19,7 @@ if (PRODUCTION) { //estamos en producción
 
 ob_start();
 @session_start();
-//session_regenerate_id();
 $_POST = json_decode(file_get_contents('php://input'), true);
-
 $_SESSION['module'] = "";
 $_SESSION['component'] = "";
 
@@ -59,9 +57,6 @@ function handlerRouter() {
 }
 
 function handlerModule($URI_module, $URI_function) {
-    // echo json_encode($URI_module);
-    // echo json_encode($URI_function);
-    // exit;
     $modules = simplexml_load_file('resources/modules.xml');
     $exist = false;
 
@@ -78,27 +73,25 @@ function handlerModule($URI_module, $URI_function) {
                 
                 $obj = new $controllerClass;
             } else {
-                require_once(VIEW_PATH_INC ."top-page.php");
-                if ((!empty($_GET['module']))||($_GET['module']==='home')){
-                    require_once(VIEW_PATH_INC ."header-home.php");///si estamos en homepage
-                }else{
-                    require_once(VIEW_PATH_INC ."header.php");
-                } 
-               
-                require_once(VIEW_PATH_INC ."menu.php"); 
-                require_once(VIEW_PATH_INC_ERROR . "error404.php");
-                require_once(VIEW_PATH_INC . "footer.php");
+                $url='http://localhost/www/EDEN_ANGULARJS/#/error';
+				redirect($url);
+                // require_once(VIEW_PATH_INC ."top-page.php");
+                // if ((!empty($_GET['module']))||($_GET['module']==='home')){
+                //     require_once(VIEW_PATH_INC ."header-home.php");///si estamos en homepage
+                // }else{
+                //     require_once(VIEW_PATH_INC ."header.php");
+                // } 
+                // require_once(VIEW_PATH_INC ."menu.php"); 
+                // require_once(VIEW_PATH_INC_ERROR . "error404.php");
+                // require_once(VIEW_PATH_INC . "footer.php");
             }
             handlerfunction(((String) $module->name), $obj, $URI_function);
             break;
         }
     }
     if (!$exist) {
-        require_once(VIEW_PATH_INC ."top-page.php");
-        require_once(VIEW_PATH_INC . "header.php");
-        require_once(VIEW_PATH_INC ."menu.php"); 
-        require_once(VIEW_PATH_INC_ERROR . "error404.php");
-        require_once(VIEW_PATH_INC . "footer.php");
+        $url='http://localhost/www/EDEN_ANGULARJS/#/error';
+        redirect($url);
     }
 }
 
@@ -114,11 +107,8 @@ function handlerFunction($module, $obj, $URI_function) {
         }
     }
     if (!$exist) {
-        require_once(VIEW_PATH_INC ."top-page.php");
-        require_once(VIEW_PATH_INC . "header.php");
-        require_once(VIEW_PATH_INC ."menu.php"); 
-        require_once(VIEW_PATH_INC_ERROR . "error404.php");
-        require_once(VIEW_PATH_INC . "footer.php");
+        $url='http://localhost/www/EDEN_ANGULARJS/#/error';
+        redirect($url);
     } else {
         call_user_func(array($obj, $event));
     }

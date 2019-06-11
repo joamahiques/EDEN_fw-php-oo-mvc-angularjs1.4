@@ -1,10 +1,7 @@
 <?php
-// console_log($_SESSION('module'));
 if (!isset($_GET['module'])){
     $_GET['module'] = 'home';
 }
-// echo($_GET['module']);
-// exit;
 
 //SITE_ROOT
 $path = $_SERVER['DOCUMENT_ROOT'] . '/www/EDEN_ANGULARJS/backend/';

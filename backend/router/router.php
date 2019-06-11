@@ -75,15 +75,6 @@ function handlerModule($URI_module, $URI_function) {
             } else {
                 $url='http://localhost/www/EDEN_ANGULARJS/#/error';
 				redirect($url);
-                // require_once(VIEW_PATH_INC ."top-page.php");
-                // if ((!empty($_GET['module']))||($_GET['module']==='home')){
-                //     require_once(VIEW_PATH_INC ."header-home.php");///si estamos en homepage
-                // }else{
-                //     require_once(VIEW_PATH_INC ."header.php");
-                // } 
-                // require_once(VIEW_PATH_INC ."menu.php"); 
-                // require_once(VIEW_PATH_INC_ERROR . "error404.php");
-                // require_once(VIEW_PATH_INC . "footer.php");
             }
             handlerfunction(((String) $module->name), $obj, $URI_function);
             break;

@@ -7,7 +7,6 @@ function generate_JWK($name){
     //iat: Tiempo que inició el token
     //exp: Tiempo que expirará el token (+1 hora)
     //name: info user
-    //echo json_encode($secret); 
     $payload = '{
         "iat":"'.time().'", 
         "exp":"'.(time() + (60*60)).'",
@@ -40,21 +39,12 @@ function generate_JWK($name){
         
         $amigableson = URL_AMIGABLES;
         $link = "";
-        // $find=array(' ','&','?');
-        // $link=str_replace($find, "/", $url);
-        // $url = "index.php" . $link;
         if ($amigableson) {
             $url = explode("&", str_replace("?", "", $url));
            
             foreach ($url as $key => $value) {
                 $aux = explode("=", $value);
-                // if ($value === end($url)) {
-                //     $link .= "/". $aux[1];
-                // }else{
-                //     $link .=  $aux[1]."/";
-                // }
-                // $aux = explode("=", $value);
-                 $link .=  $aux[1]."/";
+                $link .=  $aux[1]."/";
             }
         } else {
             $link = "index.php" . $url;
@@ -63,13 +53,8 @@ function generate_JWK($name){
         if ($return) {
             return SITE_PATH . $link;
         }
-        // $url=SITE_PATH . "index.php/" .$link;
         $url=SITE_PATH .$link;
         echo $url;
-        
-        //echo $url;
-        // echo SITE_PATH.'index.php/module=home/function=list_home';
-        
     }
 
 

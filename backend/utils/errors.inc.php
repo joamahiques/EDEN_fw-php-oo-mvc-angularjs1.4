@@ -74,4 +74,3 @@ function response_code($code = NULL) {
         $log->add_log_general($msg, $_SESSION['module'], "response " . http_response_code()); //$text, $controller, $function
         $log->add_log_user($msg, $_SESSION['mail'], $_SESSION['module'], "response " . http_response_code()); //$msg, $username = "", $controller, $function
     }
-    

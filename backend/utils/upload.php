@@ -27,9 +27,7 @@ function upload_files() {
     }
 
     ////////////////////////////////////////////////////////////////////////////
-    //if($_FILES['avatar']['error'] !== 0) { //Assignarem a l'us default-avatar
-        //$error .=  'Archivo no subido correctamente <br>';
-    //}
+
 
     ////////////////////////////////////////////////////////////////////////////
     if ($_FILES['file']['size'] > 55000 ){
@@ -37,9 +35,6 @@ function upload_files() {
     }
 
     ////////////////////////////////////////////////////////////////////////////
-    //if ($_FILES['avatar']['name'] === "") { //Assignarem a l'us default-avatar
-        //$error .= "No ha seleccionado ninguna imagen. Te proporcionamos un default-avatar<br>";
-    //}
 
     if ($_FILES['file']['name'] !== "") {
         ////////////////////////////////////////////////////////////////////////////

@@ -37,23 +37,7 @@
                 'inputSubject: ' . $arr['inputSubject']. '<br>' .
                 'inputMessage: ' . $arr['inputMessage'];
                 break;
-            // case 'purchase':
-            //     $subject = $arr['inputSubject'];
-            //     $body = 
-            //     ' <table width=100% id="table_crud">' .
-            //     '<thead>' .
-            //         '<tr>' .
-            //             '<td><b>Nombre</b></th> ' .
-            //             '<td><b>Localidad</b></th>' .
-            //             '<td><b>Provincia</b></th>' .
-            //             '<td><b>Capacidad</b></th>' .
-            //             '<td><b>Precio</b></th>' .
-            //         '<th class="td1"><b>Accion</b></th>' .
-            //         '</tr>' .
-            //     '</thead>' .
-            //     '<tbody>' . mailpurchase($arr['token']) .'</tbody>' .
-            //     '</table>';
-            //     break;
+            
         }
         ///cuerpo del mensaje
         $html .= "<html>";
@@ -114,30 +98,3 @@ function send_mailgun($from, $email, $subject, $html){
    curl_close($ch);
    return $result;
  }
-
-//  function mailpurchase($user){
-//     try {
-//         $arrValue = loadModel(MODEL_MODULE, "cart_model", "read_cart", $user);
-//     } catch (Exception $e) {
-//         echo json_encode("error");
-//         exit();
-//     }
-//     if ($arrValue){
-//                 foreach ($arrValue as $row) {
-//                        echo '<tr>';
-//                        echo '<td><br>'. $row['nombre'] . '</br></td>';
-//                     echo '<td><br>'. $row['localidad'] . '</br></td>';
-//                     echo '<td><br>'. $row['provincia'] . '</br></td>';
-//                     echo '<td><br>'. $row['capacidad'] . '</br></td>';
-//                     echo '<td><br>'. $row['precionoche'] . '€</br></td>';
-//                     echo '<td><br>';
-//                        echo "<a  class='read'  id='".$row['nombre']."'>Read</a>";
-//                        echo '&nbsp;';
-//                        echo '<a class="btn" href="index.php?page=controller_homes&op=update&id='.$row['nombre'].'">Update</a>';
-//                        echo '&nbsp;';
-//                        echo '<a class="btn" href="index.php?page=controller_homes&op=delete&id='.$row['nombre'].'">Delete</a>';
-//                        echo '</td>';
-//                        echo '</tr>';
-//                 }
-//             }       
-// }
